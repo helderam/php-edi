@@ -4,7 +4,7 @@ Sistema para geração de Eletronic Data Exchange - EDI - com fornecedores e ind
 
 O Sistema será composto de vários programas em PHP, que formatarão os registros informados, no formato exigido pelo LAYOUT do EDI.
 
-Incluiremos tambem agendamento de tarefas para automatizar operações, rodando automaticamente.
+Incluiremos tambem agendamento de tarefas para automatizar operações.
 
 
 
