@@ -1,12 +1,11 @@
 # php-edi
-Sistema para geração de Eletronic Data Exchange - EDI - com fornecedores e indústrias
 
-O Sistema será composto de um BANCO DE DADOS para integração dos dados a serem enviados ao fornecedor.
+Sistema para geração de Eletronic Data Exchange - EDI - com fornecedores e indústrias.
 
-Os programas lerão estas tabelas e gerarão os arquivos no formato e layout solicitado pelo fornecedor.
+O Sistema será composto de vários programas em PHP, que formatarão os registros informados, no formato exigido pelo LAYOUT do EDI.
 
-Incluiremos tambem agendamento de tarefas para automatizar operações.
+Incluiremos tambem agendamento de tarefas para automatizar operações, rodando automaticamente.
 
-Contamos com a colaboração de todos.
 
-Grato
+
+
