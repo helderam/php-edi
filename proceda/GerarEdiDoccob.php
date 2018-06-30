@@ -1,108 +1,98 @@
 <?php
 
-/**
- * +-----------------------------------------------------------------------+
- * | php-edi - Sistema Geração EDI - LAYOUT DOCCOB                         |
- * +-----------------------------------------------------------------------+
- * | Este arquivo está disponível sob a Licença MIT disponível pela Web    |
- * | em https://pt.wikipedia.org/wiki/Licen%C3%A7a_MIT                     |
- * |                                                                       |
- * | Coordenação: <helder.afonso.de.morais@gmail.com>                      |
- * |                                                                       |
- * | Programa...: gerar_edi_doccob.php                                     |
- * |                                                                       |
- * | Autor......: Helder <helder.afonso.de.morais@gmail.com>               |
- * |                                                                       |
- * | Criação....: 26-06-2018                                               |
- * |                                                                       |
- * | Objetivo...: Gerar arquivo de texto conforme Layout DOCCOB            |
- * |                                                                       |
- * | Layout EDI.: 6.0 - 31/07/2008                                         |
- * |                                                                       |
- * +-----------------------------------------------------------------------+
- * | Versões....:                                                          |
- * |                                                                       |
- * |                                                                       |
- * |                                                                       |
- * +-----------------------------------------------------------------------+
- */
+namespace PHP_EDI\proceda;
 
-// Função para formatar a linha
-function formata_edi($objeto) {
-    $objeto = $objeto[0];
-    #echo "<pre>"; var_dump($objeto); exit;
-    $length = $objeto->length;
-    // Converte em array
-    $campos = $objeto->campos;
-    // Cria linha
-    $linha = '';
-    foreach($campos as $campo) {
-        $tamanho = (int) empty($campo[1]) ? 1 : $campo[1]; # minimo de 1 tamanho
-        $conteudo = substr($campo[0], 0, $tamanho); # corta
-        $preenchimento = isset($campo[2]) ? $campo[2] : ' '; # preechimento defaulta de espaço
-        $preenchimento = empty($preenchimento) ? ' ' : $preenchimento; # preechimento defaulta de espaço
-        $lado = isset($campo[3]) ? $campo[3] : STR_PAD_RIGHT; # lado dafault Direito
-        $linha .= str_pad($conteudo, $tamanho, $preenchimento, $lado);
-    }
-    #if (strlen($linha) != $length)  {
-    #    throw new Exception('TAMANHO NÃO CONFERE');
-    #}
-    return $linha;
+use EdiDoccob;
+
+class GerarEdiDoccob extends EdiDoccob {
+    /**
+     * +-----------------------------------------------------------------------+
+     * | php-edi - Sistema Geração EDI - LAYOUT DOCCOB                         |
+     * +-----------------------------------------------------------------------+
+     * | Este arquivo está disponível sob a Licença MIT disponível pela Web    |
+     * | em https://pt.wikipedia.org/wiki/Licen%C3%A7a_MIT                     |
+     * |                                                                       |
+     * | Coordenação: <helder.afonso.de.morais@gmail.com>                      |
+     * |                                                                       |
+     * | Programa...: gerar_edi_doccob.php                                     |
+     * |                                                                       |
+     * | Autor......: Helder <helder.afonso.de.morais@gmail.com>               |
+     * |                                                                       |
+     * | Criação....: 26-06-2018                                               |
+     * |                                                                       |
+     * | Objetivo...: Gerar arquivo de texto conforme Layout DOCCOB            |
+     * |                                                                       |
+     * | Layout EDI.: 6.0 - 31/07/2008                                         |
+     * |                                                                       |
+     * +-----------------------------------------------------------------------+
+     * | Versões....:                                                          |
+     * |                                                                       |
+     * |                                                                       |
+     * |                                                                       |
+     * +-----------------------------------------------------------------------+
+     */
+
+
+    // Data e hora inicial
+    var $inicial;# = date('d-m-Y H:i:s');  
+
+    // Armazena as linhas que formarão o arquivo texto EDI
+    var $linhas = array();
+
+    // Armazena todos os registros a serem convertidos e formatados nolayout do EDI - PROCEDA - DOCCOB
+    var $registros = array();
+
+    /**
+     *  
+     * REGISTRO 000 - CABEÇALHO DE INTERCÂMBIO - Preenchimento: OBRIGATÓRIO 
+     * TAMANHO DO REGISTRO: 280 
+     * 
+     */
+
+    # IMPORTANTE: PREENCHER OS 4 CAMPOS: CONTEUDO, TAMANHO, PREENCHIMENTO, LADO PREENCHIMENTO, OBRIGATORIO
+
+    # CAMPOS PARA VERIFICAÇÃO E VALIDAÇÃO 
+    $this->code = '000'; // Codigo identificador do registro
+    $this->length = 280; // Tamanho da linha completa
+    $this->max_lines = 1; // Quantidade maxima de linhas deste tipo no total dos registros
+    $this->fields = 7; // Quantidade total de campos 
+    # IDENTIFICADOR DO REGISTRO - FIXO
+    $this->campos = array();
+    # 1 - IDENTIFICACAO DO REGISTRO
+    $this->campos['registro'] = ['000', 3, '', STR_PAD_RIGHT, true]; 
+    # 2 - NOME DA CAIXA POSTAL DO REMETENTE
+    $this->campos['remetente'] = ['1234', 35, ' ', STR_PAD_RIGHT, true]; 
+    # 3 - NOME DA CAIXA POSTAL DO DESTINATARIO
+    $this->campos['destinatario'] = ['234234', 35, ' ', STR_PAD_RIGHT, true]; 
+    # 4 - DDMMAA (DATA DE USO DA APLICAÇÃO EDI)
+    $this->campos['data'] = ['01022018', 6, '', STR_PAD_RIGHT, true];
+    # 5 - HORA
+    $this->campos['hora'] = ['1035', 4, '', STR_PAD_RIGHT, true]; # HHMM
+    # 6 - IDENTIFICAÇÃO DO INTERCAMBIO
+    # SUGESTÃO: "COB50DDMMSSS"
+    #           "COB50" = CONSTANTE COBrança+VERSÃO 50
+    #           "DDMM” = DIA/MÊS
+    #           "SSS" = SEQUÊNCIA DE 000 A 999
+    $this->campos['intercambio'] = ['COB502906001', 12, '', STR_PAD_RIGHT, true];
+    # 7 - PREENCHER COM ESPAÇOS 
+    $this->campos['filler'] = [' ', 185, '', STR_PAD_RIGHT, false]; 
+
+
+    // Formata REGIST|RO 000
+    #$linhas[] = $this;
+
+    #echo "<pre>"; var_dump($linhas); var_dump($registros); exit;
+
 }
-
-$inicial = date('d-m-Y H:i:s');  // Paga hora inicial
-
-// Armazena as linhas
-$linhas = array();
-$registros = array();
-
-/**
- *  
- * REGISTRO 000 - CABEÇALHO DE INTERCÂMBIO - Preenchimento: OBRIGATÓRIO 
- * TAMANHO DO REGISTRO: 280 
- * 
- */
- 
-# IMPORTANTE: PREENCHER OS 4 CAMPOS: CONTEUDO, TAMANHO, PREENCHIMENTO, LADO PREENCHIMENTO
-$registros[0] = new stdClass();
-
-# TAMANHO PARA VERIFICAÇÃO
-$registros[0]->code = 000;
-$registros[0]->length = 280;
-$registros[0]->max_lines = 1;
-# IDENTIFICADOR DO REGISTRO - FIXO
-$registros[0]->campos = array();
-$registros[0]->campos['registro'] = ['000', 3, '0', STR_PAD_RIGHT]; 
-# NOME DA CAIXA POSTAL DO REMETENTE
-$registros[0]->campos['remetente'] = ['1234', 35, ' ', STR_PAD_RIGHT]; 
-# NOME DA CAIXA POSTAL DO DESTINATARIO
-$registros[0]->campos['destinatario'] = ['234234', 35, ' ', STR_PAD_RIGHT]; 
-# DDMMAA (DATA DE USO DA APLICAÇÃO EDI)
-$registros[0]->campos['data'] = ['01022018', 6, '', STR_PAD_RIGHT];
-# HORA
-$registros[0]->campos['hora'] = ['1035', 4, '', STR_PAD_RIGHT]; # HHMM
-# iDENTIFICAÇÃO DO INTERCAMBIO
-# SUGESTÃO: "COB50DDMMSSS"
-#           "COB50" = CONSTANTE COBrança+VERSÃO 50
-#           "DDMM” = DIA/MÊS
-#           "SSS" = SEQUÊNCIA DE 000 A 999
-$registros[0]->campos['intercambio'] = ['COB502906001', 12, '', STR_PAD_RIGHT];
-# PREENCHER COM ESPAÇOS 
-$registros[0]->campos['filler'] = [' ', 185, '', STR_PAD_RIGHT]; 
-
-
-// Formata REGIST|RO 000
-$linhas[] = formata_edi($registros);
-
-echo "<pre>"; var_dump($linhas); var_dump($registros); exit;
 
 /**
  *  
  * REGISTRO 550 - CABEÇALHO DE DOCUMENTO (UNH) - Preenchimento: OBRIGATÓRIO 
  * TAMANHO DO REGISTRO: 280 
  * 
- */
- 
+
+}
+
 # IMPORTANTE: PREENCHER OS 4 CAMPOS: CONTEUDO, TAMANHO, PREENCHIMENTO, LADO PREENCHIMENTO
 $registro_550 = new stdClass(); 
 # TAMANHO PARA VERIFICAÇÃO
@@ -251,3 +241,5 @@ $conta_registros = 0;
     // Fecha o arquivo para escrita
     $arquivo->finalizar_escrita();
 }
+*/
+
