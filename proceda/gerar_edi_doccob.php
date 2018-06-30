@@ -251,28 +251,3 @@ $conta_registros = 0;
     // Fecha o arquivo para escrita
     $arquivo->finalizar_escrita();
 }
-
-/**
- * Envia o arquivo via FTP
- * $arquivo->exibir_link(); // link do arquivo
- *
-$ftp = @ftp_connect('192.168.1.23');
-#}
-$login = @ftp_login($ftp, 'anonymous', 'anonymous');
-if ($login) {
-    if (@ftp_chdir($ftp, "consinco/editransvila")) {
-        $destino = basename($arquivo->exibir_link());
-        if (!ftp_put($ftp, $destino, $arquivo->exibir_link(), FTP_ASCII)) {
-            $erro = "Erro ao enviar $arquivo";
-        }
-    } else {
-        $erro = "Sem acesso ao consinco/editransvila";
-    }
-    ftp_close($ftp);
-} else {
-    $erro = "Erro ao conectar";
-}
-
-$final = date('d-m-Y H:i:s');  // Paga hora final
-$tempo = strtotime($final) - strtotime($inicial);
-*/
