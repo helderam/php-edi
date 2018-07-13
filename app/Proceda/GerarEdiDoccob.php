@@ -1,5 +1,5 @@
 <?php
-
+/*
 namespace PHP_EDI\proceda;
 
 use EdiDoccob;
@@ -30,7 +30,7 @@ class GerarEdiDoccob extends EdiDoccob {
      * |                                                                       |
      * |                                                                       |
      * +-----------------------------------------------------------------------+
-     */
+     * /
 
 
     // Data e hora inicial
@@ -47,7 +47,7 @@ class GerarEdiDoccob extends EdiDoccob {
      * REGISTRO 000 - CABEÇALHO DE INTERCÂMBIO - Preenchimento: OBRIGATÓRIO 
      * TAMANHO DO REGISTRO: 280 
      * 
-     */
+     *
 
     # IMPORTANTE: PREENCHER OS 4 CAMPOS: CONTEUDO, TAMANHO, PREENCHIMENTO, LADO PREENCHIMENTO, OBRIGATORIO
 

@@ -1,0 +1,23 @@
+
+{
+    "name": "php-edi",
+    "description": "Gerar EDI para vários fornecedores",
+    "authors": [
+        {
+            "name": "Helder",
+            "email": "helder.afonso.de.morais@gmail.com"
+        },
+        {
+            "name": "Sidnei",
+            "email": "sidnei@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\" : "app/"
+        }
+    }
+}

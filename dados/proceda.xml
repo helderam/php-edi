@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<proceda>
+	<remetente>12345</remetente>
+	<destinatario>54321</destinatario>
+	<data>10072018</data>
+	<hora>0714</hora>
+	<intercambio>COBRA501007001</intercambio>
+    <documentos>
+        <sequencia id="0">
+	        <id_documento>COBRA501007001</id_documento>
+	        <cnpj>123123123000112</cnpj>
+	        <razao>TRANSPORTADORA ACME</razao>
+            <cobranca id="0">
+                <filial>123</filial>
+                <tipo>0</tipo>
+                <serie>001</serie>
+                <numero>123456</numero>
+                <emissao>10072018</emissao>
+                <vencimento>31122018</vencimento>
+            </cobranca>
+        </sequencia>
+</pai>
