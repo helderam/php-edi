@@ -2,7 +2,7 @@
 <proceda>
 	<remetente>12345</remetente>
 	<destinatario>54321</destinatario>
-	<data>10072018</data>
+	<data>100718</data>
 	<hora>0714</hora>
 	<intercambio>COBRA501007001</intercambio>
     <documentos>
@@ -19,4 +19,5 @@
                 <vencimento>31122018</vencimento>
             </cobranca>
         </sequencia>
-</pai>
+    </documentos>
+</proceda>
