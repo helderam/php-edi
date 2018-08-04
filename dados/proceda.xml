@@ -7,8 +7,8 @@
 	<intercambio>COBRA501007001</intercambio>
     <documentos>
         <sequencia id="0">
-	        <id_documento>COBRA501007001</id_documento>
-	        <cnpj>123123123000112</cnpj>
+	        <documento>COBRA501007001</documento>
+	        <cnpj>12123123000112</cnpj>
 	        <razao>TRANSPORTADORA ACME</razao>
             <cobranca id="0">
                 <filial>123</filial>
@@ -17,6 +17,25 @@
                 <numero>123456</numero>
                 <emissao>10072018</emissao>
                 <vencimento>31122018</vencimento>
+                <valor>31,23</valor>
+                <tipo_cobranca>BCO</tipo_cobranca>
+                <multa>2</multa>
+                <juros>1</juros>
+                <limite>31122018</limite>
+                <desconto>3,12</desconto>
+                <agente>237</agente>
+                <nome>BRADESCO</nome>
+                <agencia>0514</agencia>
+                <digito>3</digito>
+                <conta>670664</conta>
+                <digito_conta>8</digito_conta>
+                <acao>I</acao>
+                <pre_fatura>2018</pre_fatura>
+                <complementar>18</complementar>
+                <cfop>32018</cfop>
+                <codigo>98571122018</codigo>
+                <chave>3897234597834598723498571122018</chave>
+                <protocolo>31146524562436018</protocolo>
             </cobranca>
         </sequencia>
     </documentos>
