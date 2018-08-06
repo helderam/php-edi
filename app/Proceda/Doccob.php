@@ -63,19 +63,18 @@ class Doccob
 
         $layout = new Layout();
 
-        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 0, 'N', 3, OBRIGATORIO, '0'));
-        $layout->adiciona(new Campo(2,'IDENTIFICAÇÃO DO REMETENTE', $remetente, 'A', 35, OBRIGATORIO));
-        $layout->adiciona(new Campo(3,'IDENTIFICAÇÃO DO DESTINATARIO', $destinatario, 'A', 35, OBRIGATORIO));
-        $layout->adiciona(new Campo(4,'DATA', $data, 'A', 6, OBRIGATORIO));
-        $layout->adiciona(new Campo(5,'HORA', $hora, 'A', 4, OBRIGATORIO));
-        $layout->adiciona(new Campo(6,'INTERCAMBIO', 'COB502906001', 'A', 12, OBRIGATORIO));
-        $layout->adiciona(new Campo(7,'ESPAÇO',' ', 'A', 185, OBRIGATORIO)); 
+        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO
+        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 0, NUMERICO, 3, OBRIGATORIO));
+        $layout->adiciona(new Campo(2,'IDENTIFICAÇÃO DO REMETENTE', $remetente, ALFA, 35, OBRIGATORIO));
+        $layout->adiciona(new Campo(3,'IDENTIFICAÇÃO DO DESTINATARIO', $destinatario, ALFA, 35, OBRIGATORIO));
+        $layout->adiciona(new Campo(4,'DATA', $data, ALFA, 6, OBRIGATORIO));
+        $layout->adiciona(new Campo(5,'HORA', $hora, ALFA, 4, OBRIGATORIO));
+        $layout->adiciona(new Campo(6,'INTERCAMBIO', 'COB502906001', ALFA, 12, OBRIGATORIO));
+        $layout->adiciona(new Campo(7,'ESPAÇO',' ', ALFA, 185, OBRIGATORIO)); 
 
 
         // Monta linha com os dados informados conferindo e validando os campos
         $linha = $layout->gera_linha();
-        var_dump($linha); exit;
-
 
         // Verifica se tamanho gerado está conforme o tamanho esperado
         if ($tamanho != strlen($linha)) {

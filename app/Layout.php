@@ -68,7 +68,7 @@ class Layout
         $linha = '';
         foreach($this->campos as $campo) {
             // formata campo conforme parametros
-            $linha .= str_pad($campo->conteudo, $campo->tamanho, $campo->preenchimento, $campo->lado);
+            $linha .= $campo->formatado;
         }
         return $linha;
     }

@@ -44,11 +44,8 @@ class Campo
     public $tipo;
     public $tamanho;
     public $obrigatorio;
-    public $preenchimento;
-    public $lado;
 
-    public $inteiro;
-    public $decimais;
+    public $formatado;
 
     /**
      * Verifica campo tamanho e conteudo
@@ -61,12 +58,12 @@ class Campo
      * @param $preenchimento ESPAÇO
      * @param $lado STR_PAD_RIGHT
      */
-    public function __construct($ordem, $descricao, $conteudo, $tipo, $tamanho, $obrigatorio='S', $preenchimento=' ', $lado=STR_PAD_RIGHT)
+    public function __construct($ordem, $descricao, $conteudo, $tipo, $tamanho, $obrigatorio=OBRIGATORIO)
     {
         // Verifica se tamanho de campo numerico
-    $valor_inteiro =  0;
-    $valor_decimais =  0;
-    if ($tipo == 'N') {
+        $valor_inteiro =  0;
+        $valor_decimais =  0;
+        if ($tipo == 'N') {
             $partes = explode('.', $tamanho);
             $tamanho_inteiro = $partes[0];
             $tamanho_decimal = isset($partes[1]) ? $partes[1]: 0;
@@ -80,10 +77,14 @@ class Campo
                 #var_dump($tamanho_decimal); var_dump($valor_decimais); exit;
                 throw new \Exception("PARTE DECIMAL CAMPO '{$descricao}' MAIOR QUE {$tamanho_decimal}");
             }
+            $formatado = str_pad($valor_inteiro, $tamanho_inteiro, '0', STR_PAD_LEFT) .
+                         str_pad($valor_decimais, $tamanho_decimal, '0', STR_PAD_RIGHT);
+    
         } else {
             if (strlen($conteudo) > $tamanho) {
                 throw new \Exception("TAMANHO CAMPO '{$descricao}' MAIOR QUE {$tamanho}");
             }
+            $formatado = str_pad($conteudo, $tamanho, ' ', STR_PAD_RIGHT);
         }
         if ($ordem < 1) {
             throw new \Exception("ORDEM CAMPO '{$descricao}' DEVE SER MAIOR QUE 1");
@@ -99,11 +100,7 @@ class Campo
         $this->conteudo = $conteudo;
         $this->tipo = $tipo;
         $this->tamanho = $tamanho;
-        $this->inteiro = $valor_inteiro;
-        $this->decimais = $valor_decimais;
         $this->obrigatorio = $obrigatorio;
-        $this->preenchimento = $preenchimento;
-        $this->lado = $lado;
-
+        $this->formatado = $formatado;
     }
 }

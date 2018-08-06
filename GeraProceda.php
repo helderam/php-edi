@@ -33,7 +33,7 @@ const OBRIGATORIO = true;
 // Tamanho da linha
 const TAMANHO = 280;
 
-// Tipo de campo
+// Tipo de campo A/N
 const NUMERICO = 'N';
 const ALFA = 'A';
 
