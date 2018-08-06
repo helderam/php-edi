@@ -75,7 +75,8 @@ class Doccob
 
         // Monta linha com os dados informados conferindo e validando os campos
         $linha = $layout->gera_linha();
-
+        var_dump($linha); exit;
+        
         // Verifica se tamanho gerado está conforme o tamanho esperado
         if ($tamanho != strlen($linha)) {
           throw new Exception("REGISTRO 000 NAO CONFERE TAMANHO DE {$tamanho}");
