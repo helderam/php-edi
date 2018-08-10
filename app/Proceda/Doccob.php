@@ -72,11 +72,7 @@ class Doccob
         $layout->adiciona(new Campo(6,'INTERCAMBIO', 'COB502906001', ALFA, 12, OBRIGATORIO));
         $layout->adiciona(new Campo(7,'ESPAÇO',' ', ALFA, 185, OBRIGATORIO)); 
 
-
-        // Monta linha com os dados informados conferindo e validando os campos
         $linha = $layout->gera_linha();
-        var_dump($linha); exit;
-        
         // Verifica se tamanho gerado está conforme o tamanho esperado
         if ($tamanho != strlen($linha)) {
           throw new Exception("REGISTRO 000 NAO CONFERE TAMANHO DE {$tamanho}");
@@ -90,8 +86,8 @@ class Doccob
           throw new Exception("REGISTRO 000 OCORRE MAIS DE 1 VEZ");
         }
 
-        // Devolve a linha formatada conforme leyout
-        return $linha."\n";
+        // Gera linha conforme o layout
+        return $linha;
     }
 
     /**
@@ -104,22 +100,17 @@ class Doccob
         // Zera contador de 551 - ocorre 1 para cada 550
         $this->conta_551 = 0;
 
-        // 1 - IDENTIFICADOR DO REGISTRO - SEMPRE 550
-        $linha = '550';
-        /* 2 - IDENTIFICAÇÃO DO DOCUMENTO
-           SUGESTÃO: "COB50DDMMSSS"
-                     "COB50" = CONSTANTE COBrança+VERSÃO 50
-                     "DDMM” = DIA/MÊS
-                     "SSS" = SEQUÊNCIA DE 001 A 2000
-        */
-        $linha .= ValidaCampo::validar('DOCUMENTO', $documento, 14, OBRIGATORIO);
+        $layout = new Layout();
 
-        // 3 - PREENCHER COM ESPAÇOS 
-        $linha .= ValidaCampo::validar('ESPAÇO',' ', 263, OBRIGATORIO); 
+        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO
+        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 550, NUMERICO, 3, OBRIGATORIO));
+        $layout->adiciona(new Campo(2,'IDENTIFICAÇÃO DO DOCUMENTO', $documento, ALFA, 14, OBRIGATORIO));
+        $layout->adiciona(new Campo(3,'ESPAÇO',' ', ALFA, 263, OBRIGATORIO)); 
 
+        $linha = $layout->gera_linha();
         // Verifica se tamanho gerado está conforme o tamanho esperado
         if ($tamanho != strlen($linha)) {
-          throw new Exception("REGISTRO 550 NAO CONFERE TAMANHO DE {$tamanho}");
+          throw new \Exception("REGISTRO 550 NAO CONFERE TAMANHO DE {$tamanho} : ".strlen($linha));
         }
 
         // Conta linhas para conferencia final
@@ -129,9 +120,9 @@ class Doccob
         if ($this->conta_550 > 200) {
           throw new Exception("REGISTRO 550 OCORRE MAIS DE 200 VEZES");
         }
-
-        // Devolve a linha formatada conforme leyout
-        return $linha."\n";
+        
+        // Gera linha conforme o layout
+        return $linha;
     }
 
     /**
@@ -144,22 +135,20 @@ class Doccob
     {
         // Zera contador de 552 - ocorre ate 500 para cada 551
         $this->conta_552 = 0;
-        
-        // 1 - IDENTIFICADOR DO REGISTRO - SEMPRE 551
-        $linha = '551';
 
-        // 2 - CNPJ TRANSPORTADORA
-        $linha .= ValidaCampo::validar('CNPJ', $cnpj, 14, OBRIGATORIO);
+        $layout = new Layout();
 
-        // 3 - RAZAO SOCIAL 
-        $linha .= ValidaCampo::validar('RAZAO SOCIAL', $razao, 50, OBRIGATORIO); 
+        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO
+        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 551, NUMERICO, 3, OBRIGATORIO));
+        $layout->adiciona(new Campo(2,'CNPJ REMETENTE', $cnpj, ALFA, 14, OBRIGATORIO));
+        $layout->adiciona(new Campo(2,'RAZAO SOCIAL', $razao, ALFA, 50, OBRIGATORIO));
+        $layout->adiciona(new Campo(3,'ESPAÇO',' ', ALFA, 213, OBRIGATORIO)); 
 
-        // 4 - PREENCHER COM ESPAÇOS 
-        $linha .= ValidaCampo::validar('ESPAÇO',' ', 213, OBRIGATORIO); 
+        $linha = $layout->gera_linha();
 
         // Verifica se tamanho gerado está conforme o tamanho esperado
         if ($tamanho != strlen($linha)) {
-          throw new Exception("REGISTRO 551 NAO CONFERE TAMANHO DE {$tamanho}");
+          throw new \Exception("REGISTRO 551 NAO CONFERE TAMANHO DE {$tamanho} :".strlen($linha));
         }
 
         // Conta linhas para conferencia final
@@ -167,11 +156,11 @@ class Doccob
 
         // Verifica se tem mais de 1 registro 000
         if ($this->conta_551 > 1) {
-          throw new Exception("REGISTRO 551 OCORRE MAIS DE 1 VEZES");
+          throw new \Exception("REGISTRO 551 OCORRE MAIS DE 1 VEZES");
         }
-
-        // Devolve a linha formatada conforme leyout
-        return $linha."\n";
+      
+        // Gera linha conforme o layout
+        return $linha;
     }
 
     /**
@@ -188,104 +177,17 @@ class Doccob
         // Zera contador de 553 - ocorre 1 para cada 552
         $this->conta_553 = 0;
         
-        // 1 - IDENTIFICADOR DO REGISTRO - SEMPRE 551
-        $linha = '552';
+        $layout = new Layout();
 
-        // 2 - FILIAL EMISSORA
-        $linha .= ValidaCampo::validar('FILIAL', $filial, 10, OBRIGATORIO);
+        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO
+        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 552, NUMERICO, 3, OBRIGATORIO));
+        $layout->adiciona(new Campo(2,'FILIAL', $filial, ALFA, 14, OBRIGATORIO));
 
-        // 3 - TIPO DOCUMENTO
-        $linha .= ValidaCampo::validar('TIPO', $tipo, 1, OBRIGATORIO); 
-
-        // 4 - SERIE
-        $linha .= ValidaCampo::validar('SERIE', $serie, 3, OBRIGATORIO); 
-
-        // 5 - NUMERO
-        $linha .= ValidaCampo::validar('NUMERO', $numero, 10, OBRIGATORIO); 
-
-        // 6 - DATA EMISSÃO
-        $linha .= ValidaCampo::validar('DATA EMISSÃO', $emissao, 8, OBRIGATORIO); 
-
-
-
-
-
-        
-        // 3 - TIPO DOCUMENTO
-        $linha .= ValidaCampo::validar('TIPO', $tipo, 1, OBRIGATORIO); 
-
-        // 3 - TIPO DOCUMENTO
-        $linha .= ValidaCampo::validar('TIPO', $tipo, 1, OBRIGATORIO); 
-
-        // 3 - TIPO DOCUMENTO
-        $linha .= ValidaCampo::validar('TIPO', $tipo, 1, OBRIGATORIO); 
-
-        // 3 - TIPO DOCUMENTO
-        $linha .= ValidaCampo::validar('TIPO', $tipo, 1, OBRIGATORIO); 
-
-        // 3 - TIPO DOCUMENTO
-        $linha .= ValidaCampo::validar('TIPO', $tipo, 1, OBRIGATORIO); 
-
-        // 3 - TIPO DOCUMENTO
-        $linha .= ValidaCampo::validar('TIPO', $tipo, 1, OBRIGATORIO); 
-
-        // 3 - TIPO DOCUMENTO
-        $linha .= ValidaCampo::validar('TIPO', $tipo, 1, OBRIGATORIO); 
-
-        // 3 - TIPO DOCUMENTO
-        $linha .= ValidaCampo::validar('TIPO', $tipo, 1, OBRIGATORIO); 
-
-        // 3 - TIPO DOCUMENTO
-        $linha .= ValidaCampo::validar('TIPO', $tipo, 1, OBRIGATORIO); 
-
-        // 3 - TIPO DOCUMENTO
-        $linha .= ValidaCampo::validar('TIPO', $tipo, 1, OBRIGATORIO); 
-
-        // 3 - TIPO DOCUMENTO
-        $linha .= ValidaCampo::validar('TIPO', $tipo, 1, OBRIGATORIO); 
-
-        // 3 - TIPO DOCUMENTO
-        $linha .= ValidaCampo::validar('TIPO', $tipo, 1, OBRIGATORIO); 
-
-        // 3 - TIPO DOCUMENTO
-        $linha .= ValidaCampo::validar('TIPO', $tipo, 1, OBRIGATORIO); 
-
-        // 3 - TIPO DOCUMENTO
-        $linha .= ValidaCampo::validar('TIPO', $tipo, 1, OBRIGATORIO); 
-
-        // 3 - TIPO DOCUMENTO
-        $linha .= ValidaCampo::validar('TIPO', $tipo, 1, OBRIGATORIO); 
-
-        // 3 - TIPO DOCUMENTO
-        $linha .= ValidaCampo::validar('TIPO', $tipo, 1, OBRIGATORIO); 
-
-        // 3 - TIPO DOCUMENTO
-        $linha .= ValidaCampo::validar('TIPO', $tipo, 1, OBRIGATORIO); 
-
-        // 3 - TIPO DOCUMENTO
-        $linha .= ValidaCampo::validar('TIPO', $tipo, 1, OBRIGATORIO); 
-
-        // 3 - TIPO DOCUMENTO
-        $linha .= ValidaCampo::validar('TIPO', $tipo, 1, OBRIGATORIO); 
-
-        // 3 - TIPO DOCUMENTO
-        $linha .= ValidaCampo::validar('TIPO', $tipo, 1, OBRIGATORIO); 
-
-        // 3 - TIPO DOCUMENTO
-        $linha .= ValidaCampo::validar('TIPO', $tipo, 1, OBRIGATORIO); 
-
-        // 3 - TIPO DOCUMENTO
-        $linha .= ValidaCampo::validar('TIPO', $tipo, 1, OBRIGATORIO); 
-
-        // 3 - TIPO DOCUMENTO
-        $linha .= ValidaCampo::validar('TIPO', $tipo, 1, OBRIGATORIO); 
-
-        // 4 - PREENCHER COM ESPAÇOS 
-        $linha .= ValidaCampo::validar('ESPAÇO',' ', 213, OBRIGATORIO); 
+        $linha = $layout->gera_linha();
 
         // Verifica se tamanho gerado está conforme o tamanho esperado
         if ($tamanho != strlen($linha)) {
-          throw new Exception("REGISTRO 551 NAO CONFERE TAMANHO DE {$tamanho}");
+          throw new \Exception("REGISTRO 551 NAO CONFERE TAMANHO DE {$tamanho}");
         }
 
         // Conta linhas para conferencia final
@@ -293,11 +195,11 @@ class Doccob
 
         // Verifica se tem mais de 1 registro 000
         if ($this->conta_551 > 1) {
-          throw new Exception("REGISTRO 551 OCORRE MAIS DE 1 VEZES");
+          throw new \Exception("REGISTRO 551 OCORRE MAIS DE 1 VEZES");
         }
-
-        // Devolve a linha formatada conforme leyout
-        return $linha."\n";
+        
+        // Gera linha conforme o layout
+        return $linha;
     }
 
 
