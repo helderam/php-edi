@@ -11,7 +11,7 @@
 	        <cnpj>12123123000112</cnpj>
 	        <razao>TRANSPORTADORA ACME</razao>
             <cobranca id="0">
-                <filial>123</filial>
+                <filial>1234567890</filial>
                 <tipo>0</tipo>
                 <serie>001</serie>
                 <numero>123456</numero>
@@ -33,9 +33,9 @@
                 <pre_fatura>2018</pre_fatura>
                 <complementar>18</complementar>
                 <cfop>32018</cfop>
-                <codigo>98571122018</codigo>
+                <codigo>98571122</codigo>
                 <chave>3897234597834598723498571122018</chave>
-                <protocolo>31146524562436018</protocolo>
+                <protocolo>311465245624360</protocolo>
             </cobranca>
         </sequencia>
     </documentos>

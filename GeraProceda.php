@@ -58,8 +58,10 @@ try {
     foreach ($xml->documentos->sequencia as $documento) {
         // Acrescenta registro 550
         $linhas .= $doccob->registro_550($documento->documento, TAMANHO);
-        // Acrescenta registro 550
+        // Acrescenta registro 551
         $linhas .= $doccob->registro_551($documento->cnpj, $documento->razao, TAMANHO);
+        // Acrescenta registro 552
+        $linhas .= $doccob->registro_552($documento->cobranca->filial, $documento->cobranca->tipo,$documento->cobranca->serie, $documento->cobranca->numero, $documento->cobranca->emissao, $documento->cobranca->vencimento, $documento->cobranca->valor, $documento->cobranca->tipo_cobranca, $documento->cobranca->multa, $documento->cobranca->juros, $documento->cobranca->limite, $documento->cobranca->desconto, $documento->cobranca->agente, $documento->cobranca->nome, $documento->cobranca->agencia, $documento->cobranca->digito, $documento->cobranca->conta, $documento->cobranca->digito_conta, $documento->cobranca->acao, $documento->cobranca->pre_fatura, $documento->cobranca->complementar, $documento->cobranca->cfop, $documento->cobranca->codigo, $documento->cobranca->chave, $documento->cobranca->protocolo, TAMANHO);
     }
     // Mostra resultado
     file_put_contents('arquivos/proceda.txt', $linhas);
