@@ -87,7 +87,7 @@ class Doccob
         }
 
         // Gera linha conforme o layout
-        return $linha;
+        return $linha."\n";
     }
 
     /**
@@ -122,7 +122,7 @@ class Doccob
         }
         
         // Gera linha conforme o layout
-        return $linha;
+        return $linha."\n";
     }
 
     /**
@@ -160,7 +160,7 @@ class Doccob
         }
       
         // Gera linha conforme o layout
-        return $linha;
+        return $linha."\n";
     }
 
     /**
@@ -199,7 +199,7 @@ class Doccob
         }
         
         // Gera linha conforme o layout
-        return $linha;
+        return $linha."\n";
     }
 
 

@@ -62,6 +62,7 @@ try {
         $linhas .= $doccob->registro_551($documento->cnpj, $documento->razao, TAMANHO);
     }
     // Mostra resultado
+    file_put_contents('arquivos/proceda.txt', $linhas);
     echo "<pre><br>\n";
     echo $linhas;
 
