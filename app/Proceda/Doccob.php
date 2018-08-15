@@ -70,7 +70,7 @@ class Doccob
         $layout->adiciona(new Campo(4,'DATA', $data, NUMERICO, 6, OBRIGATORIO));
         $layout->adiciona(new Campo(5,'HORA', $hora, NUMERICO, 4, OBRIGATORIO));
         $layout->adiciona(new Campo(6,'INTERCAMBIO', 'COB502906001', NUMERICO, 12, OBRIGATORIO));
-        $layout->adiciona(new Campo(7,'ESPAÇO', ' ', NUMERICO, 185, OBRIGATORIO)); 
+        $layout->adiciona(new Campo(7,'ESPACO', ' ', ALFA, 185, OBRIGATORIO)); 
 
         $linha = $layout->gera_linha();
         // Verifica se tamanho gerado está conforme o tamanho esperado
@@ -105,7 +105,7 @@ class Doccob
         // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO
         $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 550, NUMERICO, 3, OBRIGATORIO));
         $layout->adiciona(new Campo(2,'IDENTIFICAÇÃO DO DOCUMENTO', $documento, NUMERICO, 14, OBRIGATORIO));
-        $layout->adiciona(new Campo(3,'ESPAÇO', ' ', NUMERICO, 263, OBRIGATORIO)); 
+        $layout->adiciona(new Campo(3,'ESPACO', ' ', ALFA, 263, OBRIGATORIO)); 
 
         $linha = $layout->gera_linha();
         // Verifica se tamanho gerado está conforme o tamanho esperado
@@ -142,7 +142,7 @@ class Doccob
         $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 551, NUMERICO, 3, OBRIGATORIO));
         $layout->adiciona(new Campo(2,'CNPJ REMETENTE', $cnpj, NUMERICO, 14, OBRIGATORIO));
         $layout->adiciona(new Campo(2,'RAZAO SOCIAL', $razao, NUMERICO, 50, OBRIGATORIO));
-        $layout->adiciona(new Campo(3,'ESPAÇO', ' ', NUMERICO, 213, OBRIGATORIO)); 
+        $layout->adiciona(new Campo(3,'ESPACO', ' ', ALFA, 213, OBRIGATORIO)); 
 
         $linha = $layout->gera_linha();
 
@@ -156,7 +156,7 @@ class Doccob
 
         // Verifica se tem mais de 1 registro 000
         if ($this->conta_551 > 1) {
-          throw new \Exception("REGISTRO 551 OCORRE MAIS DE 1 VEZES");
+          throw new \Exception("REGISTRO 551 OCORRE MAIS DE 1 VEZ");
         }
       
         // Gera linha conforme o layout
@@ -206,7 +206,7 @@ class Doccob
         $layout->adiciona(new Campo(24,'CODIGO', $codigo, NUMERICO, 9, OBRIGATORIO));
         $layout->adiciona(new Campo(25,'CHAVE', $chave, NUMERICO, 45, OBRIGATORIO));
         $layout->adiciona(new Campo(26,'PROTOCOLO', $protocolo, NUMERICO, 15, OBRIGATORIO));
-        $layout->adiciona(new Campo(27,'ESPAÇO', ' ', NUMERICO, 20, OBRIGATORIO));
+        $layout->adiciona(new Campo(27,'ESPACO', ' ', ALFA, 20, OBRIGATORIO));
 
 
         $linha = $layout->gera_linha();
@@ -220,8 +220,8 @@ class Doccob
         $this->conta_552++;
 
         // Verifica se tem mais de 1 registro 000
-        if ($this->conta_552 > 1) {
-          throw new \Exception("REGISTRO 552 OCORRE MAIS DE 1 VEZES");
+        if ($this->conta_552 > 500) {
+          throw new \Exception("REGISTRO 552 OCORRE MAIS DE 500 VEZES");
         }
         
         // Gera linha conforme o layout
@@ -246,16 +246,16 @@ class Doccob
 
         // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO
         $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 553, NUMERICO, 3, OBRIGATORIO));
-        $layout->adiciona(new Campo(2,'VALOR_ICMS', $filial, NUMERICO, 13.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(3,'ALIQUOTA_ICMS', $tipo, NUMERICO, 3.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(4,'BASE_ICMS', $serie, NUMERICO, 13.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(5,'VALOR_ISS', $numero, NUMERICO, 13.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(6,'ALIQUOTA_ISS', $emissao, NUMERICO, 3.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(7,'BASE_ISS', $vencimento, NUMERICO, 13.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(8,'VALOR_SUBSTITUICAO', $valor, NUMERICO, 13.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(9,'ALIQUOTA_SUBSTITUICAO', $tipo_cobranca, NUMERICO, 3.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(10,'BASE_SUBSTITUICAO', $multa, NUMERICO, 13.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(11,'VALOR_IR', $juros, NUMERICO, 13.2, OBRIGATORIO));
+        $layout->adiciona(new Campo(2,'VALOR_ICMS', $valor_icms, NUMERICO, 13.2, OBRIGATORIO));
+        $layout->adiciona(new Campo(3,'ALIQUOTA_ICMS', $aliq_icms, NUMERICO, 3.2, OBRIGATORIO));
+        $layout->adiciona(new Campo(4,'BASE_ICMS', $base_icms, NUMERICO, 13.2, OBRIGATORIO));
+        $layout->adiciona(new Campo(5,'VALOR_ISS', $valor_iss, NUMERICO, 13.2, OBRIGATORIO));
+        $layout->adiciona(new Campo(6,'ALIQUOTA_ISS', $aliq_iss, NUMERICO, 3.2, OBRIGATORIO));
+        $layout->adiciona(new Campo(7,'BASE_ISS', $base_iss, NUMERICO, 13.2, OBRIGATORIO));
+        $layout->adiciona(new Campo(8,'VALOR_SUBSTITUICAO', $valor_subst, NUMERICO, 13.2, OBRIGATORIO));
+        $layout->adiciona(new Campo(9,'ALIQUOTA_SUBSTITUICAO', $aliq_subst, NUMERICO, 3.2, OBRIGATORIO));
+        $layout->adiciona(new Campo(10,'BASE_SUBSTITUICAO', $base_subst, NUMERICO, 13.2, OBRIGATORIO));
+        $layout->adiciona(new Campo(11,'VALOR_IR', $valor_ir, NUMERICO, 13.2, OBRIGATORIO));
         $layout->adiciona(new Campo(12,'ESPACO', ' ', ALFA, 157, OBRIGATORIO));
 
         $linha = $layout->gera_linha();
@@ -270,7 +270,7 @@ class Doccob
 
         // Verifica se tem mais de 1 registro 553
         if ($this->conta_553 > 1) {
-          throw new \Exception("REGISTRO 553 OCORRE MAIS DE 1 VEZES");
+          throw new \Exception("REGISTRO 553 OCORRE MAIS DE 1 VEZ");
         }
         
         // Gera linha conforme o layout
@@ -326,8 +326,8 @@ class Doccob
         $this->conta_555++;
 
         // Verifica se tem mais de 1 registro 555
-        if ($this->conta_555 > 1) {
-          throw new \Exception("REGISTRO 555 OCORRE MAIS DE 1 VEZES");
+        if ($this->conta_555 > 5000) {
+          throw new \Exception("REGISTRO 555 OCORRE MAIS DE 5000 VEZES");
         }
         
         // Gera linha conforme o layout
@@ -362,7 +362,7 @@ class Doccob
         $layout->adiciona(new Campo(10,'NUMERO SAP', $numero_SAP, ALFA, 20, OBRIGATORIO));
         $layout->adiciona(new Campo(11,'OUTRO SAP', $outro_SAP, ALFA, 20, OBRIGATORIO));
         $layout->adiciona(new Campo(12,'DEVOLUCAO', $devolucao, ALFA, 1, OBRIGATORIO));
-        $layout->adiciona(new Campo(13,'ESPAÇO', ' ', ALFA, 140, OBRIGATORIO));
+        $layout->adiciona(new Campo(13,'ESPACO', ' ', ALFA, 140, OBRIGATORIO));
 
         $linha = $layout->gera_linha();
 
@@ -375,8 +375,8 @@ class Doccob
         $this->conta_556++;
 
         // Verifica se tem mais de 1 registro 556
-        if ($this->conta_556 > 1) {
-          throw new \Exception("REGISTRO 556 OCORRE MAIS DE 1 VEZES");
+        if ($this->conta_556 > 9999) {
+          throw new \Exception("REGISTRO 556 OCORRE MAIS DE 9999 VEZES");
         }
         
         // Gera linha conforme o layout
@@ -414,7 +414,7 @@ class Doccob
 
         // Verifica se tem mais de 1 registro 559
         if ($this->conta_559 > 1) {
-          throw new \Exception("REGISTRO 559 OCORRE MAIS DE 1 VEZES");
+          throw new \Exception("REGISTRO 559 OCORRE MAIS DE 1 VEZ");
         }
         
         // Gera linha conforme o layout
