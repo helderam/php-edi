@@ -4,14 +4,24 @@ namespace App\Proceda;
 use App\Layout;
 use App\Campo;
 
-class Doccob
+class Notfis
 {
 
     var $conta_000 = 0;
     var $conta_500 = 0;
     var $conta_501 = 0;
     var $conta_502 = 0;
-    var $conta_503 = 0;
+    var $conta_504 = 0;
+    var $conta_505 = 0;
+    var $conta_506 = 0;
+    var $conta_507 = 0;
+    var $conta_508 = 0;
+    var $conta_509 = 0;
+    var $conta_511 = 0;
+    var $conta_513 = 0;
+    var $conta_514 = 0;
+    var $conta_515 = 0;
+    var $conta_519 = 0;
 
     /**
      * Formata campos recebidos para registro 000

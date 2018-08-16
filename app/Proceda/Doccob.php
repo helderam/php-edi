@@ -46,6 +46,11 @@ class Doccob
     var $conta_550 = 0;
     var $conta_551 = 0;
     var $conta_552 = 0;
+    var $conta_553 = 0;
+    var $conta_555 = 0;
+    var $conta_556 = 0;
+    var $conta_559 = 0;
+
 
     /**
      * Formata campos recebidos para registro 000
