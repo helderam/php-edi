@@ -11,11 +11,10 @@ class Ocoren
     var $conta_540 = 0;
     var $conta_541 = 0;
     var $conta_542 = 0;
-    var $conta_523 = 0;
-    var $conta_524 = 0;
-    var $conta_525 = 0;
-    var $conta_527 = 0;
-    var $conta_529 = 0;
+    var $conta_543 = 0;
+    var $conta_544 = 0;
+    var $conta_545 = 0;
+    var $conta_549 = 0;
 
     /**
      * Formata campos recebidos para registro 000

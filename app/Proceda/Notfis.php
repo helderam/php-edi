@@ -41,11 +41,11 @@ class Notfis
 
         // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO
         $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 0, NUMERICO, 3, OBRIGATORIO));
-        $layout->adiciona(new Campo(2,'IDENTIFICAÇÃO DO REMETENTE', $remetente, NUMERICO, 35, OBRIGATORIO));
-        $layout->adiciona(new Campo(3,'IDENTIFICAÇÃO DO DESTINATARIO', $destinatario, NUMERICO, 35, OBRIGATORIO));
+        $layout->adiciona(new Campo(2,'IDENTIFICAÇÃO DO REMETENTE', $remetente, ALFA, 35, OBRIGATORIO));
+        $layout->adiciona(new Campo(3,'IDENTIFICAÇÃO DO DESTINATARIO', $destinatario, ALFA, 35, OBRIGATORIO));
         $layout->adiciona(new Campo(4,'DATA', $data, NUMERICO, 6, OBRIGATORIO));
         $layout->adiciona(new Campo(5,'HORA', $hora, NUMERICO, 4, OBRIGATORIO));
-        $layout->adiciona(new Campo(6,'INTERCAMBIO', 'NOT50DDMMSSS', NUMERICO, 12, OBRIGATORIO));
+        $layout->adiciona(new Campo(6,'INTERCAMBIO', 'NOT50DDMMSSS', ALFA, 12, OBRIGATORIO));
         $layout->adiciona(new Campo(7,'ESPAÇO', ' ', ALFA, 225, OBRIGATORIO)); 
 
         $linha = $layout->gera_linha();
@@ -75,7 +75,7 @@ class Notfis
 
         // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO
         $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 500, NUMERICO, 3, OBRIGATORIO));
-        $layout->adiciona(new Campo(2,'IDENTIFICAÇÃO DO DOCUMENTO', $documento, NUMERICO, 14, OBRIGATORIO));
+        $layout->adiciona(new Campo(2,'IDENTIFICAÇÃO DO DOCUMENTO', $documento, ALFA, 14, OBRIGATORIO));
         $layout->adiciona(new Campo(3,'ESPAÇO', ' ', ALFA, 303, OBRIGATORIO)); 
 
         $linha = $layout->gera_linha();
@@ -227,7 +227,7 @@ class Notfis
     public function registro_504($documento, $cnpj, $insc_estadual, $endereco, $bairro, $cidade, $cod_postal,
                                 $cod_municipio, $uf, $numero_contato, $cod_pais, $area_frete, $tipo_identificacao_dest, $tipo_estabelecimento_dest, $tamanho)
     {
-        // Zera contador de 505 - ocorre 1 para cada 503
+        // Zera contador de 505 - ocorre 500 para cada 503
         $this->conta_505 = 0;
 
         $layout = new Layout();
@@ -268,13 +268,13 @@ class Notfis
         return $linha."\n";
     }
     
-    public function registro_505($serie, $numero, $data_nf, $tipo, $especie_acond, $cod_rota, $meio_transporte, $tipo_transporte,
-                                $tipo_carga, $condicao_frete, $data, $desdobro, $plano_cargarapida, $tipo_doc_fiscal, $bonificacao,
+    public function registro_505($serie, $numero, $data, $tipo, $especie_acond, $cod_rota, $meio_transporte, $tipo_transporte,
+                                $tipo_carga, $condicao_frete, $data_embarque, $desdobro, $plano_cargarapida, $tipo_doc_fiscal, $bonificacao,
                                 $cfop, $uf, $frete_diferenciado, $tabela_frete, $modalidade_frete, $identf_pedido_cliente, $identf_embarque,
                                 $numero_sap, $outro_sap, $outro_sap1, $tipo_periodo_entrega, $data_init_entrega, $hora_init_entrega, $data_final_entrega,
                                 $hora_final_entrega, $cod_numerico_chaveacesso_nfe, $chaveacesso_nfe_dv, $numero_protocolo, $acao_doc, $tamanho)
     {
-        // Zera contador de 506 - ocorre 500 para cada 503
+        // Zera contador de 506 - ocorre 1 para cada 505
         $this->conta_506 = 0;
 
         $layout = new Layout();
@@ -383,9 +383,9 @@ class Notfis
         // Conta linhas para conferencia final
         $this->conta_506++;
 
-        // Verifica se tem mais de 500 registro 506
-        if ($this->conta_506 > 500) {
-          throw new Exception("REGISTRO 506 OCORRE MAIS DE 500 VEZES");
+        // Verifica se tem mais de 1 registro 506
+        if ($this->conta_506 > 1) {
+          throw new Exception("REGISTRO 506 OCORRE MAIS DE 1 VEZ");
         }
         
         // Gera linha conforme o layout
@@ -642,7 +642,7 @@ class Notfis
         // Conta linhas para conferencia final
         $this->conta_514++;
 
-        // Verifica se tem mais de 1 registro 505
+        // Verifica se tem mais de 1 registro 514
         if ($this->conta_514 > 1) {
           throw new Exception("REGISTRO 514 OCORRE MAIS DE 1 VEZ");
         }
@@ -653,7 +653,7 @@ class Notfis
 
     public function registro_515($documento, $cnpj, $insc_estadual, $endereco, $bairro, $cidade, $cod_postal, $cod_municipio, $uf, $numero_contato, $tamanho)
     {
-        // Zera contador de 515 - ocorre 1 para cada 505
+        // Zera contador de 515 - ocorre 1 para cada 500
         $this->conta_519 = 0;
 
         $layout = new Layout();
@@ -681,7 +681,7 @@ class Notfis
         // Conta linhas para conferencia final
         $this->conta_515++;
 
-        // Verifica se tem mais de 1 registro 505
+        // Verifica se tem mais de 1 registro 515
         if ($this->conta_515 > 1) {
           throw new Exception("REGISTRO 515 OCORRE MAIS DE 1 VEZ");
         }
@@ -712,7 +712,7 @@ class Notfis
         // Conta linhas para conferencia final
         $this->conta_519++;
 
-        // Verifica se tem mais de 1 registro 505
+        // Verifica se tem mais de 1 registro 519
         if ($this->conta_519 > 1 ){
           throw new Exception("REGISTRO 519 OCORRE MAIS DE 1 VEZ");
         }

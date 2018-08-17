@@ -70,11 +70,11 @@ class Doccob
 
         // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO
         $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 0, NUMERICO, 3, OBRIGATORIO));
-        $layout->adiciona(new Campo(2,'IDENTIFICAÇÃO DO REMETENTE', $remetente, NUMERICO, 35, OBRIGATORIO));
-        $layout->adiciona(new Campo(3,'IDENTIFICAÇÃO DO DESTINATARIO', $destinatario, NUMERICO, 35, OBRIGATORIO));
+        $layout->adiciona(new Campo(2,'IDENTIFICAÇÃO DO REMETENTE', $remetente, ALFA, 35, OBRIGATORIO));
+        $layout->adiciona(new Campo(3,'IDENTIFICAÇÃO DO DESTINATARIO', $destinatario, ALFA, 35, OBRIGATORIO));
         $layout->adiciona(new Campo(4,'DATA', $data, NUMERICO, 6, OBRIGATORIO));
         $layout->adiciona(new Campo(5,'HORA', $hora, NUMERICO, 4, OBRIGATORIO));
-        $layout->adiciona(new Campo(6,'INTERCAMBIO', 'COB502906001', NUMERICO, 12, OBRIGATORIO));
+        $layout->adiciona(new Campo(6,'INTERCAMBIO', 'COB502906001', ALFA, 12, OBRIGATORIO));
         $layout->adiciona(new Campo(7,'ESPACO', ' ', ALFA, 185, OBRIGATORIO)); 
 
         $linha = $layout->gera_linha();
@@ -109,7 +109,7 @@ class Doccob
 
         // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO
         $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 550, NUMERICO, 3, OBRIGATORIO));
-        $layout->adiciona(new Campo(2,'IDENTIFICAÇÃO DO DOCUMENTO', $documento, NUMERICO, 14, OBRIGATORIO));
+        $layout->adiciona(new Campo(2,'IDENTIFICAÇÃO DO DOCUMENTO', $documento, ALFA, 14, OBRIGATORIO));
         $layout->adiciona(new Campo(3,'ESPACO', ' ', ALFA, 263, OBRIGATORIO)); 
 
         $linha = $layout->gera_linha();
@@ -121,7 +121,7 @@ class Doccob
         // Conta linhas para conferencia final
         $this->conta_550++;
 
-        // Verifica se tem mais de 1 registro 000
+        // Verifica se tem mais de 200 registro 520
         if ($this->conta_550 > 200) {
           throw new Exception("REGISTRO 550 OCORRE MAIS DE 200 VEZES");
         }
@@ -146,7 +146,7 @@ class Doccob
         // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO
         $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 551, NUMERICO, 3, OBRIGATORIO));
         $layout->adiciona(new Campo(2,'CNPJ REMETENTE', $cnpj, NUMERICO, 14, OBRIGATORIO));
-        $layout->adiciona(new Campo(2,'RAZAO SOCIAL', $razao, NUMERICO, 50, OBRIGATORIO));
+        $layout->adiciona(new Campo(2,'RAZAO SOCIAL', $razao, ALFA, 50, OBRIGATORIO));
         $layout->adiciona(new Campo(3,'ESPACO', ' ', ALFA, 213, OBRIGATORIO)); 
 
         $linha = $layout->gera_linha();
@@ -159,7 +159,7 @@ class Doccob
         // Conta linhas para conferencia final
         $this->conta_551++;
 
-        // Verifica se tem mais de 1 registro 000
+        // Verifica se tem mais de 1 registro 550
         if ($this->conta_551 > 1) {
           throw new \Exception("REGISTRO 551 OCORRE MAIS DE 1 VEZ");
         }
@@ -186,31 +186,31 @@ class Doccob
 
         // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO
         $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 552, NUMERICO, 3, OBRIGATORIO));
-        $layout->adiciona(new Campo(2,'FILIAL', $filial, NUMERICO, 10, OBRIGATORIO));
+        $layout->adiciona(new Campo(2,'FILIAL', $filial, ALFA, 10, OBRIGATORIO));
         $layout->adiciona(new Campo(3,'TIPO', $tipo, NUMERICO, 1, OBRIGATORIO));
-        $layout->adiciona(new Campo(4,'SERIE', $serie, NUMERICO, 3, OBRIGATORIO));
+        $layout->adiciona(new Campo(4,'SERIE', $serie, ALFA, 3, OBRIGATORIO));
         $layout->adiciona(new Campo(5,'NUMERO', $numero, NUMERICO, 10, OBRIGATORIO));
         $layout->adiciona(new Campo(6,'EMISSAO', $emissao, NUMERICO, 8, OBRIGATORIO));
         $layout->adiciona(new Campo(7,'VENCIMENTO', $vencimento, NUMERICO, 8, OBRIGATORIO));
         $layout->adiciona(new Campo(8,'VALOR', $valor, NUMERICO, 13.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(9,'TIPO DE COBRANCA', $tipo_cobranca, NUMERICO, 3, OBRIGATORIO));
+        $layout->adiciona(new Campo(9,'TIPO DE COBRANCA', $tipo_cobranca, ALFA, 3, OBRIGATORIO));
         $layout->adiciona(new Campo(10,'MULTA', $multa, NUMERICO, 2.2, OBRIGATORIO));
         $layout->adiciona(new Campo(11,'JUROS', $juros, NUMERICO, 13.2, OBRIGATORIO));
         $layout->adiciona(new Campo(12,'DATA LIMITE', $limite, NUMERICO, 8, OBRIGATORIO));
         $layout->adiciona(new Campo(13,'DESCONTO', $desconto, NUMERICO, 13.2, OBRIGATORIO));
         $layout->adiciona(new Campo(14,'AGENTE', $agente, NUMERICO, 5, OBRIGATORIO));
-        $layout->adiciona(new Campo(15,'NOME', $nome, NUMERICO, 30, OBRIGATORIO));
+        $layout->adiciona(new Campo(15,'NOME', $nome, ALFA, 30, OBRIGATORIO));
         $layout->adiciona(new Campo(16,'AGENCIA', $agencia, NUMERICO, 4, OBRIGATORIO));
-        $layout->adiciona(new Campo(17,'DIGITO', $digito, NUMERICO, 1, OBRIGATORIO));
+        $layout->adiciona(new Campo(17,'DIGITO', $digito, ALFA, 1, OBRIGATORIO));
         $layout->adiciona(new Campo(18,'CONTA', $conta, NUMERICO, 10, OBRIGATORIO));
-        $layout->adiciona(new Campo(19,'DIGITO DA CONTA', $digito_conta, NUMERICO, 2, OBRIGATORIO));
-        $layout->adiciona(new Campo(20,'ACAO', $acao, NUMERICO, 1, OBRIGATORIO));
+        $layout->adiciona(new Campo(19,'DIGITO DA CONTA', $digito_conta, ALFA, 2, OBRIGATORIO));
+        $layout->adiciona(new Campo(20,'ACAO', $acao, ALFA, 1, OBRIGATORIO));
         $layout->adiciona(new Campo(21,'PRE FATURA', $pre_fatura, NUMERICO, 10, OBRIGATORIO));
-        $layout->adiciona(new Campo(22,'COMPLEMENTAR', $complementar, NUMERICO, 20, OBRIGATORIO));
-        $layout->adiciona(new Campo(23,'CFOP', $cfop, NUMERICO, 5, OBRIGATORIO));
+        $layout->adiciona(new Campo(22,'COMPLEMENTAR', $complementar, ALFA, 20, OBRIGATORIO));
+        $layout->adiciona(new Campo(23,'CFOP', $cfop, ALFA, 5, OBRIGATORIO));
         $layout->adiciona(new Campo(24,'CODIGO', $codigo, NUMERICO, 9, OBRIGATORIO));
-        $layout->adiciona(new Campo(25,'CHAVE', $chave, NUMERICO, 45, OBRIGATORIO));
-        $layout->adiciona(new Campo(26,'PROTOCOLO', $protocolo, NUMERICO, 15, OBRIGATORIO));
+        $layout->adiciona(new Campo(25,'CHAVE', $chave, ALFA, 45, OBRIGATORIO));
+        $layout->adiciona(new Campo(26,'PROTOCOLO', $protocolo, ALFA, 15, OBRIGATORIO));
         $layout->adiciona(new Campo(27,'ESPACO', ' ', ALFA, 20, OBRIGATORIO));
 
 
@@ -224,7 +224,7 @@ class Doccob
         // Conta linhas para conferencia final
         $this->conta_552++;
 
-        // Verifica se tem mais de 1 registro 000
+        // Verifica se tem mais de 500 registro 552
         if ($this->conta_552 > 500) {
           throw new \Exception("REGISTRO 552 OCORRE MAIS DE 500 VEZES");
         }
@@ -235,7 +235,7 @@ class Doccob
 
     
     /**
-     * Formata campos recebidos para registro 552
+     * Formata campos recebidos para registro 553
      * @param $cnpj Request
      * @param $razao Request
      * @param $tamanho Request
@@ -330,7 +330,7 @@ class Doccob
         // Conta linhas para conferencia final
         $this->conta_555++;
 
-        // Verifica se tem mais de 1 registro 555
+        // Verifica se tem mais de 5000 registro 555
         if ($this->conta_555 > 5000) {
           throw new \Exception("REGISTRO 555 OCORRE MAIS DE 5000 VEZES");
         }
@@ -340,7 +340,7 @@ class Doccob
     }
 
     /**
-     * Formata campos recebidos para registro 555
+     * Formata campos recebidos para registro 556
      * @param $cnpj Request
      * @param $razao Request
      * @param $tamanho Request
@@ -379,7 +379,7 @@ class Doccob
         // Conta linhas para conferencia final
         $this->conta_556++;
 
-        // Verifica se tem mais de 1 registro 556
+        // Verifica se tem mais de 9999 registro 556
         if ($this->conta_556 > 9999) {
           throw new \Exception("REGISTRO 556 OCORRE MAIS DE 9999 VEZES");
         }
@@ -389,7 +389,7 @@ class Doccob
     }
 
     /**
-     * Formata campos recebidos para registro 555
+     * Formata campos recebidos para registro 9
      * @param $cnpj Request
      * @param $razao Request
      * @param $tamanho Request
