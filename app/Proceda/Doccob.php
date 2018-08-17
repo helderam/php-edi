@@ -395,8 +395,7 @@ class Doccob
      * @param $tamanho Request
      */
 
-    public function registro_559($serie, $numero, $emissao, $peso, $valor, 
-        $emissor, $identificacao_embarque, $identificacao_carga, $numero_SAP, $outro_SAP, $devolucao, $tamanho)
+    public function registro_559($qtde_total, $valor_total , $tamanho)
     {
         
         $layout = new Layout();

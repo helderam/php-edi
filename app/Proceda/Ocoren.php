@@ -25,7 +25,7 @@ class Ocoren
      * @param $intercambio Request
      * @param $tamanho Request
      */
-    public function registro_000($remetente, $destinatario, $data, $hora, $intercambio, $tamanho)
+    public function registro_000($remetente, $destinatario, $data, $hora, $tamanho)
     {
         // Zera contador de 540 - ocorre até 200 para cada 000
         $this->conta_540 = 0;
@@ -38,7 +38,7 @@ class Ocoren
         $layout->adiciona(new Campo(3,'IDENTIFICAÇÃO DO DESTINATARIO', $destinatario, ALFA, 35, OBRIGATORIO));
         $layout->adiciona(new Campo(4,'DATA', $data, NUMERICO, 6, OBRIGATORIO));
         $layout->adiciona(new Campo(5,'HORA', $hora, NUMERICO, 4, OBRIGATORIO));
-        $layout->adiciona(new Campo(6,'INTERCAMBIO', $intercambio, ALFA, 12, OBRIGATORIO));
+        $layout->adiciona(new Campo(6,'INTERCAMBIO', 'OCO50DDMM999', ALFA, 12, OBRIGATORIO));
         $layout->adiciona(new Campo(7,'ESPAÇO', ' ', ALFA, 155, OBRIGATORIO)); 
 
         $linha = $layout->gera_linha();

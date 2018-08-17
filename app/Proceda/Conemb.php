@@ -26,7 +26,7 @@ class Conemb
      * @param $intercambio Request
      * @param $tamanho Request
      */
-    public function registro_000($remetente, $destinatario, $data, $hora, $intercambio, $tamanho)
+    public function registro_000($remetente, $destinatario, $data, $hora, $tamanho)
     {
         // Zera contador de 520 - ocorre até 200 para cada 000
         $this->conta_520 = 0;
@@ -39,7 +39,7 @@ class Conemb
         $layout->adiciona(new Campo(3,'IDENTIFICAÇÃO DO DESTINATARIO', $destinatario, ALFA, 35, OBRIGATORIO));
         $layout->adiciona(new Campo(4,'DATA', $data, NUMERICO, 6, OBRIGATORIO));
         $layout->adiciona(new Campo(5,'HORA', $hora, NUMERICO, 4, OBRIGATORIO));
-        $layout->adiciona(new Campo(6,'INTERCAMBIO', 'NOT50DDMMSSS', ALFA, 12, OBRIGATORIO));
+        $layout->adiciona(new Campo(6,'INTERCAMBIO', 'CONHE50DDMMSSS', ALFA, 12, OBRIGATORIO));
         $layout->adiciona(new Campo(7,'ESPAÇO', ' ', ALFA, 225, OBRIGATORIO)); 
 
         $linha = $layout->gera_linha();
