@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<proceda>
+	<remetente>12345</remetente>
+	<destinatario>54321</destinatario>
+	<data>100718</data>
+	<hora>0714</hora>
+	<intercambio>COBRA501007001</intercambio>
+    <documentos>
+        <sequencia id="0">
+	        <documento>COBRA501007001</documento>
+	        <cnpj>12123123000112</cnpj>
+	        <razao>TRANSPORTADORA ACME</razao>
+            <cobranca id="0">
+                <filial>1234567890</filial>
+                <tipo>0</tipo>
+                <serie>001</serie>
+                <numero>123456</numero>
+                <emissao>10072018</emissao>
+                <vencimento>31122018</vencimento>
+                <valor>31,23</valor>
+                <tipo_cobranca>BCO</tipo_cobranca>
+                <multa>2</multa>
+                <juros>1</juros>
+                <limite>31122018</limite>
+                <desconto>3,12</desconto>
+                <agente>237</agente>
+                <nome>BRADESCO</nome>
+                <agencia>0514</agencia>
+                <digito>3</digito>
+                <conta>670664</conta>
+                <digito_conta>8</digito_conta>
+                <acao>I</acao>
+                <pre_fatura>2018</pre_fatura>
+                <complementar>18</complementar>
+                <cfop>32018</cfop>
+                <codigo>98571122</codigo>
+                <chave>3897234597834598723498571122018</chave>
+                <protocolo>311465245624360</protocolo>
+					<imposto>
+						<valorICMS>13,12</valorICMS>
+						<aliquotaICMS>123</aliquotaICMS>
+						<baseICMS>13,12</baseICMS>
+						<valorISS>13,12</valorISS>
+						<aliquotaISS>123</aliquotaISS>
+						<baseISS>13,12</baseISS>
+						<valorSUBS>13,12</valorSUBS>
+						<aliquotaSUBS>123</aliquotaSUBS>
+						<baseSUBS>13,12</baseSUBS>
+						<valorIR>13,12</valorIR>
+					</imposto>
+            </cobranca>
+			<fatura>
+				<filial>1234567890</filial>
+				<serie>001</serie>
+				<numero>123456</numero>
+				<valor>31,23</valor>
+				<emissao>10072018</emissao>
+				<remetente>12345</remetente>
+				<destinatario>54321</destinatario>
+				<emissor_do_conhecimento>11122233344</emissor_do_conhecimento>
+				<uf_embarcador>mg</uf_embarcador>
+				<uf_emissora>mg</uf_emissora>
+				<uf_destinatario>mg</uf_destinatario>
+				<conta_razao>422619</conta_razao>
+				<iva>Z2</iva>
+				<identificacao_embarque>548946248636</identificacao_embarque>
+				<identificacao_carga>65559444684684</identificacao_carga>
+				<numero_sap>4446416387998</numero_sap>
+				<outro_sap>22244874963418</outro_sap>
+				<devolucao>N</devolucao>
+			</fatura>
+        </sequencia>
+    </documentos>
+</proceda>
