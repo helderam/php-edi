@@ -66,6 +66,10 @@ try {
         $linhas .= $doccob->registro_553($documento->cobranca->imposto->valorICMS, $documento->cobranca->imposto->aliquotaICMS, $documento->cobranca->imposto->baseICMS, $documento->cobranca->imposto->valorISS, $documento->cobranca->imposto->aliquotaISS, $documento->cobranca->imposto->baseISS, $documento->cobranca->imposto->valorSUBS, $documento->cobranca->imposto->aliquotaSUBS, $documento->cobranca->imposto->baseSUBS, $documento->cobranca->imposto->valorIR, TAMANHO);
         // Acrescenta registro 555
         $linhas .= $doccob->registro_555($documento->fatura->filial, $documento->fatura->serie, $documento->fatura->numero, $documento->fatura->valor, $documento->fatura->emissao, $documento->fatura->remetente, $documento->fatura->destinatario, $documento->fatura->emissor_do_conhecimento, $documento->fatura->uf_embarcador, $documento->fatura->uf_emissora, $documento->fatura->uf_destinatario, $documento->fatura->conta_razao, $documento->fatura->iva, $documento->fatura->identificacao_embarque, $documento->fatura->identificacao_carga, $documento->fatura->numero_sap, $documento->fatura->outro_sap, $documento->fatura->devolucao, TAMANHO);
+        // Acrescenta registro 556
+        $linhas .= $doccob->registro_556($documento->cobranca->nota_fiscal->serie, $documento->cobranca->nota_fiscal->numero, $documento->cobranca->nota_fiscal->emissao, $documento->cobranca->nota_fiscal->peso, $documento->cobranca->nota_fiscal->valor, $documento->cobranca->nota_fiscal->emissor, $documento->cobranca->nota_fiscal->identificacao_embarque, $documento->cobranca->nota_fiscal->identificacao_carga, $documento->cobranca->nota_fiscal->numero_sap, $documento->cobranca->nota_fiscal->outro_sap, $documento->cobranca->nota_fiscal->nf_devolucao, TAMANHO);
+        // Acrescenta registro 559
+        $linhas .= $doccob->registro_559($documento->final->qntde_total, $documento->final->valor, TAMANHO);
     }
     // Mostra resultado
     file_put_contents('arquivos/proceda.txt', $linhas);

@@ -48,6 +48,19 @@
 						<baseSUBS>13,12</baseSUBS>
 						<valorIR>13,12</valorIR>
 					</imposto>
+					<nota_fiscal>
+						<serie>321</serie>
+						<numero>112233445</numero>
+						<emissao>11223344</emissao>
+						<peso>12345.12</peso>
+						<valor>111222.33</valor>
+						<emissor>111222333444</emissor>
+						<identificacao_embarque>CARGA1</identificacao_embarque>
+						<identificacao_carga>CARGA1</identificacao_carga>
+						<numero_sap>11223344AAABBBCCC</numero_sap>
+						<outro_sap>AAABBBCCCDDD11223344</outro_sap>
+						<nf_devolucao>S</nf_devolucao>	
+					</nota_fiscal>
             </cobranca>
 			<fatura>
 				<filial>1234567890</filial>
@@ -58,9 +71,9 @@
 				<remetente>12345</remetente>
 				<destinatario>54321</destinatario>
 				<emissor_do_conhecimento>11122233344</emissor_do_conhecimento>
-				<uf_embarcador>mg</uf_embarcador>
-				<uf_emissora>mg</uf_emissora>
-				<uf_destinatario>mg</uf_destinatario>
+				<uf_embarcador>MG</uf_embarcador>
+				<uf_emissora>MG</uf_emissora>
+				<uf_destinatario>MG</uf_destinatario>
 				<conta_razao>422619</conta_razao>
 				<iva>Z2</iva>
 				<identificacao_embarque>548946248636</identificacao_embarque>
@@ -69,6 +82,10 @@
 				<outro_sap>22244874963418</outro_sap>
 				<devolucao>N</devolucao>
 			</fatura>
+			<final>
+				<qntde_total>1111</qntde_total>
+				<valor>1234567890,12</valor>
+			</final>
         </sequencia>
     </documentos>
 </proceda>
