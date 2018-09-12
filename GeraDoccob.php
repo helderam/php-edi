@@ -50,7 +50,7 @@ try {
 
 
     // Obtem os dados de arquivo XML: dados/proceda.xml
-    $xml = simplexml_load_file('dados/proceda.xml');
+    $xml = simplexml_load_file('dados/doccob.xml');
 
     // Acrescenta registro 000
     $linhas = $doccob->registro_000($xml->remetente, $xml->destinatario, $xml->data, $xml->hora, $xml->intercambio, TAMANHO);
@@ -72,7 +72,7 @@ try {
         $linhas .= $doccob->registro_559($documento->final->qntde_total, $documento->final->valor, TAMANHO);
     }
     // Mostra resultado
-    file_put_contents('arquivos/proceda.txt', $linhas);
+    file_put_contents('arquivos/doccob.txt', $linhas);
     echo "<pre><br>\n";
     echo $linhas;
 

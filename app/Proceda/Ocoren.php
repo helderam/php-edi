@@ -8,8 +8,8 @@ class Ocoren
 {
 
     var $conta_000 = 0;
-    var $conta_540 = 0;
-    var $conta_541 = 0;
+    var $conta_520 = 0;
+    var $conta_521 = 0;
     var $conta_542 = 0;
     var $conta_543 = 0;
     var $conta_544 = 0;
@@ -25,7 +25,7 @@ class Ocoren
      * @param $intercambio Request
      * @param $tamanho Request
      */
-    public function registro_000($remetente, $destinatario, $data, $hora, $tamanho)
+    public function registro_000($remetente, $destinatario, $data, $hora, $intercambio, $tamanho)
     {
         // Zera contador de 540 - ocorre até 200 para cada 000
         $this->conta_540 = 0;
@@ -68,7 +68,7 @@ class Ocoren
 
         // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO
         $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 540, NUMERICO, 3, OBRIGATORIO));
-        $layout->adiciona(new Campo(2,'IDENTIFICAÇÃO DO DOCUMENTO', $documento, ALFA, 35, OBRIGATORIO));
+        $layout->adiciona(new Campo(2,'IDENTIFICAÇÃO DO DOCUMENTO', $documento, ALFA, 14, OBRIGATORIO));
         $layout->adiciona(new Campo(3,'ESPAÇO', ' ', ALFA, 233, OBRIGATORIO)); 
 
         $linha = $layout->gera_linha();
@@ -120,9 +120,9 @@ class Ocoren
         return $linha."\n";
     }
 
-    public function registro_542($cnpj_emissor_nfm, $serie_nf, $numero_nf, $codigo_ocorrencia_entrega, $data_ocorrencia, $hora_ocorrencia, $cod_observacao_ocorrencia_entrada, $numero_romaneio_identf_embarque, $identf_carga1, $identf_carga2,
+    public function registro_542($cnpj_emissor_nf, $serie_nf, $numero_nf, $codigo_ocorrencia_entrega, $data_ocorrencia, $hora_ocorrencia, $cod_observacao_ocorrencia_entrada, $numero_romaneio_identf_embarque, $identf_carga1, $identf_carga2,
                                  $identf_carga3, $filial_emissora_conhecimento, $serie_conhecimento, $numero_conhecimento, $indicacao_tipo_entrega, $codigo_empresa_emissora_nf, $codigo_filial_empresa_emissora_nf, $data_chegada_nf, $hora_chegada_nf, $data_inicio_descarregamento_destino,
-                                 $hora_inicio_descarregamento_destino, $data_termino_descarregamento_destino, $hora_termino_descarregamento_destino, $data_saida_destino_nf, $hora_saida_destido_nf, $cnpj_emissor_nf_devolucao, $serie_nf_devolucao, $numero_nf_devolucao, $tamanho)
+                                 $hora_inicio_descarregamento_destino, $data_termino_descarregamento_destino, $hora_termino_descarregamento_destino, $data_saida_destino_nf, $hora_saida_destino_nf, $cnpj_emissor_nf_devolucao, $serie_nf_devolucao, $numero_nf_devolucao, $tamanho)
     {
         // Zera contador de 543 - ocorre até 1 para cada 542
         $this->conta_543 = 0;
@@ -155,7 +155,7 @@ class Ocoren
         $layout->adiciona(new Campo(23,'DATA DO TERMINO DO DESCARREGAMENTO NO DESTINO', $data_termino_descarregamento_destino, NUMERICO, 8, OBRIGATORIO));
         $layout->adiciona(new Campo(24,'HORA DO TERMINO DO DESCARREGAMENTO NO DESTINO', $hora_termino_descarregamento_destino, NUMERICO, 4, OBRIGATORIO));
         $layout->adiciona(new Campo(25,'DATA DA SAIDA DO DESTINO DA NF', $data_saida_destino_nf, NUMERICO, 8, OBRIGATORIO));
-        $layout->adiciona(new Campo(26,'HORA DA SAIDA DO DESTINO DA NF', $hora_saida_destido_nf, NUMERICO, 4, OBRIGATORIO));
+        $layout->adiciona(new Campo(26,'HORA DA SAIDA DO DESTINO DA NF', $hora_saida_destino_nf, NUMERICO, 4, OBRIGATORIO));
         $layout->adiciona(new Campo(27,'CNPJ(CGC) DO EMISSOR DA NOTA FISCAL DEVOLUCAO', $cnpj_emissor_nf_devolucao, NUMERICO, 14, OBRIGATORIO));
         $layout->adiciona(new Campo(28,'SERIE DA NOTA FISCAL DEVOLUCAO', $serie_nf_devolucao, ALFA, 3, OBRIGATORIO));
         $layout->adiciona(new Campo(29,'NUMERO DA NOTA FISCAL DEVOLUCAO', $numero_nf_devolucao, NUMERICO, 9, OBRIGATORIO));
@@ -188,9 +188,9 @@ class Ocoren
 
         // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO
         $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 543, NUMERICO, 3, OBRIGATORIO));
-        $layout->adiciona(new Campo(2,'TEXTO LIVRE - 1', $texto_livre1, ALFA, 75, OBRIGATORIO));
-        $layout->adiciona(new Campo(3,'TEXTO LIVRE - 2', $texto_livre2, ALFA, 75, OBRIGATORIO));
-        $layout->adiciona(new Campo(4,'TEXTO LIVRE - 3', $texto_livre3, ALFA, 75, OBRIGATORIO));
+        $layout->adiciona(new Campo(2,'TEXTO LIVRE - 1', $texto_livre1, ALFA, 70, OBRIGATORIO));
+        $layout->adiciona(new Campo(3,'TEXTO LIVRE - 2', $texto_livre2, ALFA, 70, OBRIGATORIO));
+        $layout->adiciona(new Campo(4,'TEXTO LIVRE - 3', $texto_livre3, ALFA, 70, OBRIGATORIO));
         $layout->adiciona(new Campo(5,'ESPAÇO', ' ', ALFA, 37, OBRIGATORIO)); 
 
         $linha = $layout->gera_linha();
@@ -252,7 +252,7 @@ class Ocoren
         $layout = new Layout();
 
         // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO
-        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 544, NUMERICO, 3, OBRIGATORIO));
+        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 545, NUMERICO, 3, OBRIGATORIO));
         $layout->adiciona(new Campo(2,'CNPJ DA EMPRESA CONTRATANTE DO FRETE', $cnpj_empresa_frete, NUMERICO, 14, OBRIGATORIO));
         $layout->adiciona(new Campo(3,'CNPJ DA EMPRESA EMISSORA DO CONHECIMENTO ORIGINADOR DA OCORRENCIA', $cnpj_empresa_emissora_ocorrencia, NUMERICO, 14, OBRIGATORIO));
         $layout->adiciona(new Campo(4,'FILIAL EMISSOR DO CTRC ORIGINADOR DA OCORRENCIA', $filial_emissor_ocorrencia, ALFA, 10, OBRIGATORIO));
@@ -278,7 +278,7 @@ class Ocoren
         return $linha."\n";
     }
 
-    public function registro_549($documento, $tamanho)
+    public function registro_549($numero_ocorrencias, $tamanho)
     {
 
         $layout = new Layout();

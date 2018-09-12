@@ -26,7 +26,7 @@ class Conemb
      * @param $intercambio Request
      * @param $tamanho Request
      */
-    public function registro_000($remetente, $destinatario, $data, $hora, $tamanho)
+    public function registro_000($remetente, $destinatario, $data, $hora, $intercambio, $tamanho)
     {
         // Zera contador de 520 - ocorre até 200 para cada 000
         $this->conta_520 = 0;
@@ -39,8 +39,8 @@ class Conemb
         $layout->adiciona(new Campo(3,'IDENTIFICAÇÃO DO DESTINATARIO', $destinatario, ALFA, 35, OBRIGATORIO));
         $layout->adiciona(new Campo(4,'DATA', $data, NUMERICO, 6, OBRIGATORIO));
         $layout->adiciona(new Campo(5,'HORA', $hora, NUMERICO, 4, OBRIGATORIO));
-        $layout->adiciona(new Campo(6,'INTERCAMBIO', 'CONHE50DDMMSSS', ALFA, 12, OBRIGATORIO));
-        $layout->adiciona(new Campo(7,'ESPAÇO', ' ', ALFA, 225, OBRIGATORIO)); 
+        $layout->adiciona(new Campo(6,'INTERCAMBIO', "CON50DDMMSSS", ALFA, 12, OBRIGATORIO));
+        $layout->adiciona(new Campo(7,'ESPAÇO', ' ', ALFA, 255, OBRIGATORIO)); 
 
         $linha = $layout->gera_linha();
         // Verifica se tamanho gerado está conforme o tamanho esperado
@@ -90,7 +90,7 @@ class Conemb
         return $linha."\n";
     }
 
-    public function registro_521($documento, $tamanho)
+    public function registro_521($cnpj_transportadora, $nome_transportadora, $tamanho)
     {
         // Zera contador de 522 - ocorre até 50000 para cada 521
         $this->conta_522 = 0;
@@ -199,7 +199,7 @@ class Conemb
 
         // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO
         $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 523, NUMERICO, 3, OBRIGATORIO));
-        $layout->adiciona(new Campo(2,'QUANTIDADE TOTAL DE VOLUMES/EMBALAGENS', $qntd_total_volume, NUMERICO, 6.3, OBRIGATORIO));
+        $layout->adiciona(new Campo(2,'QUANTIDADE TOTAL DE VOLUMES/EMBALAGENS', $qntd_total_volume, NUMERICO, 6.2, OBRIGATORIO));
         $layout->adiciona(new Campo(3,'PESO TOTAL TRANSPORTADO(PESO BRUTO)', $peso_total_bruto, NUMERICO, 6.3, OBRIGATORIO));
         $layout->adiciona(new Campo(4,'PESO TOTAL CUBADO(VxD)', $peso_total_cubado, NUMERICO, 6.4, OBRIGATORIO));
         $layout->adiciona(new Campo(5,'PESO DENSIDADE/CUBAGEM', $peso_densidade, NUMERICO, 6.4, OBRIGATORIO));

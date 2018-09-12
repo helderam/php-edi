@@ -11,7 +11,7 @@ class Notfis
     var $conta_500 = 0;
     var $conta_501 = 0;
     var $conta_502 = 0;
-    var $conta_504 = 0;
+    var $conta_503 = 0;
     var $conta_505 = 0;
     var $conta_506 = 0;
     var $conta_507 = 0;
@@ -96,7 +96,7 @@ class Notfis
         return $linha."\n";
     }
 
-    public function registro_501($documento, $cnpj, $insc_embarc, $insc_subs_tribut, $insc_muni, 
+    public function registro_501($documento, $cnpj, $insc_embarq, $insc_subs_tribut, $insc_muni, 
                                 $endereco, $bairro, $cidade, $cod_postal, $cod_municipio, $uf, $data_embarque, $area_frete, $contato_emerg, $tamanho)
     {
         // Zera contador de 502 - ocorre 1 para cada 501
@@ -108,7 +108,7 @@ class Notfis
         $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 501, NUMERICO, 3, OBRIGATORIO));
         $layout->adiciona(new Campo(2,'RAZAO SOCIAL', $documento, ALFA, 50, OBRIGATORIO));
         $layout->adiciona(new Campo(3,'CNPJ', $cnpj, NUMERICO, 14, OBRIGATORIO));
-        $layout->adiciona(new Campo(4,'INSCRICAO ESTADUAL EMBARCADORA', $insc_embarc, ALFA, 15, OBRIGATORIO)); 
+        $layout->adiciona(new Campo(4,'INSCRICAO ESTADUAL EMBARCADORA', $insc_embarq, ALFA, 15, OBRIGATORIO)); 
         $layout->adiciona(new Campo(5,'INSCRICAO ESTADUAL DO SUBSTITUTO TRIBUTARIO', $insc_subs_tribut, ALFA, 15, OBRIGATORIO)); 
         $layout->adiciona(new Campo(6,'INSCRICAO MUNICIPAL', $insc_muni, ALFA, 15, OBRIGATORIO)); 
         $layout->adiciona(new Campo(7,'ENDERECO', $endereco, ALFA, 50, OBRIGATORIO)); 
@@ -152,7 +152,7 @@ class Notfis
         $layout->adiciona(new Campo(2,'RAZAO SOCIAL', $documento, ALFA, 50, OBRIGATORIO));
         $layout->adiciona(new Campo(3,'CNPJ', $cnpj, NUMERICO, 14, OBRIGATORIO));
         $layout->adiciona(new Campo(4,'ENREREÇO', $endereco, ALFA, 50, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(5,'BAIRRO', $bairro, ALFA, 35, OBRIGATORIO)); 
+        $layout->adiciona(new Campo(5,'BAIRRO', $bairro, ALFA, 35, OBRIGATORIO));   
         $layout->adiciona(new Campo(6,'CIDADE', $cidade, ALFA, 35, OBRIGATORIO)); 
         $layout->adiciona(new Campo(7,'CODIGO POSTAL', $cod_postal, ALFA, 9, OBRIGATORIO)); 
         $layout->adiciona(new Campo(8,'CODIGO MUNICIPIO', $cod_municipio, ALFA, 9, OBRIGATORIO)); 
@@ -296,7 +296,7 @@ class Notfis
         $layout->adiciona(new Campo(14,'PLANO CARGA RAPIDA', $plano_cargarapida, ALFA, 1, OBRIGATORIO));
         $layout->adiciona(new Campo(15,'TIPO DOCUMENTO FISCAL', $tipo_doc_fiscal, NUMERICO, 1, OBRIGATORIO));
         $layout->adiciona(new Campo(16,'INDICACAO BONIFICACAO', $bonificacao, ALFA, 1, OBRIGATORIO));
-        $layout->adiciona(new Campo(17,'CFOP', $cfop, NUMERIC0, 4, OBRIGATORIO));
+        $layout->adiciona(new Campo(17,'CFOP', $cfop, NUMERICO, 4, OBRIGATORIO));
         $layout->adiciona(new Campo(18,'UF', $uf, ALFA, 2, OBRIGATORIO));
         $layout->adiciona(new Campo(19,'CALCULO DE FRETE DIFERENCIADO', $frete_diferenciado, ALFA, 1, OBRIGATORIO));
         $layout->adiciona(new Campo(20,'TABELA DE FRETE', $tabela_frete, ALFA, 10, OBRIGATORIO));
@@ -362,7 +362,7 @@ class Notfis
         $layout->adiciona(new Campo(14,'BASE DE CALCULO DO ICMS', $calculo_icms, NUMERICO, 13.2, OBRIGATORIO));
         $layout->adiciona(new Campo(15,'VALOR TOTAL DO ICMS', $valor_tot_icms, NUMERICO, 13.2, OBRIGATORIO));
         $layout->adiciona(new Campo(16,'BASE DE CALCULO DO ICMS SUBST. TRIBUTARIA', $calculo_icms_subst_tributaria, NUMERICO, 13.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(17,'VALOR TOTAL DO ICMS SUBST. TRIBUTARIA', $valor_tot_icms_subst_tributaria, NUMERIC0, 13.2, OBRIGATORIO));
+        $layout->adiciona(new Campo(17,'VALOR TOTAL DO ICMS SUBST. TRIBUTARIA', $valor_tot_icms_subst_tributaria, NUMERICO, 13.2, OBRIGATORIO));
         $layout->adiciona(new Campo(18,'VALOR DO ICMS RETIDO', $valor_icms_retido, NUMERICO, 13.2, OBRIGATORIO));
         $layout->adiciona(new Campo(19,'VALOR TOTAL DO IMPOSTO DE IMPORTACAO', $valor_tot_imposto_importacao, NUMERICO, 13.2, OBRIGATORIO));
         $layout->adiciona(new Campo(20,'VALOR TOTAL DO IPI', $valor_ipi, NUMERICO, 13.2, OBRIGATORIO));
@@ -404,7 +404,7 @@ class Notfis
         $layout = new Layout();
 
         // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO
-        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 506, NUMERICO, 3, OBRIGATORIO));
+        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 507, NUMERICO, 3, OBRIGATORIO));
         $layout->adiciona(new Campo(2,'QUANTIDADE TOTAL DE VOLUMES/EMBALAGENS', $qntd_total_volumes_embalagens, NUMERICO, 6.2, OBRIGATORIO));
         $layout->adiciona(new Campo(3,'PESO TOTAL TRANPORTADO(BRUTO)', $peso_total_transportado, NUMERICO, 6.3, OBRIGATORIO));
         $layout->adiciona(new Campo(4,'PESO TOTAL CUBADO(VxD)', $peso_cubado, NUMERICO, 6.4, OBRIGATORIO));  
@@ -420,7 +420,7 @@ class Notfis
         $layout->adiciona(new Campo(14,'VALOR ADEME/GRIS', $valor_ademe_gris, NUMERICO, 13.2, OBRIGATORIO));
         $layout->adiciona(new Campo(15,'VALOR TOTAL DE DESPESAS EXTRAS/ADICIONAIS', $valor_despesas_extras, NUMERICO, 13.2, OBRIGATORIO));
         $layout->adiciona(new Campo(16,'BASE DE CALCULO PARA APURACAO ICMS DO FRETE', $base_calculo_apuracao_icms_frete, NUMERICO, 13.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(17,'% DE TAXA DO ICMS DO FRETE', $taxa_icms_frete, NUMERIC0, 3.2, OBRIGATORIO));
+        $layout->adiciona(new Campo(17,'% DE TAXA DO ICMS DO FRETE', $taxa_icms_frete, NUMERICO, 3.2, OBRIGATORIO));
         $layout->adiciona(new Campo(18,'VALOR DO ICMS DO FRETE', $valor_icms_frete, NUMERICO, 13.2, OBRIGATORIO));
         $layout->adiciona(new Campo(19,'SUBSTITUICAO TRIBUTARIA', $subst_tributaria, NUMERICO, 1, OBRIGATORIO));
         $layout->adiciona(new Campo(20,'BASE DE CALCULO ICMS - SUBSTITUICAO TRIBUTARIA', $base_calculo_icms_subst_tributaria, NUMERICO, 13.2, OBRIGATORIO));
@@ -433,7 +433,7 @@ class Notfis
         $layout->adiciona(new Campo(27,'DIREITO FISCAL', $direito_fiscal, ALFA, 3, OBRIGATORIO));
         $layout->adiciona(new Campo(28,'TIPO DE IMPOSTO', $taxa_imposto, ALFA, 4, OBRIGATORIO));
         $layout->adiciona(new Campo(29,'SIGLA DO ESTADO DO FATO GERADOR ICMS FRETE', $uf, ALFA, 2, OBRIGATORIO));
-        $layout->adiciona(new Campo(30,'ESPACO', ' ', ALFA, 1, OBRIGATORIO));
+        //$layout->adiciona(new Campo(30,'ESPACO', ' ', ALFA, 1, OBRIGATORIO));
         
         $linha = $layout->gera_linha();
         // Verifica se tamanho gerado está conforme o tamanho esperado
@@ -462,7 +462,7 @@ class Notfis
 
         // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO
         $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 508, NUMERICO, 3, OBRIGATORIO));
-        $layout->adiciona(new Campo(2,'MARCA DOS VOLUMES TRANSPORTADOS', $marca_volumes_transportados, ALFA, 50, OBRIGATORIO));
+        $layout->adiciona(new Campo(2,'MARCA DOS VOLUMES TRANSPORTADOS', $marca_volumes, ALFA, 50, OBRIGATORIO));
         $layout->adiciona(new Campo(3,'NUMERACAO DOS VOLUMES TRANSPORTADOS', $num_volumes_transportados, ALFA, 50, OBRIGATORIO));
         $layout->adiciona(new Campo(4,'NUMERO DOS LACRES', $num_lacres, ALFA, 50, OBRIGATORIO));
         $layout->adiciona(new Campo(5,'ESPACO', ' ', ALFA, 167, OBRIGATORIO));
@@ -508,9 +508,9 @@ class Notfis
         $layout->adiciona(new Campo(12,'SERIE DA NOTA FISCAL - 3', $serie3, ALFA, 3, OBRIGATORIO)); 
         $layout->adiciona(new Campo(13,'NUMERO DA NOTA FISCAL - 3', $numero3, NUMERICO, 9, OBRIGATORIO)); 
         $layout->adiciona(new Campo(14,'DESPACHO: FILIAL EMISSORA CONHECIMENTO', $desp_filial_emissora_conhecimento, ALFA, 10, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(15,'DESPACHO: SERIE CONHECIMENTO', $desp_serie_conhecimento, ALFA, 5, OBRIGATORIO));
-        $layout->adiciona(new Campo(16,'DESPACHO: NUMERO DO CONHECIMENTO', $desp_numero_conhecimento, ALFA, 12, OBRIGATORIO));
-        $layout->adiciona(new Campo(17,'DESPACHO: CNPJ/CGC DA TRANSP. CONTRTATANTE', $desp_cnpj_transp_contratante, NUMERICO, 14, OBRIGATORIO)); 
+        $layout->adiciona(new Campo(15,'REDESPACHO: SERIE CONHECIMENTO', $desp_serie_conhecimento, ALFA, 5, OBRIGATORIO));
+        $layout->adiciona(new Campo(16,'REDESPACHO: NUMERO DO CONHECIMENTO', $desp_numero_conhecimento, ALFA, 12, OBRIGATORIO));
+        $layout->adiciona(new Campo(17,'REDESPACHO: CNPJ/CGC DA TRANSP. CONTRTATANTE', $desp_cnpj_transp_contratante, NUMERICO, 14, OBRIGATORIO)); 
         $layout->adiciona(new Campo(18,'ESPAÇO', ' ', ALFA, 48, OBRIGATORIO)); 
 
         $linha = $layout->gera_linha();
@@ -611,7 +611,7 @@ class Notfis
         return $linha."\n";
     }
 
-    public function registro_514($tamanho)
+    public function registro_514($documento, $cnpj, $insc_estadual, $endereco, $bairro, $cidade, $cod_postal, $cod_municipio, $uf, $numero_contato, $area_frete, $tamanho)
     {
         // Zera contador de 515 - ocorre 1 para cada 505
         $this->conta_515 = 0;
@@ -690,7 +690,7 @@ class Notfis
         return $linha."\n";
     }
 
-    public function registro_519($tamanho)
+    public function registro_519($valor_tot_nf, $peso_bruto_nf, $qntd_tot_volumes, $num_notas, $tamanho)
     {
 
         $layout = new Layout();

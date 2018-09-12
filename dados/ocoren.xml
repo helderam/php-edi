@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<proceda>
+	<remetente>12345</remetente>
+	<destinatario>54321</destinatario>
+	<data>100718</data>
+	<hora>0714</hora>
+	<intercambio>NOT501007001</intercambio>
+    <documentos>
+        <sequencia id="0">
+	        <documento>OCORR50DDMM999</documento>
+	        <cnpj>12123123000112</cnpj>
+	        <razao>TRANSPORTADORA ACME</razao>
+				<ocorr_entrega>
+					<cnpj_emissor_nf>1212312300112</cnpj_emissor_nf>
+					<serie_nf>123</serie_nf>
+					<numero_nf>123456789</numero_nf>
+					<codigo_ocorrencia_entrega>123</codigo_ocorrencia_entrega>
+					<data_ocorrencia>31082018</data_ocorrencia>
+					<hora_ocorrencia>1600</hora_ocorrencia>
+					<cod_observacao_ocorrencia_entrada>01</cod_observacao_ocorrencia_entrada>
+					<numero_romaneio_identf_embarque>555566644SDA</numero_romaneio_identf_embarque>
+					<identf_carga1>1223334444</identf_carga1>
+					<identf_carga2>1223334444</identf_carga2>
+					<identf_carga3>1223334444</identf_carga3>
+					<filial_emissora_conhecimento>ABCDE</filial_emissora_conhecimento>
+					<serie_conhecimento>123AB</serie_conhecimento>
+					<numero_conhecimento>123ABCDE</numero_conhecimento>
+					<indicacao_tipo_entrega>1</indicacao_tipo_entrega>
+					<codigo_empresa_emissora_nf>123AB</codigo_empresa_emissora_nf>
+					<codigo_filial_empresa_emissora_nf>ABCDE</codigo_filial_empresa_emissora_nf>
+					<data_chegada_nf>31082018</data_chegada_nf>
+					<hora_chegada_nf>1600</hora_chegada_nf>
+					<data_inicio_descarregamento_destino>31082018</data_inicio_descarregamento_destino>
+					<hora_inicio_descarregamento_destino>1600</hora_inicio_descarregamento_destino>
+					<data_termino_descarregamento_destino>31082018</data_termino_descarregamento_destino>
+					<hora_termino_descarregamento_destino>1601</hora_termino_descarregamento_destino>
+					<data_saida_destino_nf>31082018</data_saida_destino_nf>
+					<hora_saida_destino_nf>1602</hora_saida_destino_nf>
+					<cnpj_emissor_nf_devolucao>12123123000112</cnpj_emissor_nf_devolucao>
+					<serie_nf_devolucao>123</serie_nf_devolucao>
+					<numero_nf_devolucao>123456789</numero_nf_devolucao>
+				</ocorr_entrega>
+				<texto_complementar>
+					<texto_livre1>ABCDEFGHIJKLM</texto_livre1>
+					<texto_livre2>ABCDEFGHIJKLM</texto_livre2>
+					<texto_livre3>ABCDEFGHIJKLM</texto_livre3>
+				</texto_complementar>
+				<dados_item_nf>
+					<qntd_volumes_nf>6,2</qntd_volumes_nf>
+					<qntd_volumes_entregues>6,2</qntd_volumes_entregues>
+					<cod_item_nf>ABCDE</cod_item_nf>
+					<descricao_item_nf>ABCDE</descricao_item_nf>
+				</dados_item_nf>
+				<ocorr_despacho>
+					<cnpj_empresa_frete>1212312300111</cnpj_empresa_frete>
+					<cnpj_empresa_emissora_ocorrencia>12123123000113</cnpj_empresa_emissora_ocorrencia>
+					<filial_emissor_ocorrencia>ABCDE</filial_emissor_ocorrencia>
+					<serie_conhecimento_ocorrencia>ABCDE</serie_conhecimento_ocorrencia>
+					<numero_conhecimento_ocorrencia>ABCDE</numero_conhecimento_ocorrencia>
+				</ocorr_despacho>
+				<final>
+					<numero_ocorrencias>1234</numero_ocorrencias>
+				</final>
+        </sequencia>
+    </documentos>
+</proceda>
