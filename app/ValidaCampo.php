@@ -1,55 +1,9 @@
 <?php
-/**
- * +-----------------------------------------------------------------------+
- * | php-edi - Sistema Geração EDI - VALIDA CAMPOS                         |
- * +-----------------------------------------------------------------------+
- * | Este arquivo está disponível sob a Licença MIT disponível pela Web    |
- * | em https://pt.wikipedia.org/wiki/Licen%C3%A7a_MIT                     |
- * |                                                                       |
- * | Coordenação: <helder.afonso.de.morais@gmail.com>                      |
- * |                                                                       |
- * | Programa...: ValidaCampo.php                                          |
- * |                                                                       |
- * | Autor......: Helder <helder.afonso.de.morais@gmail.com>               |
- * |                                                                       |
- * | Criação....: 26-06-2018                                               |
- * |                                                                       |
- * | Objetivo...: Validar Campos conforme: tamanho, obrigatoriedade e      |
- * |              preenchimento a direita ou esquerda                      | 
- * |                                                                       |
- * | Layout EDI.: 6.0 - 31/07/2008                                         |
- * |                                                                       |
- * +-----------------------------------------------------------------------+
- * | Versões....:                                                          |
- * |                                                                       |
- * |                                                                       |
- * |                                                                       |
- * +-----------------------------------------------------------------------+
- */
-
 namespace App;
 
-/**
- * Doccob
- *
- * @version    1.0
- * @package    proceda
- * @author     Helder Afonso de Morais
- * @copyright  Copyright (c) 2018 php-edi
- */
 class ValidaCampo
 {
-    /**
-     * Verifica campo tamanho e conteudo e retorna formatado 
-     * @param $ordem Request
-     * @param $descrição Request
-     * @param $conteudo Request
-     * @param $tipo Request
-     * @param $tamanho Request
-     * @param $obrigatorio FALSE
-     * @param $preenchimento ESPAÇO
-     * @param $lado STR_PAD_RIGHT
-     */
+
     public static function validar($campo)
     {
         $ordem = isset($campo[0]) ? $campo[0] : 0;

@@ -1,74 +1,54 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <proceda>
-	<remetente>12345</remetente>
-	<destinatario>54321</destinatario>
-	<data>100718</data>
-	<hora>0714</hora>
-	<intercambio>COBRA501007001</intercambio>
-    <documentos>
-        <sequencia id="0">
-	        <documento>COBRA501007001</documento>
-	        <cnpj>12123123000112</cnpj>
-	        <razao>TRANSPORTADORA ACME</razao>
-            <cobranca id="0">
-                <filial>1234567890</filial>
-                <tipo>0</tipo>
-                <serie>001</serie>
-                <numero>123456</numero>
-                <emissao>10072018</emissao>
-                <vencimento>31122018</vencimento>
-                <valor>31,23</valor>
-                <tipo_cobranca>BCO</tipo_cobranca>
-                <multa>2</multa>
-                <juros>1</juros>
-                <limite>31122018</limite>
-                <desconto>3,12</desconto>
-                <agente>237</agente>
-                <nome>BRADESCO</nome>
-                <agencia>0514</agencia>
-                <digito>3</digito>
-                <conta>670664</conta>
-                <digito_conta>8</digito_conta>
-                <acao>I</acao>
-                <pre_fatura>2018</pre_fatura>
-                <complementar>18</complementar>
-                <cfop>32018</cfop>
-                <codigo>98571122</codigo>
-                <chave>3897234597834598723498571122018</chave>
-                <protocolo>311465245624360</protocolo>
-					<imposto>
-						<valorICMS>13,12</valorICMS>
-						<aliquotaICMS>123</aliquotaICMS>
-						<baseICMS>13,12</baseICMS>
-						<valorISS>13,12</valorISS>
-						<aliquotaISS>123</aliquotaISS>
-						<baseISS>13,12</baseISS>
-						<valorSUBS>13,12</valorSUBS>
-						<aliquotaSUBS>123</aliquotaSUBS>
-						<baseSUBS>13,12</baseSUBS>
-						<valorIR>13,12</valorIR>
-					</imposto>
-            </cobranca>
-			<fatura>
-				<filial>1234567890</filial>
-				<serie>001</serie>
-				<numero>123456</numero>
-				<valor>31,23</valor>
-				<emissao>10072018</emissao>
-				<remetente>12345</remetente>
-				<destinatario>54321</destinatario>
-				<emissor_do_conhecimento>11122233344</emissor_do_conhecimento>
-				<uf_embarcador>mg</uf_embarcador>
-				<uf_emissora>mg</uf_emissora>
-				<uf_destinatario>mg</uf_destinatario>
-				<conta_razao>422619</conta_razao>
-				<iva>Z2</iva>
-				<identificacao_embarque>548946248636</identificacao_embarque>
-				<identificacao_carga>65559444684684</identificacao_carga>
-				<numero_sap>4446416387998</numero_sap>
-				<outro_sap>22244874963418</outro_sap>
-				<devolucao>N</devolucao>
-			</fatura>
-        </sequencia>
-    </documentos>
+	<cliente>
+		<sap_mae>2001050255</sap_mae>
+		<sap_filial>2930298340</sap_filial>
+		<cgc_cpf>07610028327</cgc_cpf>
+		<razao>TRANSPORTADORA BCA</razao>
+		<ramo>ATACADO ALIMENTAR</ramo>
+		<endereco>RUA ABC, 123</endereco>
+		<bairro>ABCDEF</bairro>
+		<cidade>FEDCBA</cidade>
+		<estado>MG</estado>
+		<cep>19107-322</cep>
+		<telefone>35 9986423591</telefone>
+		<setor>123</setor>
+		<numero>12</numero>
+	</cliente>
+	<vendedor>
+		<sap_mae>2001050255</sap_mae>
+		<sap_filial>2930298340</sap_filial>
+		<cod_vendedor>1234567890</cod_vendedor>
+		<nome_vendedor>ABCDE DE FG HIJK</nome_vendedor>
+		<cod_supervisor>0987654321</cod_supervisor>
+		<nome_supervisor>KJIH GF ED EDCBA</nome_supervisor>
+	</vendedor>
+	<vendas>
+		<sap_mae>2001050255</sap_mae>
+		<sap_filial>2930298340</sap_filial>
+		<numero_nf>1234567890</numero_nf>
+		<tipo_transacao>FAC</tipo_transacao>
+		<data_doc>13/09/2018</data_doc>
+		<cgc_cpf_distribuidor>98564483594</cgc_cpf_distribuidor>
+		<cod_vendedor>1234567890</cod_vendedor>
+		<dun_produto>1549678SD546</dun_produto>
+		<qntd_vendida>1000000000</qntd_vendida>
+		<vlr_faturado>540.00</vlr_faturado>
+	</vendas>
+	<produtividade>
+		<sap_mae>2001050255</sap_mae>
+		<sap_filial>2930298340</sap_filial>
+		<data_visitas>13/09/2018</data_visitas>
+		<cod_vendedor>123</cod_vendedor>
+		<visitas_dia>10</visitas_dia>
+		<visitas_com_vendas>6</visitas_com_vendas>
+	</produtividade>
+	<inventario>
+		<sap_mae>2001050255</sap_mae>
+		<sap_filial>2930298340</sap_filial>
+		<dun_produto>17501001274891</dun_produto>
+		<qntd_fisica>9999999999.999</qntd_fisica>
+		<qntd_transito>9999999999.999</qntd_transito>
+		<data_leitura>09/13/2018</data_leitura>
+	</inventario>
 </proceda>

@@ -1,22 +1,21 @@
 <?php
 /**
  * +-----------------------------------------------------------------------+
- * | php-edi - Sistema Geração EDI - LAYOUT PROCTER & GAMBLE               |
+ * | php-edi - Sistema Geração EDI - LAYOUT                                |
  * +-----------------------------------------------------------------------+
  * | Este arquivo está disponível sob a Licença MIT disponível pela Web    |
  * | em https://pt.wikipedia.org/wiki/Licen%C3%A7a_MIT                     |
  * |                                                                       |
  * | Coordenação: <helder.afonso.de.morais@gmail.com>                      |
  * |                                                                       |
- * | Programa...: Procter.php                                              |
+ * | Programa...: Layout.php                                               |
  * |                                                                       |
  * | Autor......: Helder <helder.afonso.de.morais@gmail.com>               |
  * |                                                                       |
- * | Criação....: 20-08-2018                                               |
+ * | Criação....: 02-08-2018                                               |
  * |                                                                       |
- * | Objetivo...: Formatar registros conforme Layout PROCTER & GAMBLE      | 
+ * | Objetivo...: Gerar linhas com os Campos conform layout                |
  * |                                                                       |
- * | Layout EDI.: BRAZIL - MDO - TIME HFS-IDS - 01/11/2011                 |
  * |                                                                       |
  * +-----------------------------------------------------------------------+
  * | Versões....:                                                          |
@@ -26,54 +25,51 @@
  * +-----------------------------------------------------------------------+
  */
 
-namespace App\Procter;
+namespace App;
 
-use App\Layout;
 use App\Campo;
 
+
 /**
- * Procter
+ * Layout
  *
  * @version    1.0
- * @package    procter
+ * @package    APP
  * @author     Helder Afonso de Morais
  * @copyright  Copyright (c) 2018 php-edi
  */
-class Procter
+class Layout
 {
+    private $campos;
 
-    var $conta_clientes = 0;
-
-    /**
-     * Formata campos recebidos para registro CLIENTES
-     * @param $cod_sap_mae 
-     * @param $cod_sap_filial
-     * @param $cgc_cpf
-     * @param $razao
-     * @param $ramo
-     * @param $endereco
-     */
-    public function registro_cliente($remetente, $destinatario, $data, $hora, $intercambio, $tamanho)
+    public function adiciona(Campo $campo)
     {
-        // Zera contador de clientes
-        $this->conta_clientes = 0;
-
-        $layout = new Layout();
-
-        $layout->adiciona(new Campo(1,'COD SAP MAE DO CLIENTE NA P&G', 0, NUMERICO, 15, OBRIGATORIO));
-
-        $linha = $layout->gera_linha();
-
-        // Verifica se tamanho gerado está conforme o tamanho esperado
-        if ($tamanho != strlen($linha)) {
-          throw new Exception("REGISTRO CLIENTES NAO CONFERE TAMANHO DE {$tamanho}");
-        }
-
-        // Conta linhas para conferencia final
-        $this->conta_clientes++;
-
-        // Gera linha conforme o layout
-        return $linha."\n";
+        $this->campos[] = $campo;
     }
 
+    public function __construct()
+    {
+        $this->campos = NULL;
+    }
+
+    /**
+     * Verifica campo tamanho e conteudo e retorna formatado
+     * @param $ordem  - Ordem do campo no layout
+     * @param $descrição Request
+     * @param $conteudo Request
+     * @param $tipo Request
+     * @param $tamanho Request
+     * @param $obrigatorio FALSE
+     * @param $preenchimento ESPAÇO
+     * @param $lado STR_PAD_RIGHT
+     */
+    public function gera_linha()
+    {
+        $linha = '';
+        foreach($this->campos as $campo) {
+            // formata campo conforme parametros
+            $linha .= $campo->formatado;
+        }
+        return $linha;
+    }
 }

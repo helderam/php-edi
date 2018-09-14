@@ -33,6 +33,8 @@ const OBRIGATORIO = true;
 // Tamanho da linha
 const TAMANHO = 280;
 
+const DELIMITADOR = ' ';
+
 // Tipo de campo A/N
 const NUMERICO = 'N';
 const ALFA = 'A';
