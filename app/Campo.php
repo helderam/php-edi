@@ -36,10 +36,10 @@ class Campo
                          str_pad($valor_decimais, $tamanho_decimal, '0', STR_PAD_RIGHT);
     
         } else {
-        if (strlen($conteudo) > $tamanho) {
-            throw new \Exception("TAMANHO CAMPO '{$descricao}' MAIOR QUE {$tamanho}");
+            if (strlen($conteudo) > $tamanho) {
+                throw new \Exception("TAMANHO CAMPO '{$descricao}' MAIOR QUE {$tamanho}");
+            }
         }
-    }
 
         $formatado = $conteudo;
 

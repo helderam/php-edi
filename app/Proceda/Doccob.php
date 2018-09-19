@@ -80,7 +80,7 @@ class Doccob
         $linha = $layout->gera_linha();
         // Verifica se tamanho gerado está conforme o tamanho esperado
         if ($tamanho != strlen($linha)) {
-          throw new Exception("REGISTRO 000 NAO CONFERE TAMANHO DE {$tamanho}");
+          throw new \Exception("REGISTRO 000 NAO CONFERE TAMANHO DE {$tamanho}/".strlen($linha));
         }
 
         // Conta linhas para conferencia final
@@ -88,7 +88,7 @@ class Doccob
 
         // Verifica se tem mais de 1 registro 000
         if ($this->conta_000 > 1) {
-          throw new Exception("REGISTRO 000 OCORRE MAIS DE 1 VEZ");
+          throw new \Exception("REGISTRO 000 OCORRE MAIS DE 1 VEZ");
         }
 
         // Gera linha conforme o layout
