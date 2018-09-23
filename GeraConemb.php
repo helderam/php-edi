@@ -1,7 +1,37 @@
 <?php
+/**
+ * +-----------------------------------------------------------------------+
+ * | php-edi - Sistema Geração EDI - GERA LAYOUT PROCEDA/CONEMB            |
+ * +-----------------------------------------------------------------------+
+ * | Este arquivo está disponível sob a Licença MIT disponível pela Web    |
+ * | em https://pt.wikipedia.org/wiki/Licen%C3%A7a_MIT                     |
+ * |                                                                       |
+ * | Coordenação: <helder.afonso.de.morais@gmail.com>                      |
+ * |                                                                       |
+ * | Programa...: GeraProceda.php                                          |
+ * |                                                                       |
+ * | Autor......: Helder <helder.afonso.de.morais@gmail.com>               |
+ * |                                                                       |
+ * | Criação....: 26-06-2018                                               |
+ * |                                                                       |
+ * | Objetivo...: Gerar todos os registros conforme Layout PROCEDA/CONEMB. |
+ * |              Os dados devem estar no arquivo dados/conemb.xml         | 
+ * |                                                                       |
+ * | Layout EDI.: 6.0 - 31/07/2008                                         |
+ * |                                                                       |
+ * +-----------------------------------------------------------------------+
+ * | Versões....:                                                          |
+ * |                                                                       |
+ * |                                                                       |
+ * |                                                                       |
+ * +-----------------------------------------------------------------------+
+ */
 
 // Campo ORIGATÒRIO preencher o conteudo
 const OBRIGATORIO = true;
+
+// Delimitador
+const DELIMITADOR = '';
 
 // Tamanho da linha
 const TAMANHO = 350;

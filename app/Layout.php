@@ -70,6 +70,6 @@ class Layout
             // formata campo conforme parametros
             $linha .= $campo->formatado;
         }
-        return $linha;
+        return $linha.\DELIMITADOR;
     }
 }

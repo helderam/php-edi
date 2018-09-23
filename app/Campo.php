@@ -18,6 +18,7 @@ class Campo
         // Verifica se tamanho de campo numerico
         $valor_inteiro =  0;
         $valor_decimais =  0;
+        $conteudo = (string) $conteudo; // Retira objeto SimpleXML.
         if ($tipo == 'N') {
             $partes = explode('.', $tamanho);
             $tamanho_inteiro = $partes[0];
@@ -39,9 +40,8 @@ class Campo
             if (strlen($conteudo) > $tamanho) {
                 throw new \Exception("TAMANHO CAMPO '{$descricao}' MAIOR QUE {$tamanho}");
             }
+            $formatado = str_pad($conteudo, $tamanho, ' ', STR_PAD_RIGHT);
         }
-
-        $formatado = $conteudo;
 
         if ($ordem < 1) {
             throw new \Exception("ORDEM CAMPO '{$descricao}' DEVE SER MAIOR QUE 1");
@@ -49,9 +49,11 @@ class Campo
         if (strlen($conteudo) === 0 && $obrigatorio) {
             throw new \Exception("CAMPO {$descricao} É OBRIGATÓRIO");
         }
-        if(strlen($formatado) == 11 && $descricao == "CGC/CPF"){
-            $formatado = "CPF".$formatado;
-        }
+
+        #if(strlen($formatado) == 11 && $descricao == "CGC/CPF"){
+        #    $formatado = "CPF".$formatado;
+        #}
+
         // formata campo conforme parametros
         #return str_pad($conteudo, $tamanho, $preenchimento, $lado);
         $this->ordem = $ordem;
