@@ -9,3 +9,7 @@ Incluiremos tambem agendamento de tarefas para automatizar operações.
 Sobre EDI: https://pt.wikipedia.org/wiki/EDI
 
 
+# Layout PROCEDA
+
+Pronto para uso imediato, lê dados dos arquivos no /dados, a saber: conemb.xml, doccob.xml, notfis.xml, ocoren.xml e gera arquivos prontos a serem enviados aos fornecedores/transportadoras no /arquivos.
+
