@@ -32,9 +32,6 @@ class Campo
                 #var_dump($tamanho_decimal); var_dump($valor_decimais); exit;
                 throw new \Exception("PARTE DECIMAL CAMPO '{$descricao}' MAIOR QUE {$tamanho_decimal}");
             }
-            $formatado = str_pad($valor_inteiro, $tamanho_inteiro, '0', STR_PAD_LEFT) .
-                         str_pad($valor_decimais, $tamanho_decimal, '0', STR_PAD_RIGHT);
-    
         } else {
         if (strlen($conteudo) > $tamanho) {
             throw new \Exception("TAMANHO CAMPO '{$descricao}' MAIOR QUE {$tamanho}");
