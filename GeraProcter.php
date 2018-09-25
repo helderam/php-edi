@@ -1,5 +1,33 @@
 <?php
 
+/**
+ * +-----------------------------------------------------------------------+
+ * | php-edi - Sistema Geração EDI - GERA LAYOUT PROCTER                   |
+ * +-----------------------------------------------------------------------+
+ * | Este arquivo está disponível sob a Licença MIT disponível pela Web    |
+ * | em https://pt.wikipedia.org/wiki/Licen%C3%A7a_MIT                     |
+ * |                                                                       |
+ * | Coordenação: <helder.afonso.de.morais@gmail.com>                      |
+ * |                                                                       |
+ * | Programa...: GeraProcter.php                                          |
+ * |                                                                       |
+ * | Autor......: Helder <helder.afonso.de.morais@gmail.com>               |
+ * |                                                                       |
+ * | Criação....: 23-09-2018                                               |
+ * |                                                                       |
+ * | Objetivo...: Gerar todos os registros conforme Layout PROCTER. Os     |
+ * |              dados devem estar no arquivo dados/procter.xml           | 
+ * |                                                                       |
+ * | Layout EDI.:                                                          |
+ * |                                                                       |
+ * +-----------------------------------------------------------------------+
+ * | Versões....:                                                          |
+ * |                                                                       |
+ * |                                                                       |
+ * |                                                                       |
+ * +-----------------------------------------------------------------------+
+ */
+
 // Campo ORIGATÒRIO preencher o conteudo
 const OBRIGATORIO = true;
 const OPCIONAL = false;
@@ -30,7 +58,7 @@ try {
 
 
     // Obtem os dados de arquivo XML: dados/proceda.xml
-    $xml = simplexml_load_file('dados/Procter.xml');
+    $xml = simplexml_load_file('dados/procter.xml');
 
     // Acrescenta registro clientes
     $linhas = $cliente->registro_clientes($xml->cliente->sap_mae, $xml->cliente->sap_filial, $xml->cliente->cgc_cpf, $xml->cliente->razao, $xml->cliente->ramo, $xml->cliente->endereco, $xml->cliente->bairro, $xml->cliente->cidade, $xml->cliente->estado, $xml->cliente->cep, $xml->cliente->telefone, $xml->cliente->setor, $xml->cliente->numero);
@@ -56,8 +84,6 @@ try {
     $linhas = $inventario->registro_inventarios($xml->inventario->sap_mae, $xml->inventario->sap_filial, $xml->inventario->dun_produto, $xml->inventario->qntd_fisica, $xml->inventario->qntd_transito, $xml->inventario->data_leitura);
     file_put_contents('arquivos/BZL_FACTSINV_NC_10908092005.txt', $linhas);
     echo $linhas."\n";
-
-
 
 } catch (Exception $e) {
     echo 'ERRO: ' .$e->getMessage();

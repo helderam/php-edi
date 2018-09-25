@@ -1,7 +1,7 @@
 <?php
 /**
  * +-----------------------------------------------------------------------+
- * | php-edi - Sistema Geração EDI - GERA LAYOUT PROCEDA                   |
+ * | php-edi - Sistema Geração EDI - GERA LAYOUT PROCEDA/DOCCOB            |
  * +-----------------------------------------------------------------------+
  * | Este arquivo está disponível sob a Licença MIT disponível pela Web    |
  * | em https://pt.wikipedia.org/wiki/Licen%C3%A7a_MIT                     |
@@ -14,8 +14,8 @@
  * |                                                                       |
  * | Criação....: 26-06-2018                                               |
  * |                                                                       |
- * | Objetivo...: Gerar todos os registros conforme Layout PROCEDA. Os     |
- * |              dados devem estar no arquivo dados/proceda.xml           | 
+ * | Objetivo...: Gerar todos os registros conforme Layout PROCEDA/DOCCOB. |
+ * |              Os dados devem estar no arquivo dados/doccob.xml         | 
  * |                                                                       |
  * | Layout EDI.: 6.0 - 31/07/2008                                         |
  * |                                                                       |
@@ -33,7 +33,8 @@ const OBRIGATORIO = true;
 // Tamanho da linha
 const TAMANHO = 280;
 
-const DELIMITADOR = ' ';
+// Delimitador
+const DELIMITADOR = '';
 
 // Tipo de campo A/N
 const NUMERICO = 'N';
