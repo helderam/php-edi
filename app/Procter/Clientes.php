@@ -19,7 +19,7 @@ class Clientes
         }
         // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO
         $layout->adiciona(new Campo(1, 'COD SAP MAE', $sap_mae, ALFA, 15, OBRIGATORIO));
-        $layout->adiciona(new Campo(2, 'COD SAP FILIAL', $sap_filial, NUMERICO, 15, OBRIGATORIO));
+        $layout->adiciona(new Campo(2, 'COD SAP FILIAL', $sap_filial, ALFA, 15, OBRIGATORIO));
         $layout->adiciona(new Campo(3, 'CGC/CPF', $cgc_cpf, ALFA, 14, OBRIGATORIO));
         $layout->adiciona(new Campo(4, 'RAZAO SOCIAL', $razao, ALFA, 50, OBRIGATORIO));
         $layout->adiciona(new Campo(5, 'RAMO', $ramo, ALFA, 50, OBRIGATORIO));

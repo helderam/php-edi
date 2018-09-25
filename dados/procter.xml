@@ -47,8 +47,8 @@
 		<sap_mae>2001050255</sap_mae>
 		<sap_filial>2930298340</sap_filial>
 		<dun_produto>17501001274891</dun_produto>
-		<qntd_fisica>9999999999.999</qntd_fisica>
-		<qntd_transito>9999999999.999</qntd_transito>
+		<qntd_fisica>999999.999</qntd_fisica>
+		<qntd_transito>999999.999</qntd_transito>
 		<data_leitura>09/13/2018</data_leitura>
 	</inventario>
 </proceda>
