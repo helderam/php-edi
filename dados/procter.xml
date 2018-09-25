@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<proceda>
+<procter>
 	<cliente>
 		<sap_mae>2001050255</sap_mae>
 		<sap_filial>2930298340</sap_filial>
@@ -51,4 +51,4 @@
 		<qntd_transito>999999.999</qntd_transito>
 		<data_leitura>09/13/2018</data_leitura>
 	</inventario>
-</proceda>
+</procter>

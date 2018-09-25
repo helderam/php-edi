@@ -57,7 +57,7 @@ try {
     $inventario = new Inventarios();
 
 
-    // Obtem os dados de arquivo XML: dados/proceda.xml
+    // Obtem os dados de arquivo XML: dados/procter.xml
     $xml = simplexml_load_file('dados/procter.xml');
 
     // Acrescenta registro clientes
