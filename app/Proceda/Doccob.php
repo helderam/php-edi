@@ -68,14 +68,14 @@ class Doccob
 
         $layout = new Layout();
 
-        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO
-        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 0, NUMERICO, 3, OBRIGATORIO));
-        $layout->adiciona(new Campo(2,'IDENTIFICAÇÃO DO REMETENTE', $remetente, ALFA, 35, OBRIGATORIO));
-        $layout->adiciona(new Campo(3,'IDENTIFICAÇÃO DO DESTINATARIO', $destinatario, ALFA, 35, OBRIGATORIO));
-        $layout->adiciona(new Campo(4,'DATA', $data, NUMERICO, 6, OBRIGATORIO));
-        $layout->adiciona(new Campo(5,'HORA', $hora, NUMERICO, 4, OBRIGATORIO));
-        $layout->adiciona(new Campo(6,'INTERCAMBIO', 'COB502906001', ALFA, 12, OBRIGATORIO));
-        $layout->adiciona(new Campo(7,'ESPACO', ' ', ALFA, 185, OBRIGATORIO)); 
+        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO, PREENCHIMENTO
+        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 0, NUMERICO, 3, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(2,'IDENTIFICAÇÃO DO REMETENTE', $remetente, ALFA, 35, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(3,'IDENTIFICAÇÃO DO DESTINATARIO', $destinatario, ALFA, 35, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(4,'DATA', $data, NUMERICO, 6, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(5,'HORA', $hora, NUMERICO, 4, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(6,'INTERCAMBIO', 'COB502906001', ALFA, 12, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(7,'ESPACO', ' ', ALFA, 185, OBRIGATORIO, PREENCHIMENTO)); 
 
         $linha = $layout->gera_linha();
         // Verifica se tamanho gerado está conforme o tamanho esperado
@@ -107,10 +107,10 @@ class Doccob
 
         $layout = new Layout();
 
-        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO
-        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 550, NUMERICO, 3, OBRIGATORIO));
-        $layout->adiciona(new Campo(2,'IDENTIFICAÇÃO DO DOCUMENTO', $documento, ALFA, 14, OBRIGATORIO));
-        $layout->adiciona(new Campo(3,'ESPACO', ' ', ALFA, 263, OBRIGATORIO)); 
+        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO, PREENCHIMENTO
+        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 550, NUMERICO, 3, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(2,'IDENTIFICAÇÃO DO DOCUMENTO', $documento, ALFA, 14, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(3,'ESPACO', ' ', ALFA, 263, OBRIGATORIO, PREENCHIMENTO)); 
 
         $linha = $layout->gera_linha();
         // Verifica se tamanho gerado está conforme o tamanho esperado
@@ -143,11 +143,11 @@ class Doccob
 
         $layout = new Layout();
 
-        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO
-        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 551, NUMERICO, 3, OBRIGATORIO));
-        $layout->adiciona(new Campo(2,'CNPJ REMETENTE', $cnpj, NUMERICO, 14, OBRIGATORIO));
-        $layout->adiciona(new Campo(2,'RAZAO SOCIAL', $razao, ALFA, 50, OBRIGATORIO));
-        $layout->adiciona(new Campo(3,'ESPACO', ' ', ALFA, 213, OBRIGATORIO)); 
+        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO, PREENCHIMENTO
+        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 551, NUMERICO, 3, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(2,'CNPJ REMETENTE', $cnpj, NUMERICO, 14, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(2,'RAZAO SOCIAL', $razao, ALFA, 50, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(3,'ESPACO', ' ', ALFA, 213, OBRIGATORIO, PREENCHIMENTO)); 
 
         $linha = $layout->gera_linha();
 
@@ -184,34 +184,34 @@ class Doccob
         
         $layout = new Layout();
 
-        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO
-        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 552, NUMERICO, 3, OBRIGATORIO));
-        $layout->adiciona(new Campo(2,'FILIAL', $filial, ALFA, 10, OBRIGATORIO));
-        $layout->adiciona(new Campo(3,'TIPO', $tipo, NUMERICO, 1, OBRIGATORIO));
-        $layout->adiciona(new Campo(4,'SERIE', $serie, ALFA, 3, OBRIGATORIO));
-        $layout->adiciona(new Campo(5,'NUMERO', $numero, NUMERICO, 10, OBRIGATORIO));
-        $layout->adiciona(new Campo(6,'EMISSAO', $emissao, NUMERICO, 8, OBRIGATORIO));
-        $layout->adiciona(new Campo(7,'VENCIMENTO', $vencimento, NUMERICO, 8, OBRIGATORIO));
-        $layout->adiciona(new Campo(8,'VALOR', $valor, NUMERICO, 13.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(9,'TIPO DE COBRANCA', $tipo_cobranca, ALFA, 3, OBRIGATORIO));
-        $layout->adiciona(new Campo(10,'MULTA', $multa, NUMERICO, 2.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(11,'JUROS', $juros, NUMERICO, 13.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(12,'DATA LIMITE', $limite, NUMERICO, 8, OBRIGATORIO));
-        $layout->adiciona(new Campo(13,'DESCONTO', $desconto, NUMERICO, 13.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(14,'AGENTE', $agente, NUMERICO, 5, OBRIGATORIO));
-        $layout->adiciona(new Campo(15,'NOME', $nome, ALFA, 30, OBRIGATORIO));
-        $layout->adiciona(new Campo(16,'AGENCIA', $agencia, NUMERICO, 4, OBRIGATORIO));
-        $layout->adiciona(new Campo(17,'DIGITO', $digito, ALFA, 1, OBRIGATORIO));
-        $layout->adiciona(new Campo(18,'CONTA', $conta, NUMERICO, 10, OBRIGATORIO));
-        $layout->adiciona(new Campo(19,'DIGITO DA CONTA', $digito_conta, ALFA, 2, OBRIGATORIO));
-        $layout->adiciona(new Campo(20,'ACAO', $acao, ALFA, 1, OBRIGATORIO));
-        $layout->adiciona(new Campo(21,'PRE FATURA', $pre_fatura, NUMERICO, 10, OBRIGATORIO));
-        $layout->adiciona(new Campo(22,'COMPLEMENTAR', $complementar, ALFA, 20, OBRIGATORIO));
-        $layout->adiciona(new Campo(23,'CFOP', $cfop, ALFA, 5, OBRIGATORIO));
-        $layout->adiciona(new Campo(24,'CODIGO', $codigo, NUMERICO, 9, OBRIGATORIO));
-        $layout->adiciona(new Campo(25,'CHAVE', $chave, ALFA, 45, OBRIGATORIO));
-        $layout->adiciona(new Campo(26,'PROTOCOLO', $protocolo, ALFA, 15, OBRIGATORIO));
-        $layout->adiciona(new Campo(27,'ESPACO', ' ', ALFA, 20, OBRIGATORIO));
+        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO, PREENCHIMENTO
+        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 552, NUMERICO, 3, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(2,'FILIAL', $filial, ALFA, 10, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(3,'TIPO', $tipo, NUMERICO, 1, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(4,'SERIE', $serie, ALFA, 3, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(5,'NUMERO', $numero, NUMERICO, 10, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(6,'EMISSAO', $emissao, NUMERICO, 8, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(7,'VENCIMENTO', $vencimento, NUMERICO, 8, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(8,'VALOR', $valor, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(9,'TIPO DE COBRANCA', $tipo_cobranca, ALFA, 3, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(10,'MULTA', $multa, NUMERICO, 2.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(11,'JUROS', $juros, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(12,'DATA LIMITE', $limite, NUMERICO, 8, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(13,'DESCONTO', $desconto, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(14,'AGENTE', $agente, NUMERICO, 5, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(15,'NOME', $nome, ALFA, 30, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(16,'AGENCIA', $agencia, NUMERICO, 4, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(17,'DIGITO', $digito, ALFA, 1, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(18,'CONTA', $conta, NUMERICO, 10, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(19,'DIGITO DA CONTA', $digito_conta, ALFA, 2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(20,'ACAO', $acao, ALFA, 1, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(21,'PRE FATURA', $pre_fatura, NUMERICO, 10, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(22,'COMPLEMENTAR', $complementar, ALFA, 20, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(23,'CFOP', $cfop, ALFA, 5, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(24,'CODIGO', $codigo, NUMERICO, 9, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(25,'CHAVE', $chave, ALFA, 45, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(26,'PROTOCOLO', $protocolo, ALFA, 15, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(27,'ESPACO', ' ', ALFA, 20, OBRIGATORIO, PREENCHIMENTO));
 
 
         $linha = $layout->gera_linha();
@@ -249,19 +249,19 @@ class Doccob
         
         $layout = new Layout();
 
-        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO
-        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 553, NUMERICO, 3, OBRIGATORIO));
-        $layout->adiciona(new Campo(2,'VALOR_ICMS', $valor_icms, NUMERICO, 13.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(3,'ALIQUOTA_ICMS', $aliq_icms, NUMERICO, 3.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(4,'BASE_ICMS', $base_icms, NUMERICO, 13.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(5,'VALOR_ISS', $valor_iss, NUMERICO, 13.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(6,'ALIQUOTA_ISS', $aliq_iss, NUMERICO, 3.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(7,'BASE_ISS', $base_iss, NUMERICO, 13.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(8,'VALOR_SUBSTITUICAO', $valor_subst, NUMERICO, 13.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(9,'ALIQUOTA_SUBSTITUICAO', $aliq_subst, NUMERICO, 3.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(10,'BASE_SUBSTITUICAO', $base_subst, NUMERICO, 13.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(11,'VALOR_IR', $valor_ir, NUMERICO, 13.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(12,'ESPACO', ' ', ALFA, 157, OBRIGATORIO));
+        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO, PREENCHIMENTO
+        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 553, NUMERICO, 3, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(2,'VALOR_ICMS', $valor_icms, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(3,'ALIQUOTA_ICMS', $aliq_icms, NUMERICO, 3.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(4,'BASE_ICMS', $base_icms, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(5,'VALOR_ISS', $valor_iss, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(6,'ALIQUOTA_ISS', $aliq_iss, NUMERICO, 3.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(7,'BASE_ISS', $base_iss, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(8,'VALOR_SUBSTITUICAO', $valor_subst, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(9,'ALIQUOTA_SUBSTITUICAO', $aliq_subst, NUMERICO, 3.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(10,'BASE_SUBSTITUICAO', $base_subst, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(11,'VALOR_IR', $valor_ir, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(12,'ESPACO', ' ', ALFA, 157, OBRIGATORIO, PREENCHIMENTO));
 
         $linha = $layout->gera_linha();
 
@@ -298,27 +298,27 @@ class Doccob
         
         $layout = new Layout();
 
-        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO
-        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 555, NUMERICO, 3, OBRIGATORIO));
-        $layout->adiciona(new Campo(2,'FILIAL', $filial, ALFA, 10, OBRIGATORIO));
-        $layout->adiciona(new Campo(3,'SERIE', $serie, ALFA, 5, OBRIGATORIO));
-        $layout->adiciona(new Campo(4,'NUMERO', $numero, ALFA, 12, OBRIGATORIO));
-        $layout->adiciona(new Campo(5,'VALOR', $valor, NUMERICO, 13.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(6,'EMISSAO', $emissao, NUMERICO, 8, OBRIGATORIO));
-        $layout->adiciona(new Campo(7,'REMETENTE', $remetente, NUMERICO, 14, OBRIGATORIO));
-        $layout->adiciona(new Campo(8,'DESTINATARIO', $destinatario, NUMERICO, 14, OBRIGATORIO));
-        $layout->adiciona(new Campo(9,'EMISSOR DO CONHECIMENTO', $emissor_do_conhecimento, NUMERICO, 14, OBRIGATORIO));
-        $layout->adiciona(new Campo(10,'UF EMBARCADOR', $uf_embarcador, ALFA, 2, OBRIGATORIO));
-        $layout->adiciona(new Campo(11,'UF EMISSORA', $uf_emissora, ALFA, 2, OBRIGATORIO));
-        $layout->adiciona(new Campo(12,'UF DESTINATARIO', $uf_destinatario, ALFA, 2, OBRIGATORIO));
-        $layout->adiciona(new Campo(13,'CONTA RAZAO', $conta_razao, ALFA, 10, OBRIGATORIO));
-        $layout->adiciona(new Campo(14,'IVA', $iva, ALFA, 2, OBRIGATORIO));
-        $layout->adiciona(new Campo(15,'IDENTIFICACAO EMBARQUE', $identificacao_embarque, ALFA, 20, OBRIGATORIO));
-        $layout->adiciona(new Campo(16,'IDENTIFICACAO CARGA', $identificacao_carga, ALFA, 20, OBRIGATORIO));
-        $layout->adiciona(new Campo(17,'NUMERO SAP', $numero_SAP, ALFA, 20, OBRIGATORIO));
-        $layout->adiciona(new Campo(18,'OUTRO SAP', $outro_SAP, ALFA, 20, OBRIGATORIO));
-        $layout->adiciona(new Campo(19,'DEVOLUCAO', $devolucao, ALFA, 1, OBRIGATORIO));
-        $layout->adiciona(new Campo(20,'ESPACO', ' ', ALFA, 86, OBRIGATORIO));
+        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO, PREENCHIMENTO
+        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 555, NUMERICO, 3, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(2,'FILIAL', $filial, ALFA, 10, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(3,'SERIE', $serie, ALFA, 5, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(4,'NUMERO', $numero, ALFA, 12, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(5,'VALOR', $valor, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(6,'EMISSAO', $emissao, NUMERICO, 8, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(7,'REMETENTE', $remetente, NUMERICO, 14, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(8,'DESTINATARIO', $destinatario, NUMERICO, 14, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(9,'EMISSOR DO CONHECIMENTO', $emissor_do_conhecimento, NUMERICO, 14, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(10,'UF EMBARCADOR', $uf_embarcador, ALFA, 2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(11,'UF EMISSORA', $uf_emissora, ALFA, 2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(12,'UF DESTINATARIO', $uf_destinatario, ALFA, 2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(13,'CONTA RAZAO', $conta_razao, ALFA, 10, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(14,'IVA', $iva, ALFA, 2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(15,'IDENTIFICACAO EMBARQUE', $identificacao_embarque, ALFA, 20, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(16,'IDENTIFICACAO CARGA', $identificacao_carga, ALFA, 20, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(17,'NUMERO SAP', $numero_SAP, ALFA, 20, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(18,'OUTRO SAP', $outro_SAP, ALFA, 20, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(19,'DEVOLUCAO', $devolucao, ALFA, 1, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(20,'ESPACO', ' ', ALFA, 86, OBRIGATORIO, PREENCHIMENTO));
 
         $linha = $layout->gera_linha();
 
@@ -354,20 +354,20 @@ class Doccob
         
         $layout = new Layout();
 
-        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO
-        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 556, NUMERICO, 3, OBRIGATORIO));
-        $layout->adiciona(new Campo(2,'SERIE', $serie, ALFA, 3, OBRIGATORIO));
-        $layout->adiciona(new Campo(3,'NUMERO', $numero, NUMERICO, 9, OBRIGATORIO));
-        $layout->adiciona(new Campo(4,'EMISSAO', $emissao, NUMERICO, 8, OBRIGATORIO));
-        $layout->adiciona(new Campo(5,'PESO', $peso, NUMERICO, 5.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(6,'VALOR', $valor, NUMERICO, 13.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(7,'EMISSOR', $emissor, NUMERICO, 14, OBRIGATORIO));
-        $layout->adiciona(new Campo(8,'IDENTIFICACAO EMBARQUE', $identificacao_embarque, ALFA, 20, OBRIGATORIO));
-        $layout->adiciona(new Campo(9,'IDENTIFICACAO CARGA', $identificacao_carga, ALFA, 20, OBRIGATORIO));
-        $layout->adiciona(new Campo(10,'NUMERO SAP', $numero_SAP, ALFA, 20, OBRIGATORIO));
-        $layout->adiciona(new Campo(11,'OUTRO SAP', $outro_SAP, ALFA, 20, OBRIGATORIO));
-        $layout->adiciona(new Campo(12,'DEVOLUCAO', $devolucao, ALFA, 1, OBRIGATORIO));
-        $layout->adiciona(new Campo(13,'ESPACO', ' ', ALFA, 140, OBRIGATORIO));
+        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO, PREENCHIMENTO
+        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 556, NUMERICO, 3, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(2,'SERIE', $serie, ALFA, 3, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(3,'NUMERO', $numero, NUMERICO, 9, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(4,'EMISSAO', $emissao, NUMERICO, 8, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(5,'PESO', $peso, NUMERICO, 5.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(6,'VALOR', $valor, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(7,'EMISSOR', $emissor, NUMERICO, 14, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(8,'IDENTIFICACAO EMBARQUE', $identificacao_embarque, ALFA, 20, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(9,'IDENTIFICACAO CARGA', $identificacao_carga, ALFA, 20, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(10,'NUMERO SAP', $numero_SAP, ALFA, 20, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(11,'OUTRO SAP', $outro_SAP, ALFA, 20, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(12,'DEVOLUCAO', $devolucao, ALFA, 1, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(13,'ESPACO', ' ', ALFA, 140, OBRIGATORIO, PREENCHIMENTO));
 
         $linha = $layout->gera_linha();
 
@@ -400,11 +400,11 @@ class Doccob
         
         $layout = new Layout();
 
-        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO
-        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 559, NUMERICO, 3, OBRIGATORIO));
-        $layout->adiciona(new Campo(2,'QTDE TOTAL', $qtde_total, NUMERICO, 4, OBRIGATORIO));
-        $layout->adiciona(new Campo(3,'VALOR TOTAL', $valor_total, NUMERICO, 13.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(4,'ESPACO', ' ', ALFA, 258, OBRIGATORIO));
+        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO, PREENCHIMENTO
+        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 559, NUMERICO, 3, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(2,'QTDE TOTAL', $qtde_total, NUMERICO, 4, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(3,'VALOR TOTAL', $valor_total, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(4,'ESPACO', ' ', ALFA, 258, OBRIGATORIO, PREENCHIMENTO));
 
         $linha = $layout->gera_linha();
 

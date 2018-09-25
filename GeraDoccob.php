@@ -38,6 +38,7 @@ const DELIMITADOR = '';
 
 // Tipo de campo A/N
 const NUMERICO = 'N';
+const PREENCHIMENTO = ' ';
 const ALFA = 'A';
 
 require_once "vendor/autoload.php";

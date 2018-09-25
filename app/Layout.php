@@ -64,12 +64,16 @@ class Layout
      * @param $lado STR_PAD_RIGHT
      */
     public function gera_linha()
+
     {
+        #var_dump($this->campos);
+        #exit;
         $linha = '';
         foreach($this->campos as $campo) {
             // formata campo conforme parametros
-            $linha .= $campo->formatado;
+            $linha .= $campo->formatado.DELIMITADOR;
+            
         }
-        return $linha.\DELIMITADOR;
+        return $linha;
     }
 }

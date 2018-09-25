@@ -1,1 +1,1 @@
-000002001050255000002930298340CPF07610028327TRANSPORTADORA BCA                                ATACADO ALIMENTAR                                 RUA ABC, 123                                      ABCDEF                                            FEDCBA                                            MG19107-322 35 9986423591       123       12;
+2001050255;000002930298340;CPF07610028327;TRANSPORTADORA BCA;ATACADO ALIMENTAR;RUA ABC, 123;ABCDEF;FEDCBA;MG;19107-322;35 9986423591;123;12;

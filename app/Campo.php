@@ -12,7 +12,7 @@ class Campo
 
     public $formatado;
 
-    public function __construct($ordem, $descricao, $conteudo, $tipo, $tamanho, $obrigatorio)
+    public function __construct($ordem, $descricao, $conteudo, $tipo, $tamanho, $obrigatorio, $preenchimento = '')
     {
         
         // Verifica se tamanho de campo numerico
@@ -33,11 +33,22 @@ class Campo
                 #var_dump($tamanho_decimal); var_dump($valor_decimais); exit;
                 throw new \Exception("PARTE DECIMAL CAMPO '{$descricao}' MAIOR QUE {$tamanho_decimal}");
             }
+                $formatado = str_pad($valor_inteiro, $tamanho_inteiro, '0', STR_PAD_LEFT) .
+                             str_pad($valor_decimais, $tamanho_decimal, '0', STR_PAD_RIGHT);
         } else {
             if (strlen($conteudo) > $tamanho) {
                 throw new \Exception("TAMANHO CAMPO '{$descricao}' MAIOR QUE {$tamanho}");
             }
-            $formatado = str_pad($conteudo, $tamanho, ' ', STR_PAD_RIGHT);
+
+            if(!empty($preenchimento)){
+                $formatado = str_pad($conteudo, $tamanho, $preenchimento, STR_PAD_RIGHT);
+            }else
+                {
+                    $formatado = $conteudo;
+                }
+                
+                
+                
         }
 
         if ($ordem < 1) {
@@ -47,16 +58,13 @@ class Campo
             throw new \Exception("CAMPO {$descricao} É OBRIGATÓRIO");
         }
 
-        #if(strlen($formatado) == 11 && $descricao == "CGC/CPF"){
-        #    $formatado = "CPF".$formatado;
-        #}
-
         // formata campo conforme parametros
         #return str_pad($conteudo, $tamanho, $preenchimento, $lado);
         $this->ordem = $ordem;
         $this->descricao = $descricao;
         $this->conteudo = $conteudo;
         $this->tipo = $tipo;
+        $this->tamanho = $tamanho;
         $this->obrigatorio = $obrigatorio;
         $this->formatado = $formatado;
     }

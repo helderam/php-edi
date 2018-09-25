@@ -1,5 +1,5 @@
 <?php
-/**
+ /**
  * +-----------------------------------------------------------------------+
  * | php-edi - Sistema Geração EDI - GERA LAYOUT PROCEDA/CONEMB            |
  * +-----------------------------------------------------------------------+
@@ -38,6 +38,7 @@ const TAMANHO = 350;
 
 // Tipo de campo A/N
 const NUMERICO = 'N';
+const PREENCHIMENTO = ' ';
 const ALFA = 'A';
 
 require_once "vendor/autoload.php";

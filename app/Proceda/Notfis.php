@@ -66,14 +66,14 @@ class Notfis
 
         $layout = new Layout();
 
-        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO
-        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 0, NUMERICO, 3, OBRIGATORIO));
-        $layout->adiciona(new Campo(2,'IDENTIFICAÇÃO DO REMETENTE', $remetente, ALFA, 35, OBRIGATORIO));
-        $layout->adiciona(new Campo(3,'IDENTIFICAÇÃO DO DESTINATARIO', $destinatario, ALFA, 35, OBRIGATORIO));
-        $layout->adiciona(new Campo(4,'DATA', $data, NUMERICO, 6, OBRIGATORIO));
-        $layout->adiciona(new Campo(5,'HORA', $hora, NUMERICO, 4, OBRIGATORIO));
-        $layout->adiciona(new Campo(6,'INTERCAMBIO', 'NOT50DDMMSSS', ALFA, 12, OBRIGATORIO));
-        $layout->adiciona(new Campo(7,'ESPAÇO', ' ', ALFA, 225, OBRIGATORIO)); 
+        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO, PREENCHIMENTO
+        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 0, NUMERICO, 3, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(2,'IDENTIFICAÇÃO DO REMETENTE', $remetente, ALFA, 35, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(3,'IDENTIFICAÇÃO DO DESTINATARIO', $destinatario, ALFA, 35, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(4,'DATA', $data, NUMERICO, 6, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(5,'HORA', $hora, NUMERICO, 4, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(6,'INTERCAMBIO', 'NOT50DDMMSSS', ALFA, 12, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(7,'ESPAÇO', ' ', ALFA, 225, OBRIGATORIO, PREENCHIMENTO)); 
 
         $linha = $layout->gera_linha();
         // Verifica se tamanho gerado está conforme o tamanho esperado
@@ -100,10 +100,10 @@ class Notfis
 
         $layout = new Layout();
 
-        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO
-        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 500, NUMERICO, 3, OBRIGATORIO));
-        $layout->adiciona(new Campo(2,'IDENTIFICAÇÃO DO DOCUMENTO', $documento, ALFA, 14, OBRIGATORIO));
-        $layout->adiciona(new Campo(3,'ESPAÇO', ' ', ALFA, 303, OBRIGATORIO)); 
+        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO, PREENCHIMENTO
+        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 500, NUMERICO, 3, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(2,'IDENTIFICAÇÃO DO DOCUMENTO', $documento, ALFA, 14, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(3,'ESPAÇO', ' ', ALFA, 303, OBRIGATORIO, PREENCHIMENTO)); 
 
         $linha = $layout->gera_linha();
         // Verifica se tamanho gerado está conforme o tamanho esperado
@@ -131,23 +131,23 @@ class Notfis
 
         $layout = new Layout();
 
-        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO
-        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 501, NUMERICO, 3, OBRIGATORIO));
-        $layout->adiciona(new Campo(2,'RAZAO SOCIAL', $documento, ALFA, 50, OBRIGATORIO));
-        $layout->adiciona(new Campo(3,'CNPJ', $cnpj, NUMERICO, 14, OBRIGATORIO));
-        $layout->adiciona(new Campo(4,'INSCRICAO ESTADUAL EMBARCADORA', $insc_embarq, ALFA, 15, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(5,'INSCRICAO ESTADUAL DO SUBSTITUTO TRIBUTARIO', $insc_subs_tribut, ALFA, 15, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(6,'INSCRICAO MUNICIPAL', $insc_muni, ALFA, 15, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(7,'ENDERECO', $endereco, ALFA, 50, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(8,'BAIRRO', $bairro, ALFA, 35, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(9,'CIDADE', $cidade, ALFA, 35, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(10,'CODIGO POSTAL', $cod_postal, ALFA, 9, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(11,'CODIGO MUNICIPIO', $cod_municipio, ALFA, 9, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(12,'UF', $uf, ALFA, 9, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(13,'DATA DO EMBARQUE', $data_embarque, NUMERICO, 8, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(14,'AREA DE FRETE', $area_frete, ALFA, 4, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(15,'CONTATO EMERGENCIA', $contato_emerg, ALFA, 25, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(16,'ESPAÇO', ' ', ALFA, 24, OBRIGATORIO)); 
+        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO, PREENCHIMENTO
+        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 501, NUMERICO, 3, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(2,'RAZAO SOCIAL', $documento, ALFA, 50, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(3,'CNPJ', $cnpj, NUMERICO, 14, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(4,'INSCRICAO ESTADUAL EMBARCADORA', $insc_embarq, ALFA, 15, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(5,'INSCRICAO ESTADUAL DO SUBSTITUTO TRIBUTARIO', $insc_subs_tribut, ALFA, 15, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(6,'INSCRICAO MUNICIPAL', $insc_muni, ALFA, 15, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(7,'ENDERECO', $endereco, ALFA, 50, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(8,'BAIRRO', $bairro, ALFA, 35, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(9,'CIDADE', $cidade, ALFA, 35, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(10,'CODIGO POSTAL', $cod_postal, ALFA, 9, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(11,'CODIGO MUNICIPIO', $cod_municipio, ALFA, 9, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(12,'UF', $uf, ALFA, 9, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(13,'DATA DO EMBARQUE', $data_embarque, NUMERICO, 8, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(14,'AREA DE FRETE', $area_frete, ALFA, 4, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(15,'CONTATO EMERGENCIA', $contato_emerg, ALFA, 25, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(16,'ESPAÇO', ' ', ALFA, 24, OBRIGATORIO, PREENCHIMENTO)); 
 
         $linha = $layout->gera_linha();
         // Verifica se tamanho gerado está conforme o tamanho esperado
@@ -174,19 +174,19 @@ class Notfis
 
         $layout = new Layout();
 
-        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO
-        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 502, NUMERICO, 3, OBRIGATORIO));
-        $layout->adiciona(new Campo(2,'RAZAO SOCIAL', $documento, ALFA, 50, OBRIGATORIO));
-        $layout->adiciona(new Campo(3,'CNPJ', $cnpj, NUMERICO, 14, OBRIGATORIO));
-        $layout->adiciona(new Campo(4,'ENREREÇO', $endereco, ALFA, 50, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(5,'BAIRRO', $bairro, ALFA, 35, OBRIGATORIO));   
-        $layout->adiciona(new Campo(6,'CIDADE', $cidade, ALFA, 35, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(7,'CODIGO POSTAL', $cod_postal, ALFA, 9, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(8,'CODIGO MUNICIPIO', $cod_municipio, ALFA, 9, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(9,'UF', $uf, ALFA, 9, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(10,'NUMERO COMUNICACAO', $numero_contato, ALFA, 35, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(11,'AREA DE FRETE', $area_frete, ALFA, 4, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(12,'ESPAÇO', ' ', ALFA, 67, OBRIGATORIO)); 
+        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO, PREENCHIMENTO
+        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 502, NUMERICO, 3, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(2,'RAZAO SOCIAL', $documento, ALFA, 50, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(3,'CNPJ', $cnpj, NUMERICO, 14, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(4,'ENREREÇO', $endereco, ALFA, 50, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(5,'BAIRRO', $bairro, ALFA, 35, OBRIGATORIO, PREENCHIMENTO));   
+        $layout->adiciona(new Campo(6,'CIDADE', $cidade, ALFA, 35, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(7,'CODIGO POSTAL', $cod_postal, ALFA, 9, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(8,'CODIGO MUNICIPIO', $cod_municipio, ALFA, 9, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(9,'UF', $uf, ALFA, 9, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(10,'NUMERO COMUNICACAO', $numero_contato, ALFA, 35, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(11,'AREA DE FRETE', $area_frete, ALFA, 4, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(12,'ESPAÇO', ' ', ALFA, 67, OBRIGATORIO, PREENCHIMENTO)); 
 
         $linha = $layout->gera_linha();
         // Verifica se tamanho gerado está conforme o tamanho esperado
@@ -214,24 +214,24 @@ class Notfis
 
         $layout = new Layout();
 
-        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO
-        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 503, NUMERICO, 3, OBRIGATORIO));
-        $layout->adiciona(new Campo(2,'RAZAO SOCIAL', $documento, ALFA, 50, OBRIGATORIO));
-        $layout->adiciona(new Campo(3,'CNPJ', $cnpj, NUMERICO, 14, OBRIGATORIO));
-        $layout->adiciona(new Campo(4,'INSCRICAO ESTADUAL', $insc_estadual, ALFA, 15, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(5,'INSCRICAO SUFRAMA', $insc_suframa, ALFA, 15, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(6,'ENDERECO', $endereco, ALFA, 50, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(7,'BAIRRO', $bairro, ALFA, 35, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(8,'CIDADE', $cidade, ALFA, 35, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(9,'CODIGO POSTAL', $cod_postal, ALFA, 9, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(10,'CODIGO MUNICIPIO', $cod_municipio, ALFA, 9, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(11,'UF', $uf, ALFA, 9, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(12,'NUMERO CONTATO', $numero_contato, ALFA, 35, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(13,'CODIGO PAIS', $cod_pais, ALFA, 4, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(14,'AREA DE FRETE', $area_frete, ALFA, 4, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(15,'TIPO DE IDENTIFICACAO DESTINATARIO', $tipo_identificacao_dest, ALFA, 1, OBRIGATORIO));
-        $layout->adiciona(new Campo(16,'TIPO DE ESTABELECIMENTO DESTINO', $tipo_estabelecimento_dest, ALFA, 1, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(17,'ESPAÇO', ' ', ALFA, 31, OBRIGATORIO)); 
+        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO, PREENCHIMENTO
+        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 503, NUMERICO, 3, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(2,'RAZAO SOCIAL', $documento, ALFA, 50, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(3,'CNPJ', $cnpj, NUMERICO, 14, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(4,'INSCRICAO ESTADUAL', $insc_estadual, ALFA, 15, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(5,'INSCRICAO SUFRAMA', $insc_suframa, ALFA, 15, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(6,'ENDERECO', $endereco, ALFA, 50, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(7,'BAIRRO', $bairro, ALFA, 35, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(8,'CIDADE', $cidade, ALFA, 35, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(9,'CODIGO POSTAL', $cod_postal, ALFA, 9, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(10,'CODIGO MUNICIPIO', $cod_municipio, ALFA, 9, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(11,'UF', $uf, ALFA, 9, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(12,'NUMERO CONTATO', $numero_contato, ALFA, 35, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(13,'CODIGO PAIS', $cod_pais, ALFA, 4, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(14,'AREA DE FRETE', $area_frete, ALFA, 4, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(15,'TIPO DE IDENTIFICACAO DESTINATARIO', $tipo_identificacao_dest, ALFA, 1, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(16,'TIPO DE ESTABELECIMENTO DESTINO', $tipo_estabelecimento_dest, ALFA, 1, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(17,'ESPAÇO', ' ', ALFA, 31, OBRIGATORIO, PREENCHIMENTO)); 
 
         $linha = $layout->gera_linha();
         // Verifica se tamanho gerado está conforme o tamanho esperado
@@ -259,23 +259,23 @@ class Notfis
 
         $layout = new Layout();
 
-        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO
-        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 504, NUMERICO, 3, OBRIGATORIO));
-        $layout->adiciona(new Campo(2,'RAZAO SOCIAL', $documento, ALFA, 50, OBRIGATORIO));
-        $layout->adiciona(new Campo(3,'CNPJ', $cnpj, NUMERICO, 14, OBRIGATORIO));
-        $layout->adiciona(new Campo(18,'INSCRICAO ESTADUAL', $insc_estadual, ALFA, 15, OBRIGATORIO));  
-        $layout->adiciona(new Campo(4,'ENDERECO', $endereco, ALFA, 50, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(5,'BAIRRO', $bairro, ALFA, 35, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(6,'CIDADE', $cidade, ALFA, 35, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(7,'CODIGO POSTAL', $cod_postal, ALFA, 9, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(8,'CODIGO MUNICIPIO', $cod_municipio, ALFA, 9, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(9,'UF', $uf, ALFA, 9, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(10,'NUMERO CONTATO', $numero_contato, ALFA, 35, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(11,'CODIGO PAIS', $cod_pais, ALFA, 4, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(12,'AREA DE FRETE', $area_frete, ALFA, 4, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(13,'TIPO DE IDENTIFICACAO DESTINATARIO', $tipo_identificacao_dest, ALFA, 1, OBRIGATORIO));
-        $layout->adiciona(new Campo(14,'TIPO DE ESTABELECIMENTO DESTINO', $tipo_estabelecimento_dest, ALFA, 1, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(15,'ESPACO', ' ', ALFA, 46, OBRIGATORIO));
+        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO, PREENCHIMENTO
+        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 504, NUMERICO, 3, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(2,'RAZAO SOCIAL', $documento, ALFA, 50, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(3,'CNPJ', $cnpj, NUMERICO, 14, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(18,'INSCRICAO ESTADUAL', $insc_estadual, ALFA, 15, OBRIGATORIO, PREENCHIMENTO));  
+        $layout->adiciona(new Campo(4,'ENDERECO', $endereco, ALFA, 50, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(5,'BAIRRO', $bairro, ALFA, 35, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(6,'CIDADE', $cidade, ALFA, 35, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(7,'CODIGO POSTAL', $cod_postal, ALFA, 9, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(8,'CODIGO MUNICIPIO', $cod_municipio, ALFA, 9, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(9,'UF', $uf, ALFA, 9, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(10,'NUMERO CONTATO', $numero_contato, ALFA, 35, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(11,'CODIGO PAIS', $cod_pais, ALFA, 4, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(12,'AREA DE FRETE', $area_frete, ALFA, 4, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(13,'TIPO DE IDENTIFICACAO DESTINATARIO', $tipo_identificacao_dest, ALFA, 1, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(14,'TIPO DE ESTABELECIMENTO DESTINO', $tipo_estabelecimento_dest, ALFA, 1, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(15,'ESPACO', ' ', ALFA, 46, OBRIGATORIO, PREENCHIMENTO));
 
         $linha = $layout->gera_linha();
         // Verifica se tamanho gerado está conforme o tamanho esperado
@@ -306,43 +306,43 @@ class Notfis
 
         $layout = new Layout();
 
-        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO
-        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 505, NUMERICO, 3, OBRIGATORIO));
-        $layout->adiciona(new Campo(2,'SERIE NOTA FISCAL', $serie, ALFA, 3, OBRIGATORIO));
-        $layout->adiciona(new Campo(3,'NUMERO NOTA FISCAL', $numero, NUMERICO, 9, OBRIGATORIO));
-        $layout->adiciona(new Campo(4,'DATA EMISSAO', $data, NUMERICO, 8, OBRIGATORIO));  
-        $layout->adiciona(new Campo(5,'TIPO', $tipo, ALFA, 15, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(6,'ESPECIE ACONDICIONAMENTO', $especie_acond, ALFA, 15, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(7,'CODIGO ROTA', $cod_rota, ALFA, 7, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(8,'MEIO DE TRANSPORTE', $meio_transporte, NUMERICO, 1, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(9,'TIPO DE TRANSPORTE', $tipo_transporte, NUMERICO, 1, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(10,'TIPO DE CARGA', $tipo_carga, NUMERICO, 1, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(11,'CONDICAO DE FRETE', $condicao_frete, ALFA, 1, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(12,'DATA DE EMBARQUE', $data_embarque, NUMERICO, 8, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(13,'DESDOBRO', $desdobro, ALFA, 10, OBRIGATORIO));
-        $layout->adiciona(new Campo(14,'PLANO CARGA RAPIDA', $plano_cargarapida, ALFA, 1, OBRIGATORIO));
-        $layout->adiciona(new Campo(15,'TIPO DOCUMENTO FISCAL', $tipo_doc_fiscal, NUMERICO, 1, OBRIGATORIO));
-        $layout->adiciona(new Campo(16,'INDICACAO BONIFICACAO', $bonificacao, ALFA, 1, OBRIGATORIO));
-        $layout->adiciona(new Campo(17,'CFOP', $cfop, NUMERICO, 4, OBRIGATORIO));
-        $layout->adiciona(new Campo(18,'UF', $uf, ALFA, 2, OBRIGATORIO));
-        $layout->adiciona(new Campo(19,'CALCULO DE FRETE DIFERENCIADO', $frete_diferenciado, ALFA, 1, OBRIGATORIO));
-        $layout->adiciona(new Campo(20,'TABELA DE FRETE', $tabela_frete, ALFA, 10, OBRIGATORIO));
-        $layout->adiciona(new Campo(21,'MODALIDADE FRETE', $modalidade_frete, ALFA, 2, OBRIGATORIO));
-        $layout->adiciona(new Campo(22,'IDENTIFICACAO DO PEDIDO CLIENTE', $identf_pedido_cliente, ALFA, 20, OBRIGATORIO));
-        $layout->adiciona(new Campo(23,'IDENTIFICACAO EMBARQUE', $identf_embarque, ALFA, 20, OBRIGATORIO));
-        $layout->adiciona(new Campo(24,'NUMERO SAP 1', $numero_sap, ALFA, 20, OBRIGATORIO));
-        $layout->adiciona(new Campo(25,'NUMERO SAP 2', $outro_sap, ALFA, 20, OBRIGATORIO));
-        $layout->adiciona(new Campo(26,'NUMERO SAP 3', $outro_sap1, ALFA, 20, OBRIGATORIO));
-        $layout->adiciona(new Campo(27,'TIPO PERIODO DE ENTREGA', $tipo_periodo_entrega, NUMERICO, 1, OBRIGATORIO));
-        $layout->adiciona(new Campo(28,'DATA INICIAL ENTREGA', $data_init_entrega, NUMERICO, 8, OBRIGATORIO));
-        $layout->adiciona(new Campo(29,'HORA INICIAL ENTREGA', $hora_init_entrega, NUMERICO, 4, OBRIGATORIO));
-        $layout->adiciona(new Campo(30,'DATA FINAL ENTREGA', $data_final_entrega, NUMERICO, 8, OBRIGATORIO));
-        $layout->adiciona(new Campo(31,'HORA FINAL ENTREGA', $hora_final_entrega, NUMERICO, 4, OBRIGATORIO));
-        $layout->adiciona(new Campo(32,'COD NUMERICO CHAVE DE ACESSO NFE', $cod_numerico_chaveacesso_nfe, NUMERICO, 9, OBRIGATORIO));
-        $layout->adiciona(new Campo(33,'CHAVE DE ACESSO NFE COM D/V', $chaveacesso_nfe_dv, ALFA, 45, OBRIGATORIO));
-        $layout->adiciona(new Campo(34,'NUMERO DO PROTOCOLO', $numero_protocolo, ALFA, 15, OBRIGATORIO));
-        $layout->adiciona(new Campo(35,'ACAO DO DOCUMENTO', $acao_doc, ALFA, 1, OBRIGATORIO));
-        $layout->adiciona(new Campo(36,'ESPACO', ' ', ALFA, 21, OBRIGATORIO));
+        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO, PREENCHIMENTO
+        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 505, NUMERICO, 3, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(2,'SERIE NOTA FISCAL', $serie, ALFA, 3, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(3,'NUMERO NOTA FISCAL', $numero, NUMERICO, 9, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(4,'DATA EMISSAO', $data, NUMERICO, 8, OBRIGATORIO, PREENCHIMENTO));  
+        $layout->adiciona(new Campo(5,'TIPO', $tipo, ALFA, 15, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(6,'ESPECIE ACONDICIONAMENTO', $especie_acond, ALFA, 15, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(7,'CODIGO ROTA', $cod_rota, ALFA, 7, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(8,'MEIO DE TRANSPORTE', $meio_transporte, NUMERICO, 1, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(9,'TIPO DE TRANSPORTE', $tipo_transporte, NUMERICO, 1, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(10,'TIPO DE CARGA', $tipo_carga, NUMERICO, 1, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(11,'CONDICAO DE FRETE', $condicao_frete, ALFA, 1, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(12,'DATA DE EMBARQUE', $data_embarque, NUMERICO, 8, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(13,'DESDOBRO', $desdobro, ALFA, 10, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(14,'PLANO CARGA RAPIDA', $plano_cargarapida, ALFA, 1, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(15,'TIPO DOCUMENTO FISCAL', $tipo_doc_fiscal, NUMERICO, 1, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(16,'INDICACAO BONIFICACAO', $bonificacao, ALFA, 1, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(17,'CFOP', $cfop, NUMERICO, 4, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(18,'UF', $uf, ALFA, 2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(19,'CALCULO DE FRETE DIFERENCIADO', $frete_diferenciado, ALFA, 1, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(20,'TABELA DE FRETE', $tabela_frete, ALFA, 10, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(21,'MODALIDADE FRETE', $modalidade_frete, ALFA, 2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(22,'IDENTIFICACAO DO PEDIDO CLIENTE', $identf_pedido_cliente, ALFA, 20, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(23,'IDENTIFICACAO EMBARQUE', $identf_embarque, ALFA, 20, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(24,'NUMERO SAP 1', $numero_sap, ALFA, 20, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(25,'NUMERO SAP 2', $outro_sap, ALFA, 20, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(26,'NUMERO SAP 3', $outro_sap1, ALFA, 20, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(27,'TIPO PERIODO DE ENTREGA', $tipo_periodo_entrega, NUMERICO, 1, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(28,'DATA INICIAL ENTREGA', $data_init_entrega, NUMERICO, 8, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(29,'HORA INICIAL ENTREGA', $hora_init_entrega, NUMERICO, 4, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(30,'DATA FINAL ENTREGA', $data_final_entrega, NUMERICO, 8, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(31,'HORA FINAL ENTREGA', $hora_final_entrega, NUMERICO, 4, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(32,'COD NUMERICO CHAVE DE ACESSO NFE', $cod_numerico_chaveacesso_nfe, NUMERICO, 9, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(33,'CHAVE DE ACESSO NFE COM D/V', $chaveacesso_nfe_dv, ALFA, 45, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(34,'NUMERO DO PROTOCOLO', $numero_protocolo, ALFA, 15, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(35,'ACAO DO DOCUMENTO', $acao_doc, ALFA, 1, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(36,'ESPACO', ' ', ALFA, 21, OBRIGATORIO, PREENCHIMENTO));
         
         $linha = $layout->gera_linha();
         // Verifica se tamanho gerado está conforme o tamanho esperado
@@ -372,34 +372,34 @@ class Notfis
 
         $layout = new Layout();
 
-        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO
-        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 506, NUMERICO, 3, OBRIGATORIO));
-        $layout->adiciona(new Campo(2,'OTDE TOTAL', $otde_tot, NUMERICO, 6.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(3,'PESO BRUTO TOTAL MERCADORIA/NOTA', $pesobruto_tot_mercadoria, NUMERICO, 6.3, OBRIGATORIO));
-        $layout->adiciona(new Campo(4,'PESO LIQUIDO TOTAL MERCADORIA/NOTA', $pesoliqui_tot_mercadoria, NUMERICO, 6.3, OBRIGATORIO));  
-        $layout->adiciona(new Campo(5,'PESO DENSIDADE/CUBAGEM', $peso_densidade, NUMERICO, 6.4, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(6,'PESO CUBADO (VxD)', $peso_cubado, NUMERICO, 6.4, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(7,'INCIDENCIA DE ICMS', $incidencia_icms, ALFA, 1, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(8,'SEGURO EFETUADO', $seguro_efetuado, ALFA, 1, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(9,'VALOR A SER COBRADO CLIENTE', $valor_cliente, NUMERICO, 13.2, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(10,'VALOR TOTAL DA NOTA', $valor_tot_nota, NUMERICO, 13.2, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(11,'VALOR TOTAL DO SEGURO', $valor_tot_seguro, NUMERICO, 13.2, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(12,'VALOR TOTAL DO DESCONTO', $valor_tot_desconto, NUMERICO, 13.2, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(13,'VALOR TOTAL OUTRAS DESPESAS ACESSORIAS', $valor_tot_outrasdispesas, NUMERICO, 13.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(14,'BASE DE CALCULO DO ICMS', $calculo_icms, NUMERICO, 13.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(15,'VALOR TOTAL DO ICMS', $valor_tot_icms, NUMERICO, 13.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(16,'BASE DE CALCULO DO ICMS SUBST. TRIBUTARIA', $calculo_icms_subst_tributaria, NUMERICO, 13.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(17,'VALOR TOTAL DO ICMS SUBST. TRIBUTARIA', $valor_tot_icms_subst_tributaria, NUMERICO, 13.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(18,'VALOR DO ICMS RETIDO', $valor_icms_retido, NUMERICO, 13.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(19,'VALOR TOTAL DO IMPOSTO DE IMPORTACAO', $valor_tot_imposto_importacao, NUMERICO, 13.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(20,'VALOR TOTAL DO IPI', $valor_ipi, NUMERICO, 13.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(21,'VALOR TOTAL DO PIS', $valor_pis, NUMERICO, 13.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(22,'VALOR TOTAL DO COFINS', $valor_cofins, NUMERICO, 13.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(23,'VALOR CALCULADO DO FRETE', $valor_calculado_frete, NUMERICO, 13.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(24,'VALOR TOTAL DO ICMS DO FRETE', $valor_tot_icms_frete, NUMERICO, 11.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(25,'VALOR TOTAL ICMS-SUBST. TRIBUTARIA DO FRETE', $valor_tot_icms_subst_tributaria_frete, NUMERICO, 11.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(26,'VALOR TOTAL DO ISS DO FRETE', $valor_tot_iss_frete, NUMERICO, 11.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(27,'ESPACO', ' ', ALFA, 5, OBRIGATORIO));
+        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO, PREENCHIMENTO
+        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 506, NUMERICO, 3, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(2,'OTDE TOTAL', $otde_tot, NUMERICO, 6.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(3,'PESO BRUTO TOTAL MERCADORIA/NOTA', $pesobruto_tot_mercadoria, NUMERICO, 6.3, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(4,'PESO LIQUIDO TOTAL MERCADORIA/NOTA', $pesoliqui_tot_mercadoria, NUMERICO, 6.3, OBRIGATORIO, PREENCHIMENTO));  
+        $layout->adiciona(new Campo(5,'PESO DENSIDADE/CUBAGEM', $peso_densidade, NUMERICO, 6.4, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(6,'PESO CUBADO (VxD)', $peso_cubado, NUMERICO, 6.4, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(7,'INCIDENCIA DE ICMS', $incidencia_icms, ALFA, 1, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(8,'SEGURO EFETUADO', $seguro_efetuado, ALFA, 1, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(9,'VALOR A SER COBRADO CLIENTE', $valor_cliente, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(10,'VALOR TOTAL DA NOTA', $valor_tot_nota, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(11,'VALOR TOTAL DO SEGURO', $valor_tot_seguro, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(12,'VALOR TOTAL DO DESCONTO', $valor_tot_desconto, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(13,'VALOR TOTAL OUTRAS DESPESAS ACESSORIAS', $valor_tot_outrasdispesas, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(14,'BASE DE CALCULO DO ICMS', $calculo_icms, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(15,'VALOR TOTAL DO ICMS', $valor_tot_icms, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(16,'BASE DE CALCULO DO ICMS SUBST. TRIBUTARIA', $calculo_icms_subst_tributaria, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(17,'VALOR TOTAL DO ICMS SUBST. TRIBUTARIA', $valor_tot_icms_subst_tributaria, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(18,'VALOR DO ICMS RETIDO', $valor_icms_retido, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(19,'VALOR TOTAL DO IMPOSTO DE IMPORTACAO', $valor_tot_imposto_importacao, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(20,'VALOR TOTAL DO IPI', $valor_ipi, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(21,'VALOR TOTAL DO PIS', $valor_pis, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(22,'VALOR TOTAL DO COFINS', $valor_cofins, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(23,'VALOR CALCULADO DO FRETE', $valor_calculado_frete, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(24,'VALOR TOTAL DO ICMS DO FRETE', $valor_tot_icms_frete, NUMERICO, 11.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(25,'VALOR TOTAL ICMS-SUBST. TRIBUTARIA DO FRETE', $valor_tot_icms_subst_tributaria_frete, NUMERICO, 11.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(26,'VALOR TOTAL DO ISS DO FRETE', $valor_tot_iss_frete, NUMERICO, 11.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(27,'ESPACO', ' ', ALFA, 5, OBRIGATORIO, PREENCHIMENTO));
         
         $linha = $layout->gera_linha();
         // Verifica se tamanho gerado está conforme o tamanho esperado
@@ -430,37 +430,37 @@ class Notfis
 
         $layout = new Layout();
 
-        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO
-        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 507, NUMERICO, 3, OBRIGATORIO));
-        $layout->adiciona(new Campo(2,'QUANTIDADE TOTAL DE VOLUMES/EMBALAGENS', $qntd_total_volumes_embalagens, NUMERICO, 6.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(3,'PESO TOTAL TRANPORTADO(BRUTO)', $peso_total_transportado, NUMERICO, 6.3, OBRIGATORIO));
-        $layout->adiciona(new Campo(4,'PESO TOTAL CUBADO(VxD)', $peso_cubado, NUMERICO, 6.4, OBRIGATORIO));  
-        $layout->adiciona(new Campo(5,'PESO DENSIDADE/CUBAGEM', $peso_densidade, NUMERICO, 6.4, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(6,'VALOR TOTAL DO FRETE', $valor_tot_frete, NUMERICO, 13.2, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(7,'VALOR DO FRETE POR PESO/VOLUME', $valor_frete_peso, NUMERICO, 13.2, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(8,'FRETE VALOR', $frete_valor, NUMERICO, 13.2, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(9,'FRETE AD VALOREM', $frete_ad_valorem, NUMERICO, 13.2, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(10,'VALOR SEC-CAT', $valor_sec_cat, NUMERICO, 13.2, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(11,'VAOR IT/GRIS', $valor_it_gris, NUMERICO, 13.2, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(12,'VALOR DO DESPACHO', $valor_despacho, NUMERICO, 13.2, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(13,'VALOR DO PEDAGIO', $valor_pedagio, NUMERICO, 13.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(14,'VALOR ADEME/GRIS', $valor_ademe_gris, NUMERICO, 13.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(15,'VALOR TOTAL DE DESPESAS EXTRAS/ADICIONAIS', $valor_despesas_extras, NUMERICO, 13.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(16,'BASE DE CALCULO PARA APURACAO ICMS DO FRETE', $base_calculo_apuracao_icms_frete, NUMERICO, 13.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(17,'% DE TAXA DO ICMS DO FRETE', $taxa_icms_frete, NUMERICO, 3.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(18,'VALOR DO ICMS DO FRETE', $valor_icms_frete, NUMERICO, 13.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(19,'SUBSTITUICAO TRIBUTARIA', $subst_tributaria, NUMERICO, 1, OBRIGATORIO));
-        $layout->adiciona(new Campo(20,'BASE DE CALCULO ICMS - SUBSTITUICAO TRIBUTARIA', $base_calculo_icms_subst_tributaria, NUMERICO, 13.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(21,'% DE TAXA DO ICMS - SUBSTITUICAO TRIBUTARIA', $taxa_icms_subst_tributaria, NUMERICO, 3.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(22,'VALOR TOTAL DO ICMS - SUBSTITUICAO TRIBUTARIA', $valor_icms_subst_tributaria, NUMERICO, 13.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(23,'BASE DE CALCULO DO ISS', $base_calculo_iss, NUMERICO, 13.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(24,'% DE TAXA DO ISS', $taxa_iss, NUMERICO, 3.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(25,'VALOR TOTAL DO ISS', $valor_tot_iss, NUMERICO, 13.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(26,'VALOR TOTAL DO IR', $valor_tot_ir, NUMERICO, 13.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(27,'DIREITO FISCAL', $direito_fiscal, ALFA, 3, OBRIGATORIO));
-        $layout->adiciona(new Campo(28,'TIPO DE IMPOSTO', $taxa_imposto, ALFA, 4, OBRIGATORIO));
-        $layout->adiciona(new Campo(29,'SIGLA DO ESTADO DO FATO GERADOR ICMS FRETE', $uf, ALFA, 2, OBRIGATORIO));
-        //$layout->adiciona(new Campo(30,'ESPACO', ' ', ALFA, 1, OBRIGATORIO));
+        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO, PREENCHIMENTO
+        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 507, NUMERICO, 3, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(2,'QUANTIDADE TOTAL DE VOLUMES/EMBALAGENS', $qntd_total_volumes_embalagens, NUMERICO, 6.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(3,'PESO TOTAL TRANPORTADO(BRUTO)', $peso_total_transportado, NUMERICO, 6.3, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(4,'PESO TOTAL CUBADO(VxD)', $peso_cubado, NUMERICO, 6.4, OBRIGATORIO, PREENCHIMENTO));  
+        $layout->adiciona(new Campo(5,'PESO DENSIDADE/CUBAGEM', $peso_densidade, NUMERICO, 6.4, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(6,'VALOR TOTAL DO FRETE', $valor_tot_frete, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(7,'VALOR DO FRETE POR PESO/VOLUME', $valor_frete_peso, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(8,'FRETE VALOR', $frete_valor, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(9,'FRETE AD VALOREM', $frete_ad_valorem, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(10,'VALOR SEC-CAT', $valor_sec_cat, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(11,'VAOR IT/GRIS', $valor_it_gris, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(12,'VALOR DO DESPACHO', $valor_despacho, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(13,'VALOR DO PEDAGIO', $valor_pedagio, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(14,'VALOR ADEME/GRIS', $valor_ademe_gris, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(15,'VALOR TOTAL DE DESPESAS EXTRAS/ADICIONAIS', $valor_despesas_extras, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(16,'BASE DE CALCULO PARA APURACAO ICMS DO FRETE', $base_calculo_apuracao_icms_frete, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(17,'% DE TAXA DO ICMS DO FRETE', $taxa_icms_frete, NUMERICO, 3.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(18,'VALOR DO ICMS DO FRETE', $valor_icms_frete, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(19,'SUBSTITUICAO TRIBUTARIA', $subst_tributaria, NUMERICO, 1, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(20,'BASE DE CALCULO ICMS - SUBSTITUICAO TRIBUTARIA', $base_calculo_icms_subst_tributaria, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(21,'% DE TAXA DO ICMS - SUBSTITUICAO TRIBUTARIA', $taxa_icms_subst_tributaria, NUMERICO, 3.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(22,'VALOR TOTAL DO ICMS - SUBSTITUICAO TRIBUTARIA', $valor_icms_subst_tributaria, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(23,'BASE DE CALCULO DO ISS', $base_calculo_iss, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(24,'% DE TAXA DO ISS', $taxa_iss, NUMERICO, 3.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(25,'VALOR TOTAL DO ISS', $valor_tot_iss, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(26,'VALOR TOTAL DO IR', $valor_tot_ir, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(27,'DIREITO FISCAL', $direito_fiscal, ALFA, 3, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(28,'TIPO DE IMPOSTO', $taxa_imposto, ALFA, 4, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(29,'SIGLA DO ESTADO DO FATO GERADOR ICMS FRETE', $uf, ALFA, 2, OBRIGATORIO, PREENCHIMENTO));
+        //$layout->adiciona(new Campo(30,'ESPACO', ' ', ALFA, 1, OBRIGATORIO, PREENCHIMENTO));
         
         $linha = $layout->gera_linha();
         // Verifica se tamanho gerado está conforme o tamanho esperado
@@ -487,12 +487,12 @@ class Notfis
 
         $layout = new Layout();
 
-        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO
-        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 508, NUMERICO, 3, OBRIGATORIO));
-        $layout->adiciona(new Campo(2,'MARCA DOS VOLUMES TRANSPORTADOS', $marca_volumes, ALFA, 50, OBRIGATORIO));
-        $layout->adiciona(new Campo(3,'NUMERACAO DOS VOLUMES TRANSPORTADOS', $num_volumes_transportados, ALFA, 50, OBRIGATORIO));
-        $layout->adiciona(new Campo(4,'NUMERO DOS LACRES', $num_lacres, ALFA, 50, OBRIGATORIO));
-        $layout->adiciona(new Campo(5,'ESPACO', ' ', ALFA, 167, OBRIGATORIO));
+        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO, PREENCHIMENTO
+        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 508, NUMERICO, 3, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(2,'MARCA DOS VOLUMES TRANSPORTADOS', $marca_volumes, ALFA, 50, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(3,'NUMERACAO DOS VOLUMES TRANSPORTADOS', $num_volumes_transportados, ALFA, 50, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(4,'NUMERO DOS LACRES', $num_lacres, ALFA, 50, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(5,'ESPACO', ' ', ALFA, 167, OBRIGATORIO, PREENCHIMENTO));
 
         $linha = $layout->gera_linha();
         // Verifica se tamanho gerado está conforme o tamanho esperado
@@ -520,25 +520,25 @@ class Notfis
 
         $layout = new Layout();
 
-        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO
-        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 509, NUMERICO, 3, OBRIGATORIO));
-        $layout->adiciona(new Campo(2,'ENTREGA CASADA: CNPJ/CGC DO EMISSOR DA NOTA - 1', $cnpj1, NUMERICO, 14, OBRIGATORIO));
-        $layout->adiciona(new Campo(3,'NOME DO EMISSOR DA NOTA(RAZAO SOCIAL) - 1', $nome1, ALFA, 50, OBRIGATORIO));
-        $layout->adiciona(new Campo(4,'SERIE DA NOTA FISCAL - 1', $serie1, ALFA, 3, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(5,'NUMERO DA NOTA FISCAL - 1', $numero1, NUMERICO, 9, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(6,'ENTREGA CASADA: CPNJ/CGC DO EMISSOR DA NOTA - 2', $cnpj2, NUMERICO, 14, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(7,'NOME DO EMISSOR DA NOTA(RAZAO SOCIAL) - 2', $nome2, ALFA, 50, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(8,'SERIE DA NOTA FISCAL - 2', $serie2, ALFA, 3, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(9,'NUMERO DA NOTA FISCAL - 2', $numero2, NUMERICO, 9, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(10,'ENTREGA CASADA: CNPJ/CGC DO EMISSOR DA NOTA - 3', $cnpj3, NUMERICO, 14, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(11,'NOME DO EMISOR DA NOTA(RAZAO SOCIAL) - 3', $nome3, ALFA, 50, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(12,'SERIE DA NOTA FISCAL - 3', $serie3, ALFA, 3, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(13,'NUMERO DA NOTA FISCAL - 3', $numero3, NUMERICO, 9, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(14,'DESPACHO: FILIAL EMISSORA CONHECIMENTO', $desp_filial_emissora_conhecimento, ALFA, 10, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(15,'REDESPACHO: SERIE CONHECIMENTO', $desp_serie_conhecimento, ALFA, 5, OBRIGATORIO));
-        $layout->adiciona(new Campo(16,'REDESPACHO: NUMERO DO CONHECIMENTO', $desp_numero_conhecimento, ALFA, 12, OBRIGATORIO));
-        $layout->adiciona(new Campo(17,'REDESPACHO: CNPJ/CGC DA TRANSP. CONTRTATANTE', $desp_cnpj_transp_contratante, NUMERICO, 14, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(18,'ESPAÇO', ' ', ALFA, 48, OBRIGATORIO)); 
+        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO, PREENCHIMENTO
+        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 509, NUMERICO, 3, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(2,'ENTREGA CASADA: CNPJ/CGC DO EMISSOR DA NOTA - 1', $cnpj1, NUMERICO, 14, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(3,'NOME DO EMISSOR DA NOTA(RAZAO SOCIAL) - 1', $nome1, ALFA, 50, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(4,'SERIE DA NOTA FISCAL - 1', $serie1, ALFA, 3, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(5,'NUMERO DA NOTA FISCAL - 1', $numero1, NUMERICO, 9, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(6,'ENTREGA CASADA: CPNJ/CGC DO EMISSOR DA NOTA - 2', $cnpj2, NUMERICO, 14, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(7,'NOME DO EMISSOR DA NOTA(RAZAO SOCIAL) - 2', $nome2, ALFA, 50, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(8,'SERIE DA NOTA FISCAL - 2', $serie2, ALFA, 3, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(9,'NUMERO DA NOTA FISCAL - 2', $numero2, NUMERICO, 9, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(10,'ENTREGA CASADA: CNPJ/CGC DO EMISSOR DA NOTA - 3', $cnpj3, NUMERICO, 14, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(11,'NOME DO EMISOR DA NOTA(RAZAO SOCIAL) - 3', $nome3, ALFA, 50, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(12,'SERIE DA NOTA FISCAL - 3', $serie3, ALFA, 3, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(13,'NUMERO DA NOTA FISCAL - 3', $numero3, NUMERICO, 9, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(14,'DESPACHO: FILIAL EMISSORA CONHECIMENTO', $desp_filial_emissora_conhecimento, ALFA, 10, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(15,'REDESPACHO: SERIE CONHECIMENTO', $desp_serie_conhecimento, ALFA, 5, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(16,'REDESPACHO: NUMERO DO CONHECIMENTO', $desp_numero_conhecimento, ALFA, 12, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(17,'REDESPACHO: CNPJ/CGC DA TRANSP. CONTRTATANTE', $desp_cnpj_transp_contratante, NUMERICO, 14, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(18,'ESPAÇO', ' ', ALFA, 48, OBRIGATORIO, PREENCHIMENTO)); 
 
         $linha = $layout->gera_linha();
         // Verifica se tamanho gerado está conforme o tamanho esperado
@@ -566,20 +566,20 @@ class Notfis
 
         $layout = new Layout();
 
-        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO
-        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 511, NUMERICO, 3, OBRIGATORIO));
-        $layout->adiciona(new Campo(2,'QUANTIDADE DE VOLUMES', $qntd_volume, NUMERICO, 6.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(3,'ESPECIE DE ACONDICIONAMENTO DO ITEM', $especie_acond, ALFA, 15, OBRIGATORIO));
-        $layout->adiciona(new Campo(4,'CODIGO DO ITEM DA NOTA FISCAL', $cod_item_nf, ALFA, 20, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(5,'DESCRICAO DO ITEM DA NOTA FISCAL', $desc_item_nf, ALFA, 50, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(6,'CFOP DO ITEM', $cfop_item, NUMERICO, 4, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(7,'LOTE DO ITEM', $lote_item, NUMERICO, 20, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(8,'DATA DE VALIDADE DO ITEM', $data_validade_item, NUMERICO, 8, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(9,'MARCA DOS VOLUMES TRANSPORTADOS', $marca_volumes_transportados, ALFA, 50, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(10,'NUMERACAO DOS VOLUMES TRANSPORTADOS', $num_volumes_transportados, ALFA, 50, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(11,'NUMERO DOS LACRES', $num_lacres, ALFA, 50, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(12,'IDENTIFICACAO DO PEDIDO DO CLIENTE', $identf_pedido_cliente, ALFA, 20, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(13,'ESPAÇO', ' ', ALFA, 22, OBRIGATORIO)); 
+        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO, PREENCHIMENTO
+        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 511, NUMERICO, 3, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(2,'QUANTIDADE DE VOLUMES', $qntd_volume, NUMERICO, 6.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(3,'ESPECIE DE ACONDICIONAMENTO DO ITEM', $especie_acond, ALFA, 15, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(4,'CODIGO DO ITEM DA NOTA FISCAL', $cod_item_nf, ALFA, 20, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(5,'DESCRICAO DO ITEM DA NOTA FISCAL', $desc_item_nf, ALFA, 50, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(6,'CFOP DO ITEM', $cfop_item, NUMERICO, 4, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(7,'LOTE DO ITEM', $lote_item, NUMERICO, 20, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(8,'DATA DE VALIDADE DO ITEM', $data_validade_item, NUMERICO, 8, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(9,'MARCA DOS VOLUMES TRANSPORTADOS', $marca_volumes_transportados, ALFA, 50, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(10,'NUMERACAO DOS VOLUMES TRANSPORTADOS', $num_volumes_transportados, ALFA, 50, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(11,'NUMERO DOS LACRES', $num_lacres, ALFA, 50, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(12,'IDENTIFICACAO DO PEDIDO DO CLIENTE', $identf_pedido_cliente, ALFA, 20, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(13,'ESPAÇO', ' ', ALFA, 22, OBRIGATORIO, PREENCHIMENTO)); 
 
         $linha = $layout->gera_linha();
         // Verifica se tamanho gerado está conforme o tamanho esperado
@@ -606,19 +606,19 @@ class Notfis
 
         $layout = new Layout();
 
-        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO
-        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 513, NUMERICO, 3, OBRIGATORIO));
-        $layout->adiciona(new Campo(2,'NOME DO CONSCINITARIO(RAZAO SOCIAL)', $documento, ALFA, 50, OBRIGATORIO));
-        $layout->adiciona(new Campo(3,'CNPJ(CGC)', $cnpj, NUMERICO, 14, OBRIGATORIO));
-        $layout->adiciona(new Campo(4,'INSCRICAO ESTADUAL', $insc_estadual, ALFA, 15, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(5,'ENDERECO(LOGRADOURO', $endereco, ALFA, 50, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(6,'BAIRRO', $bairro, ALFA, 35, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(7,'CIDADE(MUNICIPIO)', $cidade, ALFA, 35, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(8,'CODIGO POSTAL', $cod_postal, ALFA, 9, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(9,'CODIGO MUNICIPIO', $cod_municipio, ALFA, 9, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(10,'SIGLA DO ESTADO(UF) SUBENTIDADE DO PAIS', $uf, ALFA, 9, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(11,'NUMERO DE COMUNICACAO', $numero_contato, ALFA, 35, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(12,'ESPAÇO', ' ', ALFA, 56, OBRIGATORIO)); 
+        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO, PREENCHIMENTO
+        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 513, NUMERICO, 3, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(2,'NOME DO CONSCINITARIO(RAZAO SOCIAL)', $documento, ALFA, 50, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(3,'CNPJ(CGC)', $cnpj, NUMERICO, 14, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(4,'INSCRICAO ESTADUAL', $insc_estadual, ALFA, 15, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(5,'ENDERECO(LOGRADOURO', $endereco, ALFA, 50, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(6,'BAIRRO', $bairro, ALFA, 35, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(7,'CIDADE(MUNICIPIO)', $cidade, ALFA, 35, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(8,'CODIGO POSTAL', $cod_postal, ALFA, 9, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(9,'CODIGO MUNICIPIO', $cod_municipio, ALFA, 9, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(10,'SIGLA DO ESTADO(UF) SUBENTIDADE DO PAIS', $uf, ALFA, 9, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(11,'NUMERO DE COMUNICACAO', $numero_contato, ALFA, 35, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(12,'ESPAÇO', ' ', ALFA, 56, OBRIGATORIO, PREENCHIMENTO)); 
 
         $linha = $layout->gera_linha();
         // Verifica se tamanho gerado está conforme o tamanho esperado
@@ -645,20 +645,20 @@ class Notfis
 
         $layout = new Layout();
 
-        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO
-        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 514, NUMERICO, 3, OBRIGATORIO));
-        $layout->adiciona(new Campo(2,'NOME DO RESP. PELO REDESPACHO(RAZAO SOCIAL)', $documento, ALFA, 50, OBRIGATORIO));
-        $layout->adiciona(new Campo(3,'CNPJ(CGC)', $cnpj, NUMERICO, 14, OBRIGATORIO));
-        $layout->adiciona(new Campo(4,'INSCRICAO ESTADUAL', $insc_estadual, ALFA, 15, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(5,'ENDERECO(LOGRADOURO)', $endereco, ALFA, 50, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(6,'BAIRRO', $bairro, ALFA, 35, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(7,'CIDADE(MUNICIPIO)', $cidade, ALFA, 35, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(8,'CODIGO POSTAL', $cod_postal, ALFA, 9, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(9,'CODIGO DE MUNICIPIO', $cod_municipio, ALFA, 9, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(10,'SIGLA DO ESTADO(UF) SUBENTIDADE DE PAIS', $uf, ALFA, 9, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(11,'NUMERO DE COMUNICACAO', $numero_contato, ALFA, 35, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(12,'AREA DE FRETE', $area_frete, ALFA, 4, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(13,'ESPAÇO', ' ', ALFA, 52, OBRIGATORIO)); 
+        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO, PREENCHIMENTO
+        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 514, NUMERICO, 3, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(2,'NOME DO RESP. PELO REDESPACHO(RAZAO SOCIAL)', $documento, ALFA, 50, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(3,'CNPJ(CGC)', $cnpj, NUMERICO, 14, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(4,'INSCRICAO ESTADUAL', $insc_estadual, ALFA, 15, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(5,'ENDERECO(LOGRADOURO)', $endereco, ALFA, 50, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(6,'BAIRRO', $bairro, ALFA, 35, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(7,'CIDADE(MUNICIPIO)', $cidade, ALFA, 35, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(8,'CODIGO POSTAL', $cod_postal, ALFA, 9, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(9,'CODIGO DE MUNICIPIO', $cod_municipio, ALFA, 9, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(10,'SIGLA DO ESTADO(UF) SUBENTIDADE DE PAIS', $uf, ALFA, 9, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(11,'NUMERO DE COMUNICACAO', $numero_contato, ALFA, 35, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(12,'AREA DE FRETE', $area_frete, ALFA, 4, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(13,'ESPAÇO', ' ', ALFA, 52, OBRIGATORIO, PREENCHIMENTO)); 
 
         $linha = $layout->gera_linha();
         // Verifica se tamanho gerado está conforme o tamanho esperado
@@ -685,19 +685,19 @@ class Notfis
 
         $layout = new Layout();
 
-        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO
-        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 515, NUMERICO, 3, OBRIGATORIO));
-        $layout->adiciona(new Campo(2,'NOME DO RESP. PELO REDESPACHO(RAZAO SOCIAL)', $documento, ALFA, 50, OBRIGATORIO));
-        $layout->adiciona(new Campo(3,'CNPJ(CGC)', $cnpj, NUMERICO, 14, OBRIGATORIO));
-        $layout->adiciona(new Campo(4,'INSCRICAO ESTADUAL', $insc_estadual, ALFA, 15, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(5,'ENDERECO(LOGRADOURO)', $endereco, ALFA, 50, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(6,'BAIRRO', $bairro, ALFA, 35, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(7,'CIDADE(MUNICIPIO)', $cidade, ALFA, 35, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(8,'CODIGO POSTAL', $cod_postal, ALFA, 9, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(9,'CODIGO DE MUNICIPIO', $cod_municipio, ALFA, 9, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(10,'SIGLA DO ESTADO(UF) SUBENTIDADE DE PAIS', $uf, ALFA, 9, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(11,'NUMERO DE COMUNICACAO', $numero_contato, ALFA, 35, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(12,'ESPAÇO', ' ', ALFA, 56, OBRIGATORIO)); 
+        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO, PREENCHIMENTO
+        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 515, NUMERICO, 3, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(2,'NOME DO RESP. PELO REDESPACHO(RAZAO SOCIAL)', $documento, ALFA, 50, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(3,'CNPJ(CGC)', $cnpj, NUMERICO, 14, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(4,'INSCRICAO ESTADUAL', $insc_estadual, ALFA, 15, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(5,'ENDERECO(LOGRADOURO)', $endereco, ALFA, 50, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(6,'BAIRRO', $bairro, ALFA, 35, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(7,'CIDADE(MUNICIPIO)', $cidade, ALFA, 35, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(8,'CODIGO POSTAL', $cod_postal, ALFA, 9, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(9,'CODIGO DE MUNICIPIO', $cod_municipio, ALFA, 9, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(10,'SIGLA DO ESTADO(UF) SUBENTIDADE DE PAIS', $uf, ALFA, 9, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(11,'NUMERO DE COMUNICACAO', $numero_contato, ALFA, 35, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(12,'ESPAÇO', ' ', ALFA, 56, OBRIGATORIO, PREENCHIMENTO)); 
 
         $linha = $layout->gera_linha();
         // Verifica se tamanho gerado está conforme o tamanho esperado
@@ -722,13 +722,13 @@ class Notfis
 
         $layout = new Layout();
 
-        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO
-        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 519, NUMERICO, 3, OBRIGATORIO));
-        $layout->adiciona(new Campo(2,'VALOR TOTAL DAS NOTAS FISCAIS', $valor_tot_nf, NUMERICO, 13.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(3,'PESO BRUTO TOTAL DAS NTOAS FISCAIS', $peso_bruto_nf, NUMERICO, 13.2, OBRIGATORIO));
-        $layout->adiciona(new Campo(4,'QUANTIDADE TOTAL DE VOLUMES', $qntd_tot_volumes, NUMERICO, 13.2, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(5,'NUMERO DE NOTAS', $num_notas, NUMERICO, 10, OBRIGATORIO)); 
-        $layout->adiciona(new Campo(6,'ESPACO', ' ', ALFA, 262, OBRIGATORIO));
+        // CAMPO: ORDEM, DESCRIÇÃO, CONTEUDO, TIPO N/A, TAMANHO, OBRIGATORIO, PREENCHIMENTO
+        $layout->adiciona(new Campo(1,'IDENTIFICADOR DO REGISTRO', 519, NUMERICO, 3, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(2,'VALOR TOTAL DAS NOTAS FISCAIS', $valor_tot_nf, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(3,'PESO BRUTO TOTAL DAS NTOAS FISCAIS', $peso_bruto_nf, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO));
+        $layout->adiciona(new Campo(4,'QUANTIDADE TOTAL DE VOLUMES', $qntd_tot_volumes, NUMERICO, 13.2, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(5,'NUMERO DE NOTAS', $num_notas, NUMERICO, 10, OBRIGATORIO, PREENCHIMENTO)); 
+        $layout->adiciona(new Campo(6,'ESPACO', ' ', ALFA, 262, OBRIGATORIO, PREENCHIMENTO));
 
         $linha = $layout->gera_linha();
         // Verifica se tamanho gerado está conforme o tamanho esperado
