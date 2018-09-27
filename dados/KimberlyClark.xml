@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<kc>
+	<cod_sap>42021016</cod_sap>
+	<ean>7896007540600</ean>
+	<cod_interno>203147</cod_interno>
+	<sku>ABS INTERNO INTIMUS SUPER  C/8</sku>
+	<estoque_fisico>27170,83</estoque_fisico>
+	<estoque_transito>0,0</estoque_transito>
+	<estoque_reservado>0,0</estoque_reservado>
+	<estoque_total>27170,83</estoque_total>
+		<sellout>
+			<data>2018/09/26</data>
+			<cod_sap_dist>42021931</cod_sap_dist>
+			<cod_sap_ent>1609</cod_sap_ent>
+			<cod_cliente>1619</cod_cliente>
+			<nome_cliente>SUPERMERCADOS VARANDAS LTDA</nome_cliente>
+			<cnpj_cliente_indireto>49949472000184</cnpj_cliente_indireto>
+			<cpf_cliente_indireto>49949472000184</cpf_cliente_indireto>
+			<endereco>AVENIDA SENADOR PINHEIRO MACHADO, 643</endereco>
+			<cep>11075003</cep>
+			<estado>SP</estado>
+			<bairro>CAMPO GRANDE</bairro>
+			<municipio>SANTOS</municipio>
+			<telefone>32396380</telefone>
+			<pais>BR</pais>
+			<contato>JOSE INALDO</contato>
+			<tipo_negocio>163</tipo_negocio>
+			<zona_estabelecida_distribuidor></zona_estabelecida_distribuidor>
+			<representante_distribuidor>LG003</representante_distribuidor>
+			<nome_representante>R.A. JOSEFA ANGELICA DE SOUZA NASCIMENTO</nome_representante>
+			<cod_produto_atacado>10692</cod_produto_atacado>
+			<cod_ean>7896007540662</cod_ean>
+			<cod_sap_produto></cod_sap_produto>
+			<venda_qntd>12</venda_qntd>
+			<valor_venda>471</valor_venda>
+			<preco_unitario>3,93</preco_unitario>
+			<tipo_moeda>BRL</tipo_moeda>
+			<data_faturamento>2017/06/15</data_faturamento>
+			<data_entrega>2017/06/15</data_entrega>
+			<tipo_documento>F</tipo_documento>
+			<cod_documento>513652</cod_documento>
+			<unidade_medida_qntd>UN</unidade_medida_qntd>
+			<numerador_conversao_qntd_unidade>000000000000001</numerador_conversao_qntd_unidade>
+			<denominador_conversor_qntd_unidade>1</denominador_conversor_qntd_unidade>
+			<unidade_medida_preco>UN</unidade_medida_preco>
+			<numerador_conversao_preco_unidade>000000000000001</numerador_conversao_preco_unidade>
+			<denominador_conversor_preco_unidade>000000000000001</denominador_conversor_preco_unidade>
+			<data_fim_periodo_reportado>2017/06/15</data_fim_periodo_reportado>
+			<data_transmissao_informacao>2017/06/16</data_transmissao_informacao>
+			<numero_transmissao></numero_transmissao>
+			<cpf_representante_vendas_atacado>26171897833</cpf_representante_vendas_atacado>
+			<chave_acesso>35170620002548000188550010005136521984613761</chave_acesso>
+		</sellout>
+</kc>
