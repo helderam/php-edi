@@ -1,4 +1,31 @@
 <?php
+/**
+ * +-----------------------------------------------------------------------+
+ * | php-edi - Sistema Geração EDI - LAYOUT PROCTER/Vendas                 |
+ * +-----------------------------------------------------------------------+
+ * | Este arquivo está disponível sob a Licença MIT disponível pela Web    |
+ * | em https://pt.wikipedia.org/wiki/Licen%C3%A7a_MIT                     |
+ * |                                                                       |
+ * | Coordenação: <helder.afonso.de.morais@gmail.com>                      |
+ * |                                                                       |
+ * | Programa...: Vendas.php                                               |
+ * |                                                                       |
+ * | Autor......: Helder <helder.afonso.de.morais@gmail.com>               |
+ * |                                                                       |
+ * | Criação....: 26-06-2018                                               |
+ * |                                                                       |
+ * | Objetivo...: Formatar registros conforme Layout PROCTER/Vendas        | 
+ * |                                                                       |
+ * | Layout EDI.:                                                          |
+ * |                                                                       |
+ * +-----------------------------------------------------------------------+
+ * | Versões....:                                                          |
+ * |                                                                       |
+ * |                                                                       |
+ * |                                                                       |
+ * +-----------------------------------------------------------------------+
+ */
+
 namespace App\Procter;
 
 use App\Layout;
