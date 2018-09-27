@@ -1,4 +1,31 @@
 <?php
+/**
+ * +-----------------------------------------------------------------------+
+ * | php-edi - Sistema Geração EDI - LAYOUT PROCEDA/OCOREN                 |
+ * +-----------------------------------------------------------------------+
+ * | Este arquivo está disponível sob a Licença MIT disponível pela Web    |
+ * | em https://pt.wikipedia.org/wiki/Licen%C3%A7a_MIT                     |
+ * |                                                                       |
+ * | Coordenação: <helder.afonso.de.morais@gmail.com>                      |
+ * |                                                                       |
+ * | Programa...: Ocoren.php                                               |
+ * |                                                                       |
+ * | Autor......: Helder <helder.afonso.de.morais@gmail.com>               |
+ * |                                                                       |
+ * | Criação....: 26-06-2018                                               |
+ * |                                                                       |
+ * | Objetivo...: Formatar registros conforme Layout PROCEDA/OCOREN        | 
+ * |                                                                       |
+ * | Layout EDI.: 6.0 - 31/07/2008                                         |
+ * |                                                                       |
+ * +-----------------------------------------------------------------------+
+ * | Versões....:                                                          |
+ * |                                                                       |
+ * |                                                                       |
+ * |                                                                       |
+ * +-----------------------------------------------------------------------+
+ */
+
 namespace App\Proceda;
 
 use App\Layout;

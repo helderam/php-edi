@@ -8,7 +8,7 @@
  * |                                                                       |
  * | Coordenação: <helder.afonso.de.morais@gmail.com>                      |
  * |                                                                       |
- * | Programa...: Doccob.php                                               |
+ * | Programa...: Notfis.php                                               |
  * |                                                                       |
  * | Autor......: Helder <helder.afonso.de.morais@gmail.com>               |
  * |                                                                       |

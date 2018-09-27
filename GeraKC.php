@@ -2,21 +2,21 @@
 
 /**
  * +-----------------------------------------------------------------------+
- * | php-edi - Sistema Geração EDI - GERA LAYOUT PROCTER                   |
+ * | php-edi - Sistema Geração EDI - GERA LAYOUT KIMBERLY CLARK            |
  * +-----------------------------------------------------------------------+
  * | Este arquivo está disponível sob a Licença MIT disponível pela Web    |
  * | em https://pt.wikipedia.org/wiki/Licen%C3%A7a_MIT                     |
  * |                                                                       |
  * | Coordenação: <helder.afonso.de.morais@gmail.com>                      |
  * |                                                                       |
- * | Programa...: GeraProcter.php                                          |
+ * | Programa...: GeraKC.php                                               |
  * |                                                                       |
  * | Autor......: Helder <helder.afonso.de.morais@gmail.com>               |
  * |                                                                       |
  * | Criação....: 23-09-2018                                               |
  * |                                                                       |
- * | Objetivo...: Gerar todos os registros conforme Layout PROCTER. Os     |
- * |              dados devem estar no arquivo dados/procter.xml           | 
+ * | Objetivo...: Gerar todos os registros conforme Layout KimberlyClark.  |
+ * |              Os dados devem estar no arquivo dados/KimberlyClark.xml  | 
  * |                                                                       |
  * | Layout EDI.:                                                          |
  * |                                                                       |
