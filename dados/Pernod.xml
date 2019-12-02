@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<pernod>
+		<tipo_registro>H</tipo_registro>
+		<identificador>VENDA11</identificador>
+		<cnpj_fornecedor>00000000000000</cnpj_fornecedor>
+	<movimento_de_vendas>
+		<tipo_registro_venda>D</tipo_registro_venda>
+		<cnpj_distribuicao>00000000000000</cnpj_distribuicao>
+		<identificacao_do_cliente>000000000000</identificacao_do_cliente>	
+	</movimento_de_vendas>
+</pernod>
