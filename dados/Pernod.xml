@@ -6,6 +6,30 @@
 	<movimento_de_vendas>
 		<tipo_registro_venda>D</tipo_registro_venda>
 		<cnpj_distribuicao>00000000000000</cnpj_distribuicao>
-		<identificacao_do_cliente>000000000000</identificacao_do_cliente>	
+		<identificacao_do_cliente>000000000000000000</identificacao_do_cliente>	
+		<data_transacao>AAAAMMDD</data_transacao>	
+		<numero_documento>00000000000000000000</numero_documento>	
+		<codigo_do_produto>12457832659825</codigo_do_produto>	
+		<quantidade>25.33</quantidade>	
+		<preco_de_venda>15.28</preco_de_venda>	
+		<codigo_vendedor>50</codigo_vendedor>	
+		<campo_reservado>lkjkljljkl</campo_reservado>	
+		<tipo_documento>A</tipo_documento>	
+		<cep>37880000</cep>	
+		<codigo_lote>1245788956235</codigo_lote>	
+		<validade_lote>AAAAMM</validade_lote>	
+		<dia_validade_lote>DD</dia_validade_lote>	
+		<pedido_sugerido>P</pedido_sugerido>	
+		<preco_de_venda_dolar>4.25</preco_de_venda_dolar>	
+		<tipo_de_unidade>4444</tipo_de_unidade>	
 	</movimento_de_vendas>
+	<estoque>
+		<tipo_de_registro>H</tipo_de_registro>
+		<indentificador>Estoq11</indentificador>
+		<cnpj_fornecedor>00000000000000</cnpj_fornecedor>
+		<data_do_estoque>AAAAMMDD</data_do_estoque>
+	</estoque>
+
+
+
 </pernod>
