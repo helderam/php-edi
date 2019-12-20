@@ -23,12 +23,19 @@
 		<preco_de_venda_dolar>4.25</preco_de_venda_dolar>	
 		<tipo_de_unidade>4444</tipo_de_unidade>	
 	</movimento_de_vendas>
-	<estoque>
-		<tipo_de_registro>H</tipo_de_registro>
+	<estoque_cabecalho>
+		<tipo_do_registro_cabecalho>H</tipo_do_registro_cabecalho>
 		<indentificador>Estoq11</indentificador>
 		<cnpj_fornecedor>00000000000000</cnpj_fornecedor>
 		<data_do_estoque>AAAAMMDD</data_do_estoque>
-	</estoque>
+	</estoque_cabecalho>
+	<!--<registro_estoque>
+		<tipo_do_registro>E</tipo_do_registro>
+		<cnpj_ag_distribuicao>00000000000000</cnpj_ag_distribuicao>
+		<codigo_do_produto>00000000000000<codigo_do_produto>
+		<quantidade_em_estoque>000000000000000.0000<quantidade_em_estoque>
+		<codigo_lote>00000000000000000020</codigo_lote>
+	</registro_estoque> -->
 
 
 
