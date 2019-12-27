@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<pernod>
+		<tipo_registro>H</tipo_registro>
+		<identificador>VENDA11</identificador>
+		<cnpj_fornecedor>00000000000000</cnpj_fornecedor>
+	<movimento_de_vendas>
+		<tipo_registro_venda>D</tipo_registro_venda>
+		<cnpj_distribuicao>00000000000000</cnpj_distribuicao>
+		<identificacao_do_cliente>000000000000000000</identificacao_do_cliente>	
+		<data_transacao>AAAAMMDD</data_transacao>	
+		<numero_documento>00000000000000000000</numero_documento>	
+		<codigo_do_produto>12457832659825</codigo_do_produto>	
+		<quantidade>25.33</quantidade>	
+		<preco_de_venda>15.28</preco_de_venda>	
+		<codigo_vendedor>50</codigo_vendedor>	
+		<campo_reservado>lkjkljljkl</campo_reservado>	
+		<tipo_documento>A</tipo_documento>	
+		<cep>37880000</cep>	
+		<codigo_lote>1245788956235</codigo_lote>	
+		<validade_lote>AAAAMM</validade_lote>	
+		<dia_validade_lote>DD</dia_validade_lote>	
+		<pedido_sugerido>P</pedido_sugerido>	
+		<preco_de_venda_dolar>4.25</preco_de_venda_dolar>	
+		<tipo_de_unidade>4444</tipo_de_unidade>	
+	</movimento_de_vendas>
+	<estoque_cabecalho>
+		<tipo_do_registro_cabecalho>H</tipo_do_registro_cabecalho>
+		<indentificador>Estoq11</indentificador>
+		<cnpj_fornecedor>00000000000000</cnpj_fornecedor>
+		<data_do_estoque>AAAAMMDD</data_do_estoque>
+	</estoque_cabecalho>
+	<!--<registro_estoque>
+		<tipo_do_registro>E</tipo_do_registro>
+		<cnpj_ag_distribuicao>00000000000000</cnpj_ag_distribuicao>
+		<codigo_do_produto>00000000000000<codigo_do_produto>
+		<quantidade_em_estoque>000000000000000.0000<quantidade_em_estoque>
+		<codigo_lote>00000000000000000020</codigo_lote>
+	</registro_estoque> -->
+
+
+
+</pernod>
